@@ -8,7 +8,15 @@
   --text-title-color: #111111;
   --text-content-color: #222222;
   --text-description-color: #444444;
+}
 
+@media (max-width: 768px) {
+  :root {
+    --text-logo-fontsize: 1.75rem;
+    --text-title-fontsize: 1.1rem;
+    --text-content-fontsize: 1rem;
+    --text-description-fontsize: 0.8rem;
+  }
 }
 
 body {

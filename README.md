@@ -35,3 +35,9 @@ diary-link：日记跳转链接
 diary-title：日记标题
 diary-content：日记内容
 diary-published：日记发布时间
+
+翻页
+pagination：翻页
+pagination-item：翻页列表项
+pagination-link：翻页跳转链接
+pagination-text：翻页文本

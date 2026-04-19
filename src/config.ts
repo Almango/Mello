@@ -10,7 +10,14 @@ export const BASE_CONFIG = {
 export const POST_CONFIG = {
   page_size: 8,     // 每页显示数量
 }
-
+export const CommentConfig = {
+  enable: true, 
+  provider: 'twikoo', 
+  twikoo: {
+    envId: 'https://twikoo-eb5.pages.dev/', 
+    path: 'auto', 
+  }
+}
 export const DEVELOPMENT = {
   VERSION: '1.1.5',
 }

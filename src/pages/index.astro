@@ -1,11 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import Header from '../components/Header.astro'
 import Post from '../components/Post.astro'
-import Footer from '../components/Footer.astro'
 import Turnpage from '../components/Turnpage.astro'
 import { getCollection } from 'astro:content'
-import { POST_CONFIG } from '../config'
+import { BASE_CONFIG,POST_CONFIG } from '../config'
 
 const allPosts = await getCollection('posts')
 const sortedPosts = allPosts.sort((a, b) => {
@@ -17,58 +15,10 @@ const currentPage = 1
 const totalPages = Math.ceil(sortedPosts.length / pageSize)
 const posts = sortedPosts.slice(0, pageSize)
 
-const page = "Almango"
+const page = BASE_CONFIG.title
 ---
 
 <Layout title={page}>
-  <ul class="post">
-    {posts.map(post => (
-      <li class="post-item">
-        <a href={`/post/${post.id}`} class="post-link">
-          <h2 class="post-title">{post.data.title}</h2>
-          {post.data.description && <p class="post-description">{post.data.description}</p>}
-          <span class="post-published">{post.data.published.toISOString().split('T')[0]}</span>
-        </a>
-      </li>
-    ))}
-  </ul>
+  <Post posts={posts} />
   <Turnpage currentPage={currentPage} totalPages={totalPages} baseUrl="/page" />
 </Layout>
-
-<style>
-  .post {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .post-item {
-    padding: 1rem 0;
-  }
-
-  .post-link {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    text-decoration: none;
-    color: inherit;
-  }
-
-  .post-title {
-    font-size: var(--text-title-fontsize);
-    font-weight: 500;
-    color: var(--text-title-color);
-    margin: 0;
-  }
-
-  .post-description {
-    font-size: calc(var(--text-description-fontsize) + 2.5px);
-    color: var(--text-description-color);
-    margin: 0;
-  }
-
-  .post-published {
-    font-size: var(--text-description-fontsize);
-    color: var(--text-description-color);
-  }
-</style>

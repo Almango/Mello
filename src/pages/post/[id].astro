@@ -46,13 +46,13 @@ const title = post.data.title
 
   .post-title {
     font-size: calc(var(--text-title-fontsize) + 8px);
-    font-weight: 600;
+    font-weight: var(--text-weight);
     color: var(--text-title-color);
     margin: 0;
   }
 
   .post-published {
-    font-size: var(--text-content-fontsize);
+    font-size: calc(var(--text-content-fontsize) - 2px);
     color: var(--text-content-color);
   }
   .post-content {

@@ -3,7 +3,9 @@ import Layout from '../layouts/Layout.astro'
 import { Content } from '../content/about.md'
 import '../styles/markdown.css'
 import 'github-markdown-css/github-markdown.css'
-const page = "关于"
+
+import { BASE_CONFIG } from '../config'
+const page ="关于 | " + BASE_CONFIG.title
 ---
 
 <Layout title={page}>

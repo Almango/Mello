@@ -1,10 +1,16 @@
 ---
-import { getCollection } from 'astro:content'
+interface Props {
+  posts: {
+    id: string
+    data: {
+      title: string
+      description?: string
+      published: Date
+    }
+  }[]
+}
 
-const allPosts = await getCollection('posts')
-const posts = allPosts.sort((a, b) => {
-  return new Date(b.data.published).getTime() - new Date(a.data.published).getTime()
-})
+const { posts } = Astro.props
 ---
 
 <ul class="post">
@@ -40,7 +46,7 @@ const posts = allPosts.sort((a, b) => {
 
   .post-title {
     font-size: var(--text-title-fontsize);
-    font-weight: 500;
+    font-weight: var(--text-weight);
     color: var(--text-title-color);
     margin: 0;
   }

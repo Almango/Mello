@@ -8,11 +8,17 @@ interface Diary {
 }
 
 const diaries: Diary[] = [
+  // 新文章写在最上方 //
+  {
+    author: 'Almango',
+    date: '2026-04-19 17:49:20',
+    content: '没能想到，随手写的小项目居然把两个托管平台的月流量都用光了，为了保证博客能正常访问，我只能临时部署在 cf 了。对于那个小项目，我决定暂时关闭……'
+  },
   {
     author: 'Almango',
     date: '2026-04-18 14:32:08',
     content: '考虑了很久，最终还是打算另起炉灶，重新设计一个更简洁的博客主题，我将它命名为Simpoo，我希望它能如Simple的含义那样：简单、直接、高效。'
-  }
+  },
 ]
 
 const title = '日记'
@@ -52,7 +58,7 @@ const title = '日记'
     gap: 0.25rem;
   }
   .diary-author {
-    font-weight: 500;
+    font-weight: var(--text-weight);
     color: var(--text-title-color);
   }
 

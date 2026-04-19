@@ -12,5 +12,5 @@ export const POST_CONFIG = {
 }
 
 export const DEVELOPMENT = {
-  VERSION: '1.1.0',
+  VERSION: '1.1.1',
 }

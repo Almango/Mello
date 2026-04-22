@@ -1,6 +1,5 @@
 ---
 import Layout from '../../layouts/Layout.astro'
-import Comment from '../../components/Comment.astro'
 import { getCollection, render } from 'astro:content'
 import 'github-markdown-css/github-markdown.css'
 import '../../styles/markdown.css'
@@ -29,7 +28,6 @@ const title = post.data.title
       <Content />
     </div>
   </article>
-  <Comment />
 </Layout>
 
 <style>

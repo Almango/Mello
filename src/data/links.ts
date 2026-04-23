@@ -63,12 +63,12 @@ export const links: Link[] = [
     avatar: "https://q1.qlogo.cn/g?b=qq&nk=3311118881&s=640",
     rss: "https://liuyuyang.net/api/rss"
   },
-  // {
-  //   name: "卿以君歌",
-  //   description: "幻术的世界有什么不好？",
-  //   url: "https://www.mekimto.cn/",
-  //   avatar: "https://q1.qlogo.cn/g?b=qq&nk=2882740&s=100",
-  // },
+  {
+    name: "卿以君歌",
+    description: "幻术的世界有什么不好？",
+    url: "https://www.mekimto.cn/",
+    avatar: "https://q1.qlogo.cn/g?b=qq&nk=2882740&s=100",
+  },
   {
     name: "Revincx",
     description: "可爱就是正义~",
@@ -177,5 +177,12 @@ export const links: Link[] = [
     url: "https://cosky.top/",
     avatar: "https://bu.dusays.com/2026/02/05/6984096009670.jpeg",
     rss: "https://cosky.top/rss"
+  },
+  {
+    name: "周天记",
+    description: "路漫漫其修远兮，吾将上下而求索",
+    url: "https://zhoutian.com",
+    avatar: "https://bu.dusays.com/2023/01/29/63d5bf7fa0d2c.png",
+    rss: "https://zhoutian.com/rss.xml"
   },
 ];

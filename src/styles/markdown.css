@@ -1,4 +1,14 @@
+
+
+
 .markdown-body {
+  background-color: transparent !important;
+}
+
+.markdown-body table,
+.markdown-body table tr,
+.markdown-body table th,
+.markdown-body table td {
   background-color: transparent !important;
 }
 
@@ -11,5 +21,5 @@
   font-weight: bold;
   color: var(--text-text-color);
   text-decoration: underline;
-   text-underline-offset: 6px;
+  text-underline-offset: 6px;
 }

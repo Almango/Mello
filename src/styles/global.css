@@ -4,6 +4,7 @@
   --text-content-fontsize: 1.15rem;
   --text-description-fontsize: 0.85rem;
   --text-weight: bold;
+  --hover-decoration-thickness: 2px;
   --font-family: "Noto Serif SC", serif, Sans-serif;
 }
 
@@ -24,7 +25,7 @@
     --text-title-color: #ffffff;
     --text-content-color: #eeeeee;
     --text-description-color: #bbbbbb;
-    --bg-color: #11151a;
+    --bg-color: #1d2024;
     --border-color: #94989c;
   }
 }

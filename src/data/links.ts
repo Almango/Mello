@@ -57,13 +57,6 @@ export const links: Link[] = [
     rss: "https://blog.sakura.ink/rss.xml"
   },
   {
-    name: "宇阳",
-    description: "记录所学知识，缩短和大神的差距！",
-    url: "https://liuyuyang.net",
-    avatar: "https://q1.qlogo.cn/g?b=qq&nk=3311118881&s=640",
-    rss: "https://liuyuyang.net/api/rss"
-  },
-  {
     name: "卿以君歌",
     description: "幻术的世界有什么不好？",
     url: "https://www.mekimto.cn/",
@@ -93,13 +86,6 @@ export const links: Link[] = [
     description: "唐人曾",
     url: "https://youxianyu.cn/",
     avatar: "https://www.youxianyu.cn/img/c.c.jpg",
-  },
-  {
-    name: "探人间",
-    description: "努力吃上更贵的雪糕！",
-    url: "https://www.hydsb0.com",
-    avatar: "https://s21.ax1x.com/2025/07/13/pVlsr8S.jpg",
-    rss: "https://www.hydsb0.com/rss.xml"
   },
   {
     name: "JustPureH2O",

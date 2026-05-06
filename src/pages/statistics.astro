@@ -1,0 +1,40 @@
+---
+import Layout from '../layouts/Layout.astro'
+import { getCollection } from 'astro:content'
+import { BASE_CONFIG } from '../config'
+
+const posts = await getCollection('posts')
+
+const totalPosts = posts.length
+
+let totalWords = 0
+posts.forEach(post => {
+  let content = post.body
+    .replace(/^#{1,6}\s+/gm, '')
+    .replace(/\*\*|__|\*|_|`{1,3}|~~/g, '')
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+    .replace(/!\[([^\]]*)\]\([^)]+\)/g, '')
+    .replace(/^[-*+]\s+/gm, '')
+    .replace(/^\d+\.\s+/gm, '')
+    .replace(/^>\s+/gm, '')
+    .replace(/^---+$/gm, '')
+    .replace(/```[\s\S]*?```/g, '')
+    .replace(/`[^`]+`/g, '')
+  totalWords += content.replace(/[#*`\[\]()>\-\s]/g, '').length
+})
+
+const categoryCount = new Set(posts.map(p => p.data.category || '未分类')).size
+
+const createTime = new Date(BASE_CONFIG.create_time)
+const now = new Date()
+const runDays = Math.floor((now.getTime() - createTime.getTime()) / (1000 * 60 * 60 * 24))
+
+const title = '统计'
+---
+
+<Layout title={title}>
+  <p>文章总数：{totalPosts}</p>
+  <p>总字数：{(totalWords / 1000).toFixed(1)}k</p>
+  <p>运行时间：{runDays}天</p>
+  <p>分类数量：{categoryCount}</p>
+</Layout>

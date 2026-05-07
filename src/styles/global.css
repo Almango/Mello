@@ -30,7 +30,14 @@
   }
 }
 
-
+@media (max-width: 768px) {
+  :root {
+    --text-logo-fontsize: 1.8rem;
+    --text-title-fontsize: 1.15rem;
+    --text-content-fontsize: 1.05rem;
+    --text-description-fontsize: 0.85rem;
+  }
+}
 
 body {
   font-family: var(--font-family);

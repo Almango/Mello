@@ -4,6 +4,7 @@
   --text-content-fontsize: 1.15rem;
   --text-description-fontsize: 0.85rem;
   --text-weight: bold;
+  --padding: 12px;
   --hover-decoration-thickness: 2px;
   --font-family: "Noto Serif SC", serif, Sans-serif;
 }

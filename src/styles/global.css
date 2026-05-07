@@ -39,6 +39,15 @@
   }
 }
 
+/* @media (max-width: 768px) {
+  :root {
+    --text-logo-fontsize: 1.75rem;
+    --text-title-fontsize: 1.1rem;
+    --text-content-fontsize: 1rem;
+    --text-description-fontsize: 0.8rem;
+  }
+} */
+
 body {
   font-family: var(--font-family);
   background-color: var(--bg-color);

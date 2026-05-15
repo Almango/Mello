@@ -35,5 +35,3 @@ id: "58674a56"
 对了，我已经好久没更新过文章了，说不定这次换了框架和主题后，我的文章更新频率会高很多...
 
 最后呢，我也把自己微改的Butterfly主题存到了Github中，毕竟魔改也花了很多精力的。
-
-::github{repo="Almango/Butterfly-mango_Modify"}

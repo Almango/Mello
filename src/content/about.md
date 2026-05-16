@@ -10,14 +10,17 @@
 
 MBTI鉴定为：<span style="color: var(--theme-color); font-weight: 600;"><a href="https://www.16personalities.com/ch/infj-人格" target="_blank">INFJ-T</a></span>
 
-**邮箱**：sliveralmango@outlook.com
+**联系邮箱**：sliveralmango@outlook.com
 
 关于个人博客，它承载着我一路走来的所有思绪与热爱，它不仅仅是我的博客，更是我的秘密基地，是只属于我的一方小天地，它记录着我对生活的感悟、对技术的探索、对日常的思考与实践...
 
 >往后岁月，也愿继续在这里慢慢书写，把平凡的日子，活成值得珍藏的篇章。
 
+本站文章采用 [CC BY-NC-SA 4.0 许可协议](https://creativecommons.org/licenses/by-nc-sa/4.0/) ，转载请注明出处。
 
 本站的内容仅供阅读，若你对本站有任何建议或问题，欢迎邮箱联系我。
+
+
 
 
 

@@ -12,7 +12,11 @@ const logs: Logs[] = [
   // 新文章写在最上方
   {
     date: '2026-05-16 11:49:01',
-    content: '这周是真的充实🤓🤓'
+    content: '因为一些原因，我不得不长期关闭评论区了，大家有什么问题的话，可以邮箱联系我。'
+  },
+  {
+    date: '2026-05-16 11:49:01',
+    content: '这周过的是真的充实🤓🤓'
   },
   {
     date: '2026-05-05 09:26:22',
@@ -72,7 +76,9 @@ const title = '日记'
   .logs-item {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.2rem;
+    padding-bottom: 12px;
+    border-bottom: 1px dashed var(--border-color);
   }
 
   .logs-meta {

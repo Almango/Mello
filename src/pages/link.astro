@@ -1,0 +1,82 @@
+---
+import Layout from '../layouts/Layout.astro'
+import { links } from '../data/links.ts'
+
+const title = '友链'
+---
+
+<Layout title={title}>
+  <div class="link">
+    <div class="link-top">
+      {links.map(link => (
+        <a href={link.url} target="_blank" rel="noopener" class="link-item">
+          <img src={link.avatar} alt={link.name} class="link-avatar" />
+          <span class="link-name">{link.name}</span>
+        </a>
+      ))}
+    </div>
+    <div class="link-bottom">
+      <h3>友链申请</h3>
+      <p>海内存知己，天涯若比邻，很高兴能在这里与你相遇，如果你也和我一样，热爱记录、用心经营自己的小天地，欢迎常来坐坐，期待与你交换友链。</p>
+      <p>请按照以下格式提交至评论区或者发送至我的邮箱，最快会在24小时内处理好申请。</p>
+      <p style="font-weight: bold;">本站已关闭评论功能，请邮箱联系我。</p>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .link {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem 0;
+  }
+
+  .link-top {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .link-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+  }
+
+  .link-item:hover .link-name {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: var(--hover-decoration-thickness);
+  }
+
+  .link-avatar {
+    width: 2rem;
+    height: 2rem;
+    object-fit: cover;
+  }
+
+  .link-name {
+    font-size: var(--text-content-fontsize);
+    color: var(--text-content-color);
+  }
+
+  .link-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .link-bottom h3 {
+    font-size: var(--text-title-fontsize);
+    color: var(--text-title-color);
+    margin: 0;
+  }
+
+  .link-bottom p {
+    font-size: var(--text-content-fontsize);
+    color: var(--text-content-color);
+    margin: 0;
+  }
+</style>

@@ -1,0 +1,53 @@
+---
+import { BASE_CONFIG } from '../config'
+const navItems = [
+  { label: '归档', href: '/archive' },
+  { label: '手记', href: '/weekly' },
+  // { label: '日志', href: '/logs' },
+  { label: '统计', href: '/statistics' },
+  { label: '邻居', href: '/link' },
+  { label: '关于', href: '/about' },
+
+]
+---
+<header>
+  <a href="/" class="header-logo">{BASE_CONFIG.title}</a>
+  <nav class="header-nav">
+    {navItems.map(item => (
+      <a href={item.href}>{item.label}</a>
+    ))}
+  </nav>
+</header>
+
+<style>
+  header {
+    margin: 0;
+    padding: 1.5rem 0rem 1rem 0rem;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .header-logo {
+    font-size: var(--text-logo-fontsize);
+    font-weight: var(--text-weight);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+    font-family: var(--font-family);
+    color: var(--text-logo-color);
+  }
+  .header-nav {
+    display: flex;
+    gap: 1.5rem;
+  }
+  .header-nav a {
+    font-size: calc(var(--text-content-fontsize) - 2px);
+    color: var(--text-title-color);
+    text-decoration: none;
+    font-weight: var(--text-weight);
+  }
+</style>

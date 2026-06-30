@@ -1,0 +1,78 @@
+:root {
+  --text-logo-fontsize: 2rem;
+  --text-title-fontsize: 1.25rem;
+  --text-content-fontsize: 1.15rem;
+  --text-description-fontsize: 0.85rem;
+  --text-weight: bold;
+  --padding: 12px;
+  --hover-decoration-thickness: 2px;
+  --font-family: "Noto Sans", serif, Sans-serif;
+}
+
+/* 亮色主题（默认） */
+:root {
+  --text-logo-color: #000000;
+  --text-title-color: #000000;
+  --text-content-color: #111111;
+  --text-description-color: #333333;
+  --bg-color: #ffffff;
+  --border-color: #e1e4e8;
+}
+
+/* 暗色主题 */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-logo-color: #ffffff;
+    --text-title-color: #ffffff;
+    --text-content-color: #eeeeee;
+    --text-description-color: #cccccc;
+    --bg-color: #1d2024;
+    --border-color: #94989c;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --text-logo-fontsize: 1.8rem;
+    --text-title-fontsize: 1.15rem;
+    --text-content-fontsize: 1.05rem;
+    --text-description-fontsize: 0.85rem;
+  }
+}
+
+/* @media (max-width: 768px) {
+  :root {
+    --text-logo-fontsize: 1.75rem;
+    --text-title-fontsize: 1.1rem;
+    --text-content-fontsize: 1rem;
+    --text-description-fontsize: 0.8rem;
+  }
+} */
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-color);
+  color: var(--text-content-color);
+  /* background-image: url("/jigsaw.svg");
+  background-repeat: repeat;
+  background-attachment: fixed; */
+}
+
+.container {
+  max-width: 740px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 8px;
+  }
+}
+
+@font-face {
+  font-family: "LXGW WenKai";
+  src: url("/fonts/LXGWWenKai.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

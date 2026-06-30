@@ -1,0 +1,55 @@
+---
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import { BASE_CONFIG } from '../config'
+import '../styles/global.css'
+interface Props {
+  title?: string
+}
+
+const { title = BASE_CONFIG.title } = Astro.props
+---
+
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href={BASE_CONFIG.favicon} />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <!-- 防止暗色主题闪烁的内联样式 -->
+    <style is:inline>
+      :root {
+        --bg-color: #ffffff;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg-color: #0d1117;
+        }
+      }
+      html {
+        background-color: var(--bg-color);
+      }
+    </style>
+  </head>
+  <body>
+    	
+     <main class="container">
+      <Header />
+            <slot />
+      <Footer />
+    </main>
+  </body>
+</html>
+
+<style>
+  .container {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  @media (max-width: 768px) {
+    .container {
+      padding: 0 1rem;
+    }
+  }
+</style>

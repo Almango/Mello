@@ -1,0 +1,58 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import { getCollection } from 'astro:content'
+
+const allPosts = await getCollection('posts')
+const posts = allPosts.sort((a, b) => {
+  return new Date(b.data.published).getTime() - new Date(a.data.published).getTime()
+})
+
+const title = '归档'
+---
+
+<Layout title={title}>
+	<ul class="archive">
+	  {posts.map(post => (
+	    <li class="archive-item">
+	      <span class="archive-published">{post.data.published.toISOString().split('T')[0]}</span>
+	      <a href={`/post/${post.id}`} class="archive-title">{post.data.title}</a>
+	    </li>
+	  ))}
+	</ul>
+</Layout>
+
+<style>
+  .archive {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .archive-item {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding: .75rem 0;
+  }
+
+  .archive-published {
+    font-size: var(--text-content-fontsize);
+    color: var(--text-title-color);
+    flex-shrink: 0;
+    min-width: 6rem;
+  }
+
+  .archive-title {
+    font-size: var(--text-content-fontsize);
+    color: var(--text-content-color);
+    text-decoration: none;
+  }
+
+  .archive-title:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: var(--hover-decoration-thickness);
+  }
+</style>

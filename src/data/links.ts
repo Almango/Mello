@@ -171,4 +171,11 @@ export const links: Link[] = [
     avatar: "https://bu.dusays.com/2023/01/29/63d5bf7fa0d2c.png",
     rss: "https://zhoutian.com/rss.xml"
   },
+  {
+    name: "洪畅的博客",
+    description: "想，全是问题；做，才有答案。",
+    url: "https://blog.hcbu.cn/",
+    avatar: "https://gitee.com/hcbug/picture1/raw/master/20260607223324364.webp",
+    rss: "https://blog.hcbu.cn/atom.xml"
+  },
 ];

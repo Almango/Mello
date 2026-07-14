@@ -3,32 +3,37 @@
   --text-title-fontsize: 1.25rem;
   --text-content-fontsize: 1.15rem;
   --text-description-fontsize: 0.85rem;
-  --text-weight: bold;
+  --text-weight: 500;
   --padding: 12px;
   --hover-decoration-thickness: 2px;
-  --font-family: "Noto Sans", serif, Sans-serif;
+  --font-family: "LXGW ZhenKai", serif, Sans-serif;
 }
 
 /* 亮色主题（默认） */
 :root {
-  --text-logo-color: #000000;
-  --text-title-color: #000000;
-  --text-content-color: #111111;
-  --text-description-color: #333333;
+  --text-logo-color: #333333;
+  --text-title-color: #3a3a3a;
+  --text-content-color: #3a3a3a;
+  --text-description-color: #6b6b6b;
   --bg-color: #ffffff;
   --border-color: #e1e4e8;
+
+  --grid: #f5f3f0;
 }
 
 /* 暗色主题 */
 @media (prefers-color-scheme: dark) {
   :root {
-    --text-logo-color: #ffffff;
-    --text-title-color: #ffffff;
-    --text-content-color: #eeeeee;
-    --text-description-color: #cccccc;
+    --text-logo-color: #e8e8e8;
+    --text-title-color: #d8d8d8;
+    --text-content-color: #d8d8d8;
+    --text-description-color: #a8a8a8;
     --bg-color: #1d2024;
     --border-color: #94989c;
+
+    --grid: #23262b;
   }
+
 }
 
 @media (max-width: 768px) {
@@ -48,15 +53,17 @@
     --text-description-fontsize: 0.8rem;
   }
 } */
-
-body {
-  font-family: var(--font-family);
+html,body{
   background-color: var(--bg-color);
+    font-family: var(--font-family);
   color: var(--text-content-color);
-  /* background-image: url("/jigsaw.svg");
-  background-repeat: repeat;
-  background-attachment: fixed; */
+   background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-attachment: fixed;
 }
+
 
 .container {
   max-width: 740px;
@@ -70,8 +77,8 @@ body {
 }
 
 @font-face {
-  font-family: "LXGW WenKai";
-  src: url("/fonts/LXGWWenKai.ttf") format("truetype");
+  font-family: "LXGW ZhenKai";
+  src: url("/fonts/LXGW ZhenKai.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;

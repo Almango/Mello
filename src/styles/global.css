@@ -6,7 +6,7 @@
   --text-weight: 500;
   --padding: 12px;
   --hover-decoration-thickness: 2px;
-  --font-family: "LXGW ZhenKai", serif, Sans-serif;
+  --font-family: "LXGW WenKai", "Noto Sans", sans-serif;
 }
 
 /* 亮色主题（默认） */
@@ -55,7 +55,7 @@
 } */
 html,body{
   background-color: var(--bg-color);
-    font-family: var(--font-family);
+  font-family: var(--font-family);
   color: var(--text-content-color);
    background-image:
     linear-gradient(var(--grid) 1px, transparent 1px),
@@ -77,9 +77,9 @@ html,body{
 }
 
 @font-face {
-  font-family: "LXGW ZhenKai";
-  src: url("/fonts/LXGW ZhenKai.ttf") format("truetype");
+  font-family: "LXGW WenKai";
+  src: url("/fonts/LXGWWenKai.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
-  font-display: swap;
+  font-display: fallback;
 }

@@ -3,10 +3,10 @@
   --text-title-fontsize: 1.25rem;
   --text-content-fontsize: 1.15rem;
   --text-description-fontsize: 0.85rem;
-  --text-weight: 500;
+  --text-weight: bold;
   --padding: 12px;
   --hover-decoration-thickness: 2px;
-  --font-family: "LXGW WenKai", "Noto Sans", sans-serif;
+  --font-family: "LXGW WenKai", "Noto Sans", serif;
 }
 
 /* 亮色主题（默认） */

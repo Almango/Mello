@@ -17,14 +17,25 @@ const { title = BASE_CONFIG.title } = Astro.props
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <!-- 防止暗色主题闪烁的内联样式 -->
+    <!-- 防止暗色主题闪烁的内联脚本与样式 -->
+    <script is:inline>
+      (function () {
+        const theme = localStorage.getItem('theme');
+        if (theme === 'dark' || theme === 'light') {
+          document.documentElement.setAttribute('data-theme', theme);
+        }
+      })();
+    </script>
     <style is:inline>
       :root {
         --bg-color: #ffffff;
       }
+      :root[data-theme="dark"] {
+        --bg-color: #1d2024;
+      }
       @media (prefers-color-scheme: dark) {
-        :root {
-          --bg-color: #0d1117;
+        :root:not([data-theme]) {
+          --bg-color: #1d2024;
         }
       }
       html {

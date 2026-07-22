@@ -23,7 +23,7 @@
 
 /* 暗色主题 */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme]) {
     --text-logo-color: #e8e8e8;
     --text-title-color: #d8d8d8;
     --text-content-color: #d8d8d8;
@@ -33,7 +33,17 @@
 
     --grid: #23262b;
   }
+}
 
+:root[data-theme="dark"] {
+  --text-logo-color: #e8e8e8;
+  --text-title-color: #d8d8d8;
+  --text-content-color: #d8d8d8;
+  --text-description-color: #a8a8a8;
+  --bg-color: #1d2024;
+  --border-color: #94989c;
+
+  --grid: #23262b;
 }
 
 @media (max-width: 768px) {
@@ -81,5 +91,5 @@ html,body{
   src: url("/fonts/LXGWWenKai.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
-  font-display: fallback;
+  font-display: swap;
 }

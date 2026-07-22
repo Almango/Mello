@@ -56,12 +56,12 @@ export const links: Link[] = [
     avatar: "https://q2.qlogo.cn/headimg_dl?dst_uin=2731443459&spec=5",
     rss: "https://blog.sakura.ink/rss.xml"
   },
-  {
-    name: "卿以君歌",
-    description: "幻术的世界有什么不好？",
-    url: "https://www.mekimto.cn/",
-    avatar: "https://q1.qlogo.cn/g?b=qq&nk=2882740&s=100",
-  },
+  // {
+  //   name: "卿以君歌",
+  //   description: "幻术的世界有什么不好？",
+  //   url: "https://www.mekimto.cn/",
+  //   avatar: "https://q1.qlogo.cn/g?b=qq&nk=2882740&s=100",
+  // },
   {
     name: "Revincx",
     description: "可爱就是正义~",
@@ -100,13 +100,6 @@ export const links: Link[] = [
     url: "https://blog.tsoo.net/",
     avatar: "https://blog.tsoo.net/upload/logo.jpg?width=800",
     rss: "https://blog.tsoo.net/rss.xml"
-  },
-  {
-    name: "ElysiumStack",
-    description: "不会摄影的设计师不是优秀的旅行家",
-    url: "https://www.elysium-stack.cn/",
-    avatar: "https://elysium-stack.cn/upload/c4d9cffe-2541-40d3-b8b9-85f5827a2dc3.png",
-    rss: "https://www.elysium-stack.cn/rss.xml"
   },
   {
     name: "小林の木屋",
@@ -165,17 +158,17 @@ export const links: Link[] = [
     rss: "https://cosky.top/rss"
   },
   {
-    name: "周天记",
-    description: "路漫漫其修远兮，吾将上下而求索",
-    url: "https://zhoutian.com",
-    avatar: "https://bu.dusays.com/2023/01/29/63d5bf7fa0d2c.png",
-    rss: "https://zhoutian.com/rss.xml"
-  },
-  {
     name: "洪畅的博客",
     description: "想，全是问题；做，才有答案。",
     url: "https://blog.hcbu.cn/",
     avatar: "https://gitee.com/hcbug/picture1/raw/master/20260607223324364.webp",
     rss: "https://blog.hcbu.cn/atom.xml"
   },
+  {
+    name: "合荒小站",
+    description: "万物合鸣·独守一荒",
+    url: "https://hehuang.site",
+    avatar: "https://hehuang.site/img/avatar.jpg",
+    rss: "https://hehuang.site/index.xml"
+  }
 ];

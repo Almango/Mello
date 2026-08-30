@@ -44,10 +44,10 @@
 
 @media (max-width: 768px) {
   :root {
-    --text-logo-fontsize: 1.8rem;
-    --text-title-fontsize: 1.15rem;
-    --text-content-fontsize: 1.05rem;
-    --text-description-fontsize: 0.85rem;
+  --text-logo-fontsize: 1.6rem;
+  --text-title-fontsize: 1.2rem;
+  --text-content-fontsize: 1rem;
+  --text-description-fontsize: 0.8rem;
   }
 }
 

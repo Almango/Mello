@@ -1,0 +1,113 @@
+---
+import Layout from '../layouts/Layout.astro'
+import { BASE_CONFIG } from '../config'
+
+interface Logs {
+  date: string
+  content: string
+  images?: string[]
+}
+
+const logs: Logs[] = [
+  // 新文章写在最上方
+  {
+    date: '2026-05-22 22:01:32',
+    content: '想着广告费提现了，打算买一把新AK皮肤玩玩，结果还价一毛钱对方都没接受，无缘就算了，于是便给老妈和奶奶分别转了520和200块钱，家人开心我也开心，皮肤等以后再买吧，价格还能再跌一些...'
+  },
+  {
+    date: '2026-05-20 21:39:02',
+    content: '今天真是美滋滋✨✨，真就是八方来财了🤤🤩'
+  },
+  {
+    date: '2026-05-16 11:49:01',
+    content: '因为一些原因，我不得不长期关闭评论区了，大家有什么问题的话，可以邮箱联系我。'
+  },
+  {
+    date: '2026-05-16 11:49:01',
+    content: '这周过的是真的充实🤓🤓'
+  },
+  {
+    date: '2026-05-05 09:26:22',
+    content: '五一就要这么寥寥草草的结束了？'
+  },
+  {
+    date: '2026-05-03 09:46:10',
+    content: '每次都忘记备份照片，等到找不到数据的时候才知道珍惜...'
+  },
+  {
+    date: '2026-04-23 14:01:15',
+    content: '看来是我的期望太高了，异环并没有想象中的那么好玩，我不关心打斗和剧情，只是觉得相比GTA5，它还是太保守了。 '
+  },
+  {
+    date: '2026-04-23 13:40:08',
+    content: '新推出的 ChatGPT-Image2 太逆天了，又一次刷新了图片生成的高度，此前生成的图片都带着一股AI味，现在真就分不清哪张是现实了。'
+  },
+  {
+    date: '2026-04-19 21:39:00',
+    content: '由于正在完善主题，评论系统暂时关闭，如有意可邮箱联系我。'
+  },
+  {
+    date: '2026-04-19 17:49:20',
+    content: '没能想到，随手写的小项目居然把两个托管平台的月流量都用光了，为了保证博客能正常访问，我只能临时部署在 cf 了。对于那个小项目，我决定暂时关闭……'
+  },
+  {
+    date: '2026-04-18 14:32:08',
+    content: '考虑了很久，最终还是打算另起炉灶，重新设计一个更简洁的博客主题。'
+  },
+]
+
+const title = '日记'
+---
+
+<Layout title={title}>
+  <div class="logs">
+    {logs.map(log => (
+      <article class="logs-item">
+        <div class="logs-meta">
+          <span class="logs-author">{BASE_CONFIG.author}</span>
+          <span class="logs-published">{log.date}</span>
+        </div>
+        <p class="logs-content">{log.content}</p>
+      </article>
+    ))}
+  </div>
+</Layout>
+
+<style>
+  .logs {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem 0;
+  }
+
+  .logs-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding-bottom: 12px;
+    border-bottom: 1px dashed var(--border-color);
+  }
+
+  .logs-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .logs-author {
+    font-weight: var(--text-weight);
+    color: var(--text-title-color);
+  }
+
+  .logs-published {      
+    font-size: var(--text-description-fontsize);
+    color: var(--text-description-color);
+  }
+
+  .logs-content {
+    font-size: var(--text-content-fontsize);
+    color: var(--text-content-color);
+    line-height: 1.8;
+    margin: 0;
+  }
+</style>

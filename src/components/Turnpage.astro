@@ -1,0 +1,81 @@
+---
+interface Props {
+  currentPage: number
+  totalPages: number
+  baseUrl: string
+}
+
+const { currentPage, totalPages, baseUrl } = Astro.props
+
+const hasPrev = currentPage > 1
+const hasNext = currentPage < totalPages
+
+// 上一页链接：第 2 页的上一个是首页
+const prevUrl = hasPrev 
+  ? (currentPage === 2 ? '/' : `${baseUrl}/${currentPage - 1}`)
+  : null
+
+// 下一页链接
+const nextUrl = hasNext ? `${baseUrl}/${currentPage + 1}` : null
+
+// 首页链接
+const firstUrl = currentPage !== 1 ? '/' : null
+
+// 末页链接
+const lastUrl = currentPage !== totalPages ? `${baseUrl}/${totalPages}` : null
+---
+
+<nav class="turnpage">
+  {firstUrl ? (
+    <a href={firstUrl} class="turnpage-link">首页</a>
+  ) : (
+    <span class="turnpage-disabled">首页</span>
+  )}
+  
+  {prevUrl ? (
+    <a href={prevUrl} class="turnpage-link">上一页</a>
+  ) : (
+    <span class="turnpage-disabled">上一页</span>
+  )}
+  
+  <span class="turnpage-info">{currentPage} / {totalPages}</span>
+  
+  {nextUrl ? (
+    <a href={nextUrl} class="turnpage-link">下一页</a>
+  ) : (
+    <span class="turnpage-disabled">下一页</span>
+  )}
+  
+  {lastUrl ? (
+    <a href={lastUrl} class="turnpage-link">页末</a>
+  ) : (
+    <span class="turnpage-disabled">页末</span>
+  )}
+</nav>
+
+<style>
+  .turnpage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem 0;
+    flex-wrap: wrap;
+  }
+
+  .turnpage-link {
+    font-size: var(--text-content-fontsize);
+    color: var(--text-content-color);
+    text-decoration: none;
+  }
+
+  .turnpage-disabled {
+    font-size: var(--text-content-fontsize);
+    color: var(--text-description-color);
+  }
+
+  .turnpage-info {
+    font-size: var(--text-description-fontsize);
+    color: var(--text-description-color);
+  }
+</style>

@@ -1,0 +1,69 @@
+---
+interface Props {
+  posts: {
+    id: string
+    data: {
+      title: string
+      description?: string
+      published: Date
+    }
+  }[]
+}
+
+const { posts } = Astro.props
+---
+
+<ul class="post">
+  {posts.map(post => (
+    <li class="post-item">
+      <a href={`/post/${post.id}`} class="post-link">
+        <h2 class="post-title">{post.data.title}</h2>
+        {post.data.description && <p class="post-description">{post.data.description}</p>}
+        <span class="post-published">{post.data.published.toISOString().split('T')[0]}</span>
+      </a>
+    </li>
+  ))}
+</ul>
+
+<style>
+  .post {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .post-item {
+    padding: 1rem 0;
+  }
+
+  .post-link {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .post-link:hover .post-title {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: var(--hover-decoration-thickness);
+  }
+
+  .post-title {
+    font-size: var(--text-title-fontsize);
+    color: var(--text-title-color);
+    margin: 0;
+  }
+
+  .post-description {
+    font-size: calc(var(--text-description-fontsize) + 2.5px);
+    color: var(--text-description-color);
+    margin: 0;
+  }
+
+  .post-published {
+    font-size: var(--text-description-fontsize);
+    color: var(--text-description-color);
+  }
+</style>

@@ -1,0 +1,46 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import Post from '../../components/Post.astro'
+import Turnpage from '../../components/Turnpage.astro'
+import { getCollection } from 'astro:content'
+import { POST_CONFIG } from '../../config'
+
+const POSTS_PER_PAGE = POST_CONFIG.page_size
+
+export async function getStaticPaths() {
+  const POSTS_PER_PAGE = POST_CONFIG.page_size
+  
+  const posts = await getCollection('posts')
+  
+  const totalPosts = posts.length
+  const totalPages = Math.ceil(totalPosts / POSTS_PER_PAGE)
+  
+  const paths = []
+  
+  // 从第 2 页开始生成，第 1 页是首页
+  for (let i = 2; i <= totalPages; i++) {
+    paths.push({
+      params: { page: i.toString() },
+    })
+  }
+  
+  return paths
+}
+
+const page = Number(Astro.params.page) || 2
+
+const posts = await getCollection('posts')
+
+const totalPosts = posts.length
+const totalPages = Math.ceil(totalPosts / POSTS_PER_PAGE)
+
+posts.sort((a, b) => new Date(b.data.published).getTime() - new Date(a.data.published).getTime())
+
+const startIndex = (page - 1) * POSTS_PER_PAGE
+const paginatedPosts = posts.slice(startIndex, startIndex + POSTS_PER_PAGE)
+---
+
+<Layout title={`第 ${page} 页 | Almango`}>
+  <Post posts={paginatedPosts} />
+  <Turnpage currentPage={page} totalPages={totalPages} baseUrl="/page" />
+</Layout>

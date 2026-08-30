@@ -20,9 +20,5 @@ export const CommentConfig = {
   }
 }
 export const DEVELOPMENT = {
-<<<<<<< HEAD
   VERSION: '1.5.3',
-=======
-  VERSION: '1.5.2',
->>>>>>> a286e8b805706e6d1616ab4c1d06e6bf1c1c365b
 }

@@ -128,3 +128,11 @@
   --focus-outlineColor: var(--borderColor-accent-emphasis);
   --borderColor-neutral-muted: var(--borderColor-muted);
 }
+
+/* 标题字号层级（px 显式控制，覆盖 github-markdown-css 默认 em 值） */
+.markdown-body h1 { font-size: 24px; }
+.markdown-body h2 { font-size: 20px; }
+.markdown-body h3 { font-size: 18px; }
+.markdown-body h4 { font-size: 16px; }
+.markdown-body h5 { font-size: 15px; }
+.markdown-body h6 { font-size: 14px; }

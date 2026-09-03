@@ -33,8 +33,49 @@ const title = '统计'
 ---
 
 <Layout title={title}>
-  <p>总字数：{(totalWords / 1000).toFixed(1)}k</p>
-  <p>文章总数：{totalPosts}</p>
-  <p>分类数量：{categoryCount}</p>
-  <p>运行时间：{runDays}天</p>
+  <ul class="statistics">
+    <li class="statistics-item">
+      <span class="statistics-label">总字数</span>
+      <span class="statistics-value">{(totalWords / 1000).toFixed(1)}k</span>
+    </li>
+    <li class="statistics-item">
+      <span class="statistics-label">文章总数</span>
+      <span class="statistics-value">{totalPosts}</span>
+    </li>
+    <li class="statistics-item">
+      <span class="statistics-label">分类数量</span>
+      <span class="statistics-value">{categoryCount}</span>
+    </li>
+    <li class="statistics-item">
+      <span class="statistics-label">运行时间</span>
+      <span class="statistics-value">{runDays}天</span>
+    </li>
+  </ul>
 </Layout>
+
+<style>
+  .statistics {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .statistics-item {
+    display: flex;
+    align-items: baseline;
+    gap: 24px;
+    padding: .75rem 0;
+  }
+
+  .statistics-label {
+    font-size: var(--text-content-fontsize);
+    color: var(--text-description-color);
+    flex-shrink: 0;
+    min-width: 4rem;
+  }
+
+  .statistics-value {
+    font-size: var(--text-content-fontsize);
+    color: var(--text-logo-color);
+  }
+</style>

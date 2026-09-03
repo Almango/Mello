@@ -6,6 +6,7 @@ interface Props {
       title: string
       description?: string
       published: Date
+      tags?: string[]
     }
   }[]
 }
@@ -19,7 +20,16 @@ const { posts } = Astro.props
       <a href={`/post/${post.id}`} class="post-link">
         <h2 class="post-title">{post.data.title}</h2>
         {post.data.description && <p class="post-description">{post.data.description}</p>}
-        <span class="post-published">{post.data.published.toISOString().split('T')[0]}</span>
+      
+        <div class="post-meta">
+          <span class="post-published">{post.data.published.toISOString().split('T')[0]}</span>
+          {post.data.tags && post.data.tags.length > 0 && (
+            <span class="post-tags">
+              {post.data.tags.map(tag => <span class="post-tag">#{tag}</span>)}
+            </span>
+          )}
+        </div>
+        
       </a>
     </li>
   ))}
@@ -62,8 +72,26 @@ const { posts } = Astro.props
     margin: 0;
   }
 
-  .post-published {
+  .post-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .post-published,
+  .post-tag {
     font-size: var(--text-description-fontsize);
     color: var(--text-description-color);
+  }
+
+  .post-tag {
+    color: var(--text-tag-color);
+  }
+
+  .post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
   }
 </style>

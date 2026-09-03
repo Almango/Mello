@@ -48,6 +48,7 @@ html,body{
 
 .container {
   max-width: 740px;
+  padding: 18px;
   margin: 0 auto;
 }
 
@@ -57,9 +58,5 @@ html,body{
     --text-title-fontsize: 17px;
     --text-content-fontsize: 15px;
     --text-description-fontsize: 12px;
-  }
-
-  .container {
-    padding: 8px;
   }
 }

@@ -14,7 +14,7 @@
 }
 
 .markdown-body a {
-  color: var(--text-text-color);
+  color: var(--text-tag-color);
   text-decoration: underline;
   text-underline-offset: 6px;
 }
@@ -130,6 +130,14 @@
 }
 
 /* 标题字号层级（px 显式控制，覆盖 github-markdown-css 默认 em 值） */
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  color: var(--text-title-color);
+}
 .markdown-body h1 { font-size: 24px; }
 .markdown-body h2 { font-size: 20px; }
 .markdown-body h3 { font-size: 18px; }

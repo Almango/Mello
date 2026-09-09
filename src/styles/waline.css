@@ -686,7 +686,7 @@
 .wl-card-item {
     position: relative;
     display: flex;
-    padding: .5em 0;
+    padding: .5em
 }
 
 .wl-card-item .wl-card-item {
@@ -1481,4 +1481,20 @@
 .wl-user-wall .wl-user-item img {
     width: var(--waline-user-avatar-size, 48px);
     height: var(--waline-user-avatar-size, 48px)
+}
+
+
+.wl-editor {
+    background-image: url(https://bu.dusays.com/2026/09/09/6aa0cb96e974d.gif);
+    background-size: 10%;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-color: rgba(0, 0, 0, 0);
+    resize: vertical
+}
+
+.wl-editor:focus {
+    background-position-x: 800px;
+    background-position-y: 1000px;
+    transition: all 0.2s ease-in-out 0s;
 }

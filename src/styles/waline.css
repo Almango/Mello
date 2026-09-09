@@ -263,6 +263,7 @@
     position: relative;
     flex-shrink: 1;
     width: 100%;
+    margin: .5em;
     border: var(--waline-border);
     border-radius: .75em;
     background: var(--waline-bg-color);
@@ -685,7 +686,7 @@
 .wl-card-item {
     position: relative;
     display: flex;
-    padding: .5em
+    padding: .5em 0;
 }
 
 .wl-card-item .wl-card-item {

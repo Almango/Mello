@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import { links } from '../data/links.ts'
+import Comment from '../components/Comment.astro'
+
 
 const title = '友链'
 ---
@@ -19,8 +21,9 @@ const title = '友链'
       <h3>友链申请</h3>
       <p>海内存知己，天涯若比邻，很高兴能在这里与你相遇，如果你也和我一样，热爱记录、用心经营自己的小天地，欢迎常来坐坐，期待与你交换友链。</p>
       <p>请按照以下格式提交至评论区或者发送至我的邮箱，最快会在24小时内处理好申请。</p>
-      <p style="font-weight: bold;">本站已关闭评论功能，请邮箱联系我。</p>
+      <!-- <p style="font-weight: bold;">本站已关闭评论功能，请邮箱联系我。</p> -->
     </div>
+    <Comment />
   </div>
 </Layout>
 

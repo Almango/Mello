@@ -17,7 +17,6 @@ const { title = BASE_CONFIG.title } = Astro.props
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <!-- 防止暗色主题闪烁的内联脚本与样式 -->
     <script is:inline>
       (function () {
         const theme = localStorage.getItem('theme');

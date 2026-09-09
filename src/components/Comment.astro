@@ -2,11 +2,12 @@
 import { CommentConfig } from '../config';
 import '../styles/waline.css';
 
+if (!CommentConfig.enable) return Astro.empty();
+
 const serverURL = CommentConfig.waline.serverURL;
 ---
 
 <section class="comment">
-  <!-- <h2 class="comment-title">评论</h2> -->
   <div id="waline" class="waline-container" data-server-url={serverURL}></div>
 </section>
 

@@ -12,12 +12,11 @@ export const POST_CONFIG = {
   page_size: 12,     // 每页显示数量
 }
 export const CommentConfig = {
-  enable: false, 
-  provider: 'twikoo', 
-  twikoo: {
-    envId: 'https://twikoo-eb5.pages.dev/', 
-    path: 'auto', 
-  }
+  enable: true,
+  provider: 'waline',
+  waline: {
+    serverURL: 'https://waline.almango.cn/',
+  },
 }
 export const DEVELOPMENT = {
   VERSION: '1.6.1',

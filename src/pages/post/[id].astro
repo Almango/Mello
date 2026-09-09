@@ -1,6 +1,8 @@
 ---
 import Layout from '../../layouts/Layout.astro'
+import Comment from '../../components/Comment.astro'
 import { getCollection, render } from 'astro:content'
+import { CommentConfig } from '../../config'
 import 'github-markdown-css/github-markdown.css'
 import '../../styles/markdown.css'
 
@@ -27,6 +29,7 @@ const title = post.data.title
     <div class="post-content markdown-body">
       <Content />
     </div>
+    {CommentConfig.enable && <Comment />}
   </article>
 </Layout>
 

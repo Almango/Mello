@@ -1,0 +1,12 @@
+/* 外链引入 Waline 官方样式（保留为外部资源，不打包） */
+@import url('https://unpkg.com/@waline/client@v3/dist/waline.css');
+
+/* 覆盖样式 */
+.waline-container {
+  font-family: var(--font-family);
+  --waline-font-family: var(--font-family);
+  --waline-theme-color: var(--text-tag-color);
+}
+.wl-panel {
+  margin: 0;
+}

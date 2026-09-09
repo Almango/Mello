@@ -2,6 +2,23 @@
   background-color: transparent !important;
 }
 
+/* 标题 */
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  color: var(--text-title-color);
+}
+.markdown-body h1 { font-size: 24px; }
+.markdown-body h2 { font-size: 20px; }
+.markdown-body h3 { font-size: 18px; }
+.markdown-body h4 { font-size: 16px; }
+.markdown-body h5 { font-size: 15px; }
+.markdown-body h6 { font-size: 14px; }
+
+/* 表格 */
 .markdown-body table,
 .markdown-body table tr,
 .markdown-body table th,
@@ -14,7 +31,7 @@
 }
 
 .markdown-body a {
-  color: var(--text-tag-color);
+  color: var(--text-content-color);
   text-decoration: underline;
   text-underline-offset: 6px;
 }
@@ -129,18 +146,3 @@
   --borderColor-neutral-muted: var(--borderColor-muted);
 }
 
-/* 标题字号层级（px 显式控制，覆盖 github-markdown-css 默认 em 值） */
-.markdown-body h1,
-.markdown-body h2,
-.markdown-body h3,
-.markdown-body h4,
-.markdown-body h5,
-.markdown-body h6 {
-  color: var(--text-title-color);
-}
-.markdown-body h1 { font-size: 24px; }
-.markdown-body h2 { font-size: 20px; }
-.markdown-body h3 { font-size: 18px; }
-.markdown-body h4 { font-size: 16px; }
-.markdown-body h5 { font-size: 15px; }
-.markdown-body h6 { font-size: 14px; }

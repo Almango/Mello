@@ -1484,9 +1484,15 @@
 }
 
 
+/* 
+-------------------------------
+样式定制区                      
+-------------------------------
+*/
+
 .wl-editor {
-    background-image: url(https://bu.dusays.com/2026/09/09/6aa0cb96e974d.gif);
-    background-size: 10%;
+    background-image: url(https://bu.dusays.com/2026/09/09/6aa0d55e1a429.gif);
+    background-size: 12%;
     background-repeat: no-repeat;
     background-position: right bottom;
     background-color: rgba(0, 0, 0, 0);
@@ -1497,4 +1503,12 @@
     background-position-x: 800px;
     background-position-y: 1000px;
     transition: all 0.2s ease-in-out 0s;
+}
+
+.wl-reaction-title {
+    color: var(--text-title-color);
+}
+.wl-count {
+    color: var(--text-title-color);
+    font-size: 18px;
 }

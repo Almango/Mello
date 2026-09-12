@@ -111,9 +111,9 @@ export const links: Link[] = [
   {
     name: "mccsjs",
     description: "素敵な一日が始まります🎉🎉🎉",
-    url: "https://mccsjs.eu.org/",
-    avatar: "https://mccsjs.eu.org/img/head.jpg",
-    rss: "https://mccsjs.eu.org/rss.xml"
+    url: "https://mccsjs.cn/",
+    avatar: "https://mccsjs.cn/_astro/ico.DgJiMYbf_1BrGmp.webp",
+    rss: "https://mccsjs.cn/rss.xml"
   },
   {
     name: "CcoMm",
@@ -128,13 +128,6 @@ export const links: Link[] = [
     url: "https://blog.meorion.moe",
     avatar: "https://gravatar.meorion.moe/avatar/me",
     rss: "https://blog.meorion.moe/rss.xml"
-  },
-  {
-    name: "朝瓜夕拾",
-    description: "瓜瓜和果果的Blog",
-    url: "https://yuubari.cn",
-    avatar: "https://yuubari.cn/upload/3628985i.png",
-    rss: "https://yuubari.cn/rss.xml"
   },
   {
     name: "Kegongtang",
@@ -154,7 +147,7 @@ export const links: Link[] = [
     name: "天码行空的小破站",
     description: "路漫漫其修远兮，吾将上下而求索",
     url: "https://cosky.top/",
-    avatar: "https://bu.dusays.com/2026/02/05/6984096009670.jpeg",
+    avatar: "https://i.see.you/2026/04/06/mW3p/e687dcf361b90e15258af06410e4df9e.jpg",
     rss: "https://cosky.top/rss"
   },
   {

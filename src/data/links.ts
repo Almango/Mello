@@ -56,12 +56,6 @@ export const links: Link[] = [
     avatar: "https://q2.qlogo.cn/headimg_dl?dst_uin=2731443459&spec=5",
     rss: "https://blog.sakura.ink/rss.xml"
   },
-  // {
-  //   name: "卿以君歌",
-  //   description: "幻术的世界有什么不好？",
-  //   url: "https://www.mekimto.cn/",
-  //   avatar: "https://q1.qlogo.cn/g?b=qq&nk=2882740&s=100",
-  // },
   {
     name: "Revincx",
     description: "可爱就是正义~",
@@ -80,12 +74,6 @@ export const links: Link[] = [
     description: "阿巴阿巴阿巴..",
     url: "https://blog.luoaicheng.cn/",
     avatar: "https://pic.imgdb.cn/item/64c65629a9eb352efd93a379.webp",
-  },
-  {
-    name: "悠闲的鱼",
-    description: "唐人曾",
-    url: "https://youxianyu.cn/",
-    avatar: "https://www.youxianyu.cn/img/c.c.jpg",
   },
   {
     name: "JustPureH2O",

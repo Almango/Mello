@@ -30,6 +30,16 @@
   font-family: var(--font-family) !important;
 }
 
+/* 代码块使用等宽字体 */
+.markdown-body code,
+.markdown-body pre,
+.markdown-body kbd,
+.markdown-body samp,
+.markdown-body code *,
+.markdown-body pre * {
+  font-family: Consolas, "Courier New", monospace !important;
+}
+
 .markdown-body a {
   color: var(--text-content-color);
   text-decoration: underline;

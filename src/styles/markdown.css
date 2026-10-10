@@ -10,6 +10,7 @@
 .markdown-body h5,
 .markdown-body h6 {
   color: var(--text-title-color);
+  font-weight: var(--text-weight);
 }
 .markdown-body h1 { font-size: 24px; }
 .markdown-body h2 { font-size: 20px; }
@@ -31,14 +32,12 @@
 }
 
 /* 代码块使用等宽字体 */
-.markdown-body code,
-.markdown-body pre,
-.markdown-body kbd,
-.markdown-body samp,
-.markdown-body code *,
+
 .markdown-body pre * {
+  border-radius: 0;
   font-family: Consolas, "Courier New", monospace !important;
 }
+
 
 .markdown-body a {
   color: var(--text-content-color);

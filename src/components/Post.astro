@@ -16,11 +16,9 @@ const { posts } = Astro.props
 <ul class="post">
   {posts.map(post => (
     <li class="post-item">
-      <a href={`/post/${post.id}`} class="post-link">
-        <h2 class="post-title">{post.data.title}</h2>
-        {post.data.description && <p class="post-description">{post.data.description}</p>}
-        <span class="post-published">{post.data.published.toISOString().split('T')[0]}</span>
-      </a>
+      <a href={`/post/${post.id}`} class="post-title hover-underline">{post.data.title}</a>
+      {post.data.description && <p class="post-description">{post.data.description}</p>}
+      <span class="post-published">{post.data.published.toISOString().split('T')[0]}</span>
     </li>
   ))}
 </ul>
@@ -33,27 +31,17 @@ const { posts } = Astro.props
   }
 
   .post-item {
-    padding: 1rem 0;
-  }
-
-  .post-link {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    text-decoration: none;
-    color: inherit;
-  }
-
-  .post-link:hover .post-title {
-    text-decoration: underline;
-    text-underline-offset: 4px;
-    text-decoration-thickness: var(--hover-decoration-thickness);
+    padding: 1rem 0;
   }
 
   .post-title {
     font-size: var(--text-title-fontsize);
     color: var(--text-title-color);
-    margin: 0;
+    width: fit-content;
+    text-decoration: none;
   }
 
   .post-description {

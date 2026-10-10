@@ -104,11 +104,11 @@ export const links: Link[] = [
     rss: "https://mccsjs.cn/rss.xml"
   },
   {
-    name: "CcoMm",
+    name: "qwwp",
     description: "你要吃C4吗？",
-    url: "https://blog.ccomm.top/",
-    avatar: "https://avatars.githubusercontent.com/u/147143261",
-    rss: "https://blog.ccomm.top/rss.xml"
+    url: "https://qwwp.top/",
+    avatar: "https://qwwp.top/images/avatar.jpg",
+    rss: "https://qwwp.top/feed.xml"
   },
   {
     name: "Meorion",

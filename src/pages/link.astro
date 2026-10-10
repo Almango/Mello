@@ -11,10 +11,13 @@ const title = '友链'
   <div class="link">
     <div class="link-top">
       {links.map(link => (
-        <a href={link.url} target="_blank" rel="noopener" class="link-item">
+        <div class="link-item">
           <img src={link.avatar} alt={link.name} class="link-avatar" />
-          <span class="link-name">{link.name}</span>
-        </a>
+          <div class="link-info">
+            <a href={link.url} target="_blank" rel="noopener" class="link-name hover-underline">{link.name}</a>
+            <span class="link-description">{link.description}</span>
+          </div>
+        </div>
       ))}
     </div>
     <div class="link-bottom">
@@ -31,37 +34,54 @@ const title = '友链'
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    padding: 1rem 0;
   }
 
   .link-top {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .link-item {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    text-decoration: none;
-  }
-
-  .link-item:hover .link-name {
-    text-decoration: underline;
-    text-underline-offset: 4px;
-    text-decoration-thickness: var(--hover-decoration-thickness);
+    gap: 12px;
+    padding: .75rem 0;
   }
 
   .link-avatar {
-    width: 2rem;
-    height: 2rem;
+    width: 46px;
+    height: 46px;
     object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .link-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
   }
 
   .link-name {
     font-size: var(--text-content-fontsize);
-    color: var(--text-content-color);
+    font-weight: var(--text-weight);
+    color: var(--text-title-color);
+    width: fit-content;
+    text-decoration: none;
+  }
+
+  .link-description {
+    font-size: var(--text-description-fontsize);
+    color: var(--text-description-color);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 768px) {
+    .link-top {
+      grid-template-columns: 1fr;
+    }
   }
 
   .link-bottom {

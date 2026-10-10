@@ -19,4 +19,3 @@ const posts = defineCollection({
 
 export const collections = { posts };
 
-// WHAT THE HELL?

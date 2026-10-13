@@ -73,7 +73,9 @@ void ReplaceLinkNode(string oidName, int newAge, string newName)
 
 ### 分析
 1 . 这里我会实现一个往指定链表节点后面插入新的节点的功能（方法）
+
 2 . 注意了，是往指定节点的`后面`插入新节点。
+
 3 . 实现方法也很简单：只要通过While循环来查找指定节点，再插入新的节点，把指定节点的指针域赋值给新节点即可，这样就完美衔接了整个链表。
 
 ![](http://testingcf.jsdelivr.net/gh/Almango/Blog_imgbed@main/post/post_cpp7_2.png)
@@ -81,9 +83,13 @@ void ReplaceLinkNode(string oidName, int newAge, string newName)
 ### 代码实现与解析
 
 1 . 代码十分简短。
+
 2 . 首先我们需要设置好形参，`target`为要指定参照节点，`Person_Age`和`Person_Name`为要插入的节点数据域内容。
+
 3 . 调用`CreatNode方法`来创建一个节点。
+
 4 . 设置循环，直到找到指定的参照节点才停下来，当循环结束后也就说明找到了参照节点，当然了，如果不存在指定参照节点，则会通过判断来终止循环。
+
 5 . 此时的指针`已经指向了参照节点`，这时我们需要先将该参照节点的指针域保存到一个临时变量中，再将该参照节点的指针域修改指向新的链表，最后把临时变量赋值给新节点的指针域，这样就完美衔接了整个链表。
 
 ```c++
@@ -113,6 +119,7 @@ void InsertLinkNode(string target, int Person_Age, string Person_Name)
 ### 分析
 
 1 . 删除节点的原理很简单，但对于我来说，操作起来会有点麻烦。
+
 2 . 实现原理是通过循环来查找要删除的节点，将要删除的上一个节点的指针域重新赋值为要删除节点的下一个节点，也就是说将该节点的两端切断，最后删除。另外，删除指定节点需要注意一种情况，就是当头节点为要删除的节点，这个时候需要将头节点重新赋值为头节点的指针域，相当于头节点被第二个节点覆盖了，第二个节点成为了头节点。
 
 ![](http://testingcf.jsdelivr.net/gh/Almango/Blog_imgbed@main/post/post_cpp7_3.png)
@@ -120,6 +127,7 @@ void InsertLinkNode(string target, int Person_Age, string Person_Name)
 ### 代码实现与解析
 
 1 . 代码的实现这里我就不过多分析了，该说的，上面基本上已经提到了。
+
 2 . 说实话，这代码是我无意中摸索出来的，这指针已经把我头都搞大了。
 
 ```C++
@@ -149,8 +157,11 @@ void DeleteLinkNode(string target_name)
 ### 分析
 
 1 . 当我们想使用链表来实现某一个功能的时候，只需要直接通过调用几个基本功能即可，例如：添加节点`AppendLinkNode("张三", 16)`。但是，如果我们要使用链表去实现多种事件的时候，例如：将`一班的学生信息和二班的学生信息分开`存储，当前的链表肯定是不支持一表多用的。
+
 2 . 这个时候就需要使用`class类来封装`起来，之后当我们就可以`创建多个链表对象`，每个链表对象都可以分门别类的存储不同的数据。
+
 3 . 这里可以在class中分别用private来封装结构体,头节点，创建节点函数。public来封装各个功能函数。
+
 4 . 这样，我们就可以通过创建对象来分开使用链表空间。
 
 ### 代码实现

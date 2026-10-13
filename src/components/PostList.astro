@@ -1,0 +1,52 @@
+---
+interface Props {
+  posts: {
+    id: string
+    data: {
+      title: string
+      published: Date
+    }
+  }[]
+}
+
+const { posts } = Astro.props
+---
+
+<ul class="post-list">
+  {posts.map(post => (
+    <li class="post-list-item">
+      <span class="post-list-published">{post.data.published.toISOString().split('T')[0]}</span>
+      <a href={`/post/${post.id}`} class="post-list-title hover-underline">{post.data.title}</a>
+    </li>
+  ))}
+</ul>
+
+<style>
+  .post-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .post-list-item {
+    display: flex;
+    align-items: baseline;
+    gap: 24px;
+    padding: .75rem 0;
+  }
+
+  .post-list-published {
+    font-size: var(--text-content-fontsize);
+    color: var(--text-description-color);
+    flex-shrink: 0;
+    min-width: 4rem;
+  }
+
+  .post-list-title {
+    font-size: var(--text-content-fontsize);
+    color: var(--text-logo-color);
+    font-weight: var(--text-weight);
+    text-decoration: none;
+    font-variant-numeric: tabular-nums;
+  }
+</style>

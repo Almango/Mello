@@ -34,18 +34,22 @@ const title = '友链'
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    padding: 1rem 0;
   }
 
   .link-top {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
   }
 
   .link-item {
+    min-width: 0;
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: .75rem 0;
+    padding: .75rem;
+    border: 1px dashed var(--border-color);
   }
 
   .link-avatar {
@@ -66,7 +70,10 @@ const title = '友链'
     font-size: var(--text-content-fontsize);
     font-weight: var(--text-weight);
     color: var(--text-title-color);
-    width: fit-content;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     text-decoration: none;
   }
 
@@ -76,12 +83,6 @@ const title = '友链'
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-  }
-
-  @media (max-width: 768px) {
-    .link-top {
-      grid-template-columns: 1fr;
-    }
   }
 
   .link-bottom {

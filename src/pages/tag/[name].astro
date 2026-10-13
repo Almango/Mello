@@ -1,0 +1,26 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import PostList from '../../components/PostList.astro'
+import { getCollection } from 'astro:content'
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts')
+  const tags = [...new Set(posts.flatMap(p => p.data.tags ?? []))]
+  return tags.map(name => ({
+    params: { name },
+    props: { name },
+  }))
+}
+
+const { name } = Astro.props
+
+const posts = (await getCollection('posts'))
+  .filter(post => (post.data.tags ?? []).includes(name))
+  .sort((a, b) => new Date(b.data.published).getTime() - new Date(a.data.published).getTime())
+
+const title = `标签：${name}`
+---
+
+<Layout title={title}>
+  <PostList posts={posts} />
+</Layout>

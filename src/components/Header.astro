@@ -10,7 +10,7 @@ const navItems = [
 ]
 ---
 <header>
-  <a href="/" class="header-logo">{BASE_CONFIG.title}</a>
+  <a href="/" class="header-logo">{BASE_CONFIG.subtitle}</a>
   <nav class="header-nav">
     {navItems.map(item => (
       <a href={item.href} class="hover-underline">{item.label}</a>
@@ -22,7 +22,6 @@ const navItems = [
   header {
     margin: 0;
     padding: 1.5rem 0rem 1rem 0rem;
-    border-bottom: 2px solid var(--border-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -33,10 +32,10 @@ const navItems = [
 
   .header-logo {
     font-size: var(--text-logo-fontsize);
-    font-weight: var(--text-weight);
+    font-weight: 500;
     text-decoration: none;
     letter-spacing: -0.02em;
-    font-family: var(--font-family);
+    font-family: "Damion", cursive;
     color: var(--text-logo-color);
   }
   .header-nav {

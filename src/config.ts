@@ -1,7 +1,8 @@
 
 export const BASE_CONFIG = {
   title: '啊芒果',
-  subtitle: '天真永不消逝，浪漫至死不渝',
+  subtitle: 'Almango\'s Blog',
+  description: '天真永不消逝，浪漫致死不渝',
   author: '啊芒果',
   favicon: '/favicon.png',
   avatar: '/avatar.webp',
@@ -9,7 +10,7 @@ export const BASE_CONFIG = {
   create_time: '2024-01-23',
 }
 export const POST_CONFIG = {
-  page_size: 12,     // 每页显示数量
+  page_size: 8,     // 每页显示数量
 }
 export const CommentConfig = {
   enable: true,
@@ -19,5 +20,5 @@ export const CommentConfig = {
   },
 }
 export const DEVELOPMENT = {
-  VERSION: '1.6.7',
+  VERSION: '1.6.7a',
 }

@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro'
+import PostList from '../components/PostList.astro'
 import { getCollection } from 'astro:content'
 const allPosts = await getCollection('posts')
 const posts = allPosts.sort((a, b) => {
@@ -10,41 +11,5 @@ const title = '归档'
 ---
 
 <Layout title={title}>
-	<ul class="archive">
-	  {posts.map(post => (
-	    <li class="archive-item">
-	      <span class="archive-published">{post.data.published.toISOString().split('T')[0]}</span>
-	      <a href={`/post/${post.id}`} class="archive-title hover-underline">{post.data.title}</a>
-	    </li>
-	  ))}
-	</ul>
+  <PostList posts={posts} />
 </Layout>
-
-<style>
-  .archive {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .archive-item {
-    display: flex;
-    align-items: baseline;
-    gap: 24px;
-    padding: .75rem 0;
-  }
-
-  .archive-published {
-    font-size: var(--text-content-fontsize);
-    color: var(--text-description-color);
-    flex-shrink: 0;
-    min-width: 4rem;
-  }
-
-  .archive-title {
-    font-size: var(--text-content-fontsize);
-    color: var(--text-logo-color);
-
-    text-decoration: none;
-  }
-</style>

@@ -15,20 +15,6 @@ export const links: Link[] = [
     rss: "https://blog.zhheo.com/atom.xml"
   },
   {
-    name: "纸鹿本鹿",
-    description: "纸鹿至麓不知路，支炉制露不止漉",
-    url: "https://blog.zhilu.site/",
-    avatar: "https://www.zhilu.site/api/avatar.png",
-    rss: "https://blog.zhilu.site/atom.xml"
-  },
-  {
-    name: "杜老师说",
-    description: "dusays.com",
-    url: "https://dusays.com/",
-    avatar: "https://cdn.dusays.com/favicon.ico",
-    rss: "https://dusays.com/atom.xml"
-  },
-  {
     name: "定の栈",
     description: "LINK START!",
     url: "https://blog.saop.cc/",
@@ -57,23 +43,11 @@ export const links: Link[] = [
     rss: "https://blog.sakura.ink/rss.xml"
   },
   {
-    name: "Revincx",
-    description: "可爱就是正义~",
-    url: "https://blog.revincx.icu/",
-    avatar: "https://cdn.jsdelivr.net/gh/Revincx/blog-assets@master/images/avatar.jpg",
-  },
-  {
     name: "微尘印记",
     description: "愿如微尘，亦有印记。",
     url: "https://weichen.ink",
     avatar: "https://weichen.ink/avatar.jpg",
     rss: "https://weichen.ink/rss.xml"
-  },
-  {
-    name: "懒觉猫先生",
-    description: "阿巴阿巴阿巴..",
-    url: "https://blog.luoaicheng.cn/",
-    avatar: "https://pic.imgdb.cn/item/64c65629a9eb352efd93a379.webp",
   },
   {
     name: "JustPureH2O",

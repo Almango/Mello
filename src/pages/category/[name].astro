@@ -1,0 +1,26 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import PostList from '../../components/PostList.astro'
+import { getCollection } from 'astro:content'
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts')
+  const categories = [...new Set(posts.map(p => p.data.category || '未分类'))]
+  return categories.map(name => ({
+    params: { name },
+    props: { name },
+  }))
+}
+
+const { name } = Astro.props
+
+const posts = (await getCollection('posts'))
+  .filter(post => (post.data.category || '未分类') === name)
+  .sort((a, b) => new Date(b.data.published).getTime() - new Date(a.data.published).getTime())
+
+const title = `分类：${name}`
+---
+
+<Layout title={title}>
+  <PostList posts={posts} />
+</Layout>

@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro'
+import PostList from '../components/PostList.astro'
 import { getCollection } from 'astro:content'
 
 const allPosts = await getCollection('posts')
@@ -13,40 +14,5 @@ const title = '往尘手记'
 ---
 
 <Layout title={title}>
-	<ul class="record">
-	  {posts.map(post => (
-	    <li class="record-item">
-	      <span class="record-published">{post.data.published.toISOString().split('T')[0]}</span>
-	      <a href={`/post/${post.id}`} class="record-title hover-underline">{post.data.title}</a>
-	    </li>
-	  ))}
-	</ul>
+  <PostList posts={posts} />
 </Layout>
-
-<style>
-  .record {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .record-item {
-    display: flex;
-    align-items: baseline;
-    gap: 10px;
-    padding: .75rem 0;
-  }
-
-  .record-published {
-    font-size: var(--text-content-fontsize);
-    color: var(--text-description-color);
-    flex-shrink: 0;
-    min-width: 6rem;
-  }
-
-  .record-title {
-    font-size: var(--text-content-fontsize);
-    color: var(--text-logo-color);
-    text-decoration: none;
-  }
-</style>

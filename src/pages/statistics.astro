@@ -29,53 +29,96 @@ const createTime = new Date(BASE_CONFIG.create_time)
 const now = new Date()
 const runDays = Math.floor((now.getTime() - createTime.getTime()) / (1000 * 60 * 60 * 24))
 
+// 分类统计：名称 -> 文章数
+const categoryMap = new Map<string, number>()
+for (const post of posts) {
+  const c = post.data.category || '未分类'
+  categoryMap.set(c, (categoryMap.get(c) || 0) + 1)
+}
+
+// 标签统计：名称 -> 文章数
+const tagMap = new Map<string, number>()
+for (const post of posts) {
+  for (const t of post.data.tags ?? []) {
+    tagMap.set(t, (tagMap.get(t) || 0) + 1)
+  }
+}
+
+// 根据出现次数映射字号：13px ~ 26px（px 单位）
+function cloudSize(count: number, map: Map<string, number>) {
+  const max = Math.max(...map.values(), 1)
+  return Math.round(13 + (count / max) * 13)
+}
+
 const title = '统计'
 ---
 
 <Layout title={title}>
-  <ul class="statistics">
-    <li class="statistics-item">
-      <span class="statistics-label">总字数</span>
-      <span class="statistics-value">{(totalWords / 1000).toFixed(1)}k</span>
-    </li>
-    <li class="statistics-item">
-      <span class="statistics-label">文章总数</span>
-      <span class="statistics-value">{totalPosts}</span>
-    </li>
-    <li class="statistics-item">
-      <span class="statistics-label">分类数量</span>
-      <span class="statistics-value">{categoryCount}</span>
-    </li>
-    <li class="statistics-item">
-      <span class="statistics-label">运行时间</span>
-      <span class="statistics-value">{runDays}天</span>
-    </li>
-  </ul>
+  <div class="cloud-section">
+    <h2 class="cloud-title">总字数 ({(totalWords / 1000).toFixed(1)}k)</h2>
+    <h2 class="cloud-title">文章总数 ({totalPosts})</h2>
+    <h2 class="cloud-title">分类数量 ({categoryCount})</h2>
+    <h2 class="cloud-title">运行时间 ({runDays}天)</h2>
+  </div>
+
+  <div class="cloud-section">
+    <h2 class="cloud-title">分类 ({categoryMap.size})</h2>
+    <div class="cloud">
+      {[...categoryMap.entries()].sort((a, b) => b[1] - a[1]).map(([name, count]) => (
+        <a
+          href={`/category/${name}`}
+          class="cloud-item hover-underline"
+          style={`font-size: ${cloudSize(count, categoryMap)}px`}
+          title={`${count} 篇`}
+        >{name}</a>
+      ))}
+    </div>
+  </div>
+
+  <div class="cloud-section">
+    <h2 class="cloud-title">标签 ({tagMap.size})</h2>
+    <div class="cloud">
+      {[...tagMap.entries()].sort((a, b) => b[1] - a[1]).map(([name, count]) => (
+        <a
+          href={`/tag/${name}`}
+          class="cloud-item hover-underline"
+          style={`font-size: ${cloudSize(count, tagMap)}px`}
+          title={`${count} 篇`}
+        >{name}</a>
+      ))}
+    </div>
+  </div>
 </Layout>
 
 <style>
-  .statistics {
-    list-style: none;
-    padding: 0;
+  .cloud-section {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .cloud-section:first-child {
+    margin-top: 0;
+  }
+
+  .cloud-title {
+    font-size: var(--text-title-fontsize);
+    color: var(--text-title-color);
     margin: 0;
   }
 
-  .statistics-item {
+  .cloud {
     display: flex;
+    flex-wrap: wrap;
     align-items: baseline;
-    gap: 24px;
-    padding: .75rem 0;
+    text-align: justify;
+    gap: 10px 16px;
   }
 
-  .statistics-label {
-    font-size: var(--text-content-fontsize);
-    color: var(--text-description-color);
-    flex-shrink: 0;
-    min-width: 4rem;
-  }
-
-  .statistics-value {
-    font-size: var(--text-content-fontsize);
-    color: var(--text-logo-color);
+  .cloud-item {
+    color: var(--text-content-color);
+    line-height: 1.6;
+    text-decoration: none;
   }
 </style>

@@ -30,13 +30,13 @@ const { posts } = Astro.props
 
   .post-list-item {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     gap: 24px;
     padding: .75rem 0;
   }
 
   .post-list-published {
-    font-size: var(--text-content-fontsize);
+    font-size: var(--text-description-fontsize);
     color: var(--text-description-color);
     flex-shrink: 0;
     min-width: 4rem;
@@ -46,5 +46,12 @@ const { posts } = Astro.props
     font-size: var(--text-content-fontsize);
     color: var(--text-logo-color);
     text-decoration: none;
+  }
+  @media (max-width: 768px) {
+    .post-list-item {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 4px;
+    }
   }
 </style>

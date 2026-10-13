@@ -20,5 +20,5 @@ export const CommentConfig = {
   },
 }
 export const DEVELOPMENT = {
-  VERSION: '1.6.7b',
+  VERSION: '1.6.7c',
 }

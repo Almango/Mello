@@ -7,7 +7,7 @@
   --padding: 12px;
   --hover-decoration-thickness: 2px;
   --hover-underline-offset: 4px;
-  --font-family: "Noto Serif SC", sans-serif;
+  --font-family: "Noto Serif", sans-serif;
 
   /* 亮色主题（默认） */
   --text-logo-color: #333333;
@@ -54,6 +54,14 @@ html,body{
   margin: 0 auto;
 }
 
+/* @media (max-width: 768px) {
+  :root {
+    --text-logo-fontsize: 24px;
+    --text-title-fontsize: 16px;
+    --text-content-fontsize: 14px;
+    --text-description-fontsize: 12px;
+  }
+} */
 
 
 /* 通用悬停下划线效果：直接加 class="hover-underline" 即可 */

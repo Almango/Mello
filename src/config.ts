@@ -1,7 +1,7 @@
 
 export const BASE_CONFIG = {
   title: '啊芒果',
-  subtitle: 'Almango\'s Blog',
+  subtitle: '啊芒果',
   description: '天真永不消逝，浪漫致死不渝',
   author: '啊芒果',
   favicon: '/favicon.png',
@@ -20,5 +20,5 @@ export const CommentConfig = {
   },
 }
 export const DEVELOPMENT = {
-  VERSION: '1.6.7a',
+  VERSION: '1.6.7b',
 }

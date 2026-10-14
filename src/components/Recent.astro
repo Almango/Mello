@@ -1,0 +1,81 @@
+---
+interface Props {
+  posts: {
+    id: string
+    data: {
+      title: string
+      description?: string
+      published: Date
+    }
+  }[]
+}
+
+const { posts } = Astro.props
+---
+
+<section class="recent">
+  <span class="recent-label">RECENT</span>
+  <ul class="recent-list">
+    {posts.map(post => (
+      <li class="recent-item">
+        <a href={`/post/${post.id}`} class="recent-title hover-underline">{post.data.title}</a>
+        {post.data.description && <p class="recent-description">{post.data.description}</p>}
+        <span class="recent-published">{post.data.published.toISOString().split('T')[0]}</span>
+      </li>
+    ))}
+  </ul>
+  <a href="/archive" class="recent-more hover-underline">显示更多文章 →</a>
+</section>
+
+<style>
+  .recent {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .recent-label {
+    font-size: var(--text-description-fontsize);
+    color: var(--text-description-color);
+  }
+
+  .recent-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .recent-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .recent-title {
+    font-size: var(--text-title-fontsize);
+    color: var(--text-title-color);
+    width: fit-content;
+    text-decoration: none;
+  }
+
+  .recent-description {
+    font-size: var(--text-description-fontsize);
+    color: var(--text-description-color);
+    margin: 0;
+  }
+
+  .recent-published {
+    font-size: var(--text-description-fontsize);
+    color: var(--text-description-color);
+  }
+
+  .recent-more {
+    font-size: var(--text-description-fontsize);
+    color: var(--text-description-color);
+    text-decoration: none;
+    margin-top: 2rem;
+  }
+</style>

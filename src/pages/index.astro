@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import Post from '../components/Post.astro'
-import Turnpage from '../components/Turnpage.astro'
+import Intro from '../components/Intro.astro'
+import Recent from '../components/Recent.astro'
 import { getCollection } from 'astro:content'
 import { BASE_CONFIG,POST_CONFIG } from '../config'
 
@@ -11,14 +11,12 @@ const sortedPosts = allPosts.sort((a, b) => {
 })
 
 const pageSize = POST_CONFIG.page_size
-const currentPage = 1
-const totalPages = Math.ceil(sortedPosts.length / pageSize)
 const posts = sortedPosts.slice(0, pageSize)
 
 const page = BASE_CONFIG.title
 ---
 
 <Layout title={page}>
-  <Post posts={posts} />
-  <Turnpage currentPage={currentPage} totalPages={totalPages} baseUrl="/page" />
+  <Intro />
+  <Recent posts={posts} />
 </Layout>

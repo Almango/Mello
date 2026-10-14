@@ -1,13 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro'
+import PageHeader from '../components/PageHeader.astro'
 import { links } from '../data/links.ts'
 import Comment from '../components/Comment.astro'
+import { Content } from '../content/link.md'
+import 'github-markdown-css/github-markdown.css'
+import '../styles/markdown.css'
 
 
 const title = '友链'
 ---
 
 <Layout title={title}>
+  <PageHeader title={title} subtitle="海内存知己，天涯若比邻" />
   <div class="link">
     <div class="link-top">
       {links.map(link => (
@@ -20,10 +25,8 @@ const title = '友链'
         </div>
       ))}
     </div>
-    <div class="link-bottom">
-      <h3>友链申请</h3>
-      <p>海内存知己，天涯若比邻，很高兴能在这里与你相遇，如果你也和我一样，热爱记录、用心经营自己的小天地，欢迎常来坐坐，期待与你交换友链。</p>
-      <p>请按照以下格式提交至评论区或者发送至我的邮箱，最快会在24小时内处理好申请。</p>
+    <div class="link-bottom markdown-body">
+      <Content />
     </div>
     <Comment />
   </div>
@@ -40,17 +43,44 @@ const title = '友链'
   .link-top {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 12px;
+    gap: 16px;
   }
 
-  .link-item {
-    min-width: 0;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: .75rem;
-    border: 1px dashed var(--border-color);
+.link-item {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0.75rem;
+  background: #fff;
+  filter:
+    drop-shadow(0 1px 1px rgba(0, 0, 0, 0.06))
+    drop-shadow(0 3px 5px rgba(0, 0, 0, 0.045));
+  clip-path: polygon(
+    1% 4%, 4% 0%, 20% 2%, 36% 0%, 53% 2%, 69% 0%, 85% 2%, 98% 1%,
+    100% 6%, 98% 25%, 100% 48%, 98% 70%, 100% 90%, 97% 99%, 80% 98%,
+    62% 100%, 45% 98%, 28% 100%, 12% 98%, 2% 100%, 0% 93%, 2% 72%,
+    0% 50%, 2% 27%
+  );
+}
+
+/* 暗色主题 */
+:root[data-theme="dark"] .link-item {
+  background: #26292e;
+  filter:
+    drop-shadow(0 1px 1px rgba(0, 0, 0, 0.2))
+    drop-shadow(0 3px 5px rgba(0, 0, 0, 0.12));
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) .link-item {
+    background: #26292e;
+    filter:
+      drop-shadow(0 1px 1px rgba(0, 0, 0, 0.2))
+      drop-shadow(0 3px 5px rgba(0, 0, 0, 0.12));
   }
+}
+
 
   .link-avatar {
     width: 46px;
@@ -86,20 +116,8 @@ const title = '友链'
   }
 
   .link-bottom {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  .link-bottom h3 {
-    font-size: var(--text-title-fontsize);
-    color: var(--text-title-color);
-    margin: 0;
-  }
-
-  .link-bottom p {
     font-size: var(--text-content-fontsize);
     color: var(--text-content-color);
-    margin: 0;
+    line-height: 1.8;
   }
 </style>

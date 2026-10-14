@@ -21,7 +21,7 @@ import { BASE_CONFIG, DEVELOPMENT } from '../config'
   footer {
     margin: 0;
     padding: 1rem 0 1.5rem 0;
-    border-top: 1px solid var(--border-color);
+    border-top: 1px solid var(--line-border-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -37,8 +37,14 @@ import { BASE_CONFIG, DEVELOPMENT } from '../config'
 
   .footer-nav {
     display: flex;
-    gap: 1.5rem;
     align-items: center;
+  }
+
+  /* 右侧各项之间用 · 衔接 */
+  .footer-nav > *:not(:first-child)::before {
+    content: "·";
+    margin: 0 0.5rem;
+    color: var(--text-description-color);
   }
 
   .footer-nav a,

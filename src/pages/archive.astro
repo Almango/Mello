@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro'
+import PageHeader from '../components/PageHeader.astro'
 import PostList from '../components/PostList.astro'
 import { getCollection } from 'astro:content'
 const allPosts = await getCollection('posts')
@@ -11,5 +12,6 @@ const title = '归档'
 ---
 
 <Layout title={title}>
+  <PageHeader title={title} subtitle="浏览所有已发布的文章" />
   <PostList posts={posts} />
 </Layout>

@@ -2,16 +2,16 @@
 import { CommentConfig } from '../config';
 import '../styles/waline.css';
 
-if (!CommentConfig.enable) return Astro.empty();
-
 const serverURL = CommentConfig.waline.serverURL;
 ---
 
-<section class="comment">
-  <div id="waline" class="waline-container" data-server-url={serverURL}></div>
-</section>
+{CommentConfig.enable && (
+  <>
+    <section class="comment">
+      <div id="waline" class="waline-container" data-server-url={serverURL}></div>
+    </section>
 
-<script is:inline>
+    <script is:inline>
   // 把“实际生效的暗色状态”同步到 <html data-dark>，供 Waline 的 dark 选择器匹配。
   // 站点是混合模式：手动切换写 data-theme，auto 模式无 data-theme 时跟随系统偏好。
   function syncDark() {
@@ -56,7 +56,9 @@ const serverURL = CommentConfig.waline.serverURL;
       container.textContent = '评论系统加载失败，请稍后刷新重试';
     }
   })();
-</script>
+    </script>
+  </>
+)}
 
 <style>
   .comment {

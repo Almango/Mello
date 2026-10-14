@@ -1,0 +1,45 @@
+---
+import { BASE_CONFIG } from '../config'
+---
+
+<section class="intro">
+  <span class="intro-label">INTRO</span>
+  <h1 class="intro-title">欢迎来到{BASE_CONFIG.title}的博客</h1>
+  <p class="intro-description">{BASE_CONFIG.description}</p>
+  <time class="intro-date">{BASE_CONFIG.create_time}</time>
+</section>
+
+<style>
+  .intro {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--line-divider-color);
+  }
+
+  .intro-label {
+    font-size: var(--text-description-fontsize);
+    color: var(--text-description-color);
+  }
+
+  .intro-title {
+    font-size: var(--text-logo-fontsize);
+    font-weight: var(--text-weight);
+    color: var(--text-title-color);
+    margin: 0;
+  }
+
+  .intro-description {
+    font-size: var(--text-content-fontsize);
+    color: var(--text-content-color);
+    line-height: 1.8;
+    margin: 0;
+  }
+
+  .intro-date {
+    font-size: var(--text-description-fontsize);
+    color: var(--text-description-color);
+  }
+</style>

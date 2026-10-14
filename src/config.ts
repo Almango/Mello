@@ -5,20 +5,19 @@ export const BASE_CONFIG = {
   description: '天真永不消逝，浪漫致死不渝',
   author: '啊芒果',
   favicon: '/favicon.png',
-  avatar: '/avatar.webp',
   site_url: 'https://blog.almango.cn',
   create_time: '2024-01-23',
 }
 export const POST_CONFIG = {
-  page_size: 8,     // 每页显示数量
+  page_size: 4,     // 每页显示数量
 }
 export const CommentConfig = {
-  enable: true,
+  enable: false,
   provider: 'waline',
   waline: {
     serverURL: 'https://waline.almango.cn/',
   },
 }
 export const DEVELOPMENT = {
-  VERSION: '1.6.7c',
+  VERSION: '2.0.0',
 }

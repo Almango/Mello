@@ -1,6 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro'
-import Post from '../../components/Post.astro'
+import Recent from '../../components/Recent.astro'
 import Turnpage from '../../components/Turnpage.astro'
 import { getCollection } from 'astro:content'
 import { POST_CONFIG } from '../../config'
@@ -41,6 +41,6 @@ const paginatedPosts = posts.slice(startIndex, startIndex + POSTS_PER_PAGE)
 ---
 
 <Layout title={`第 ${page} 页 | Almango`}>
-  <Post posts={paginatedPosts} />
+  <Recent posts={paginatedPosts} />
   <Turnpage currentPage={page} totalPages={totalPages} baseUrl="/page" />
 </Layout>

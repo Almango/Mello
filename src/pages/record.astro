@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro'
+import PageHeader from '../components/PageHeader.astro'
 import PostList from '../components/PostList.astro'
 import { getCollection } from 'astro:content'
 
@@ -10,9 +11,10 @@ const posts = allPosts
     return new Date(b.data.published).getTime() - new Date(a.data.published).getTime()
   })
 
-const title = '往尘手记'
+const title = '手记'
 ---
 
 <Layout title={title}>
+  <PageHeader title={title} subtitle="记录生活中的点点滴滴" />
   <PostList posts={posts} />
 </Layout>

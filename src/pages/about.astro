@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro'
+import PageHeader from '../components/PageHeader.astro'
 import { Content } from '../content/about.md'
 import 'github-markdown-css/github-markdown.css'
 import '../styles/markdown.css'
@@ -7,6 +8,7 @@ const page = "关于"
 ---
 
 <Layout title={page}>
+  <PageHeader title={page} subtitle="关于我和这个博客" />
   <article class="post">
     <div class="post-content markdown-body">
       <Content />

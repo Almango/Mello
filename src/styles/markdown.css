@@ -38,12 +38,6 @@
   font-family: Consolas, "Courier New", monospace !important;
 }
 
-.markdown-body strong {
-  color: var(--text-title-color);
-  font-weight: bold;
-  -webkit-text-stroke: .6px currentColor;
-}
-
 .markdown-body a {
   color: var(--text-content-color);
   text-decoration: underline;

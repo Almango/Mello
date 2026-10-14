@@ -4,7 +4,7 @@
   --text-content-fontsize: 16px;
   --text-description-fontsize: 14px;
   --text-weight: bold;
-  --font-family: "GuruJiuHei", serif;
+  --font-family: "KingHwaOldSong", "Note serif";
 
   /* 亮色主题（默认） */
   --text-logo-color: #35362F;
@@ -64,8 +64,8 @@ html,body{
 }
 
 @font-face {
-  font-family: "GuruJiuHei";
-  src: url("/fonts/GuruJiuHei.ttf") format("truetype");
+  font-family: "KingHwaOldSong";
+  src: url("/fonts/KingHwaOldSong.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;

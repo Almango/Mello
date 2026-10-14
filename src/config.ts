@@ -12,12 +12,12 @@ export const POST_CONFIG = {
   page_size: 4,     // 每页显示数量
 }
 export const CommentConfig = {
-  enable: false,
+  enable: true,
   provider: 'waline',
   waline: {
     serverURL: 'https://waline.almango.cn/',
   },
 }
 export const DEVELOPMENT = {
-  VERSION: '2.0.0a',
+  VERSION: '2.0.0b',
 }

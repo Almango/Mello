@@ -7,13 +7,13 @@
   --font-family: "KingHwaOldSong", "Note serif";
 
   /* 亮色主题（默认） */
-  --text-logo-color: #35362F;
-  --text-title-color: #35362F;
-  --text-content-color: #414139;
-  --text-description-color: #A09F91;
-  --line-divider-color: #E2DFD5;
-  --line-border-color: #b9b6ab;
-  --bg-color: #F8F7F2;
+  --text-logo-color: #32322d;
+  --text-title-color: #3d3d35;
+  --text-content-color: #3d3d35;
+  --text-description-color: #8A877D;
+  --line-divider-color: #DDDBD3;
+  --line-border-color: #AAAAA2;
+  --bg-color: #F4F4EC;
 }
 
 /* 暗色主题：手动切换（不受系统偏好影响） */
@@ -74,6 +74,14 @@ html,body{
 @font-face {
   font-family: "Kaibunsyo";
   src: url("/fonts/Kaibunsyo.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Damion";
+  src: url("/fonts/Damion-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;

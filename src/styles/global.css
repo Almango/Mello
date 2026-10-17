@@ -58,6 +58,7 @@ html,body{
 .hover-underline {
   width: fit-content;
 }
+
 .hover-underline:hover{
   background-color: var(--text-content-color);
   color: var(--bg-color) !important;

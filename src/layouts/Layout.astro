@@ -3,6 +3,7 @@ import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
 import { BASE_CONFIG } from '../config'
 import '../styles/global.css'
+
 interface Props {
   title?: string
 }
@@ -15,9 +16,11 @@ const { title = BASE_CONFIG.title } = Astro.props
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="heostarrysky-verify" content="6239659c274de21193638607a42bfe9c" />
     <link rel="icon" href={BASE_CONFIG.favicon} />
     <title>{title}</title>
+    <script>
+      import '../scripts/image-zoom.js';
+    </script>
     <script is:inline>
       (function () {
         const theme = localStorage.getItem('theme');
@@ -26,6 +29,7 @@ const { title = BASE_CONFIG.title } = Astro.props
         }
       })();
     </script>
+
     <style is:inline>
       :root {
         --bg-color: #ffffff;

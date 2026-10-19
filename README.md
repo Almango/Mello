@@ -1,6 +1,6 @@
 ### 🍃 Astro Theme Mello
 
-Mello 是基于上一代博客主题设计思路，重新设计的新一代博客主题，它更加极简、优雅、高性能，以阅读体验为核心，专注于内容本身，回归文字最本真的状态，
+Astro Theme Mello 是基于上一代博客主题设计思路，重新设计的新一代博客主题，它更加极简、优雅、高性能，以阅读体验为核心，专注于内容本身，回归文字最本真的状态，
 没有冗余装饰，没有复杂交互，只保留最纯粹的阅读与写作环境。 (🖥️[Demo](https://blog.almango.cn))
 
 [![](https://img.shields.io/badge/Astro-v6-BC52EE?logo=astro)](https://astro.build)
@@ -101,63 +101,6 @@ pnpm preview
 ├── astro.config.mjs         # Astro 配置
 └── package.json
 ```
-
-### 🔄 配置站点信息
-
-所有站点配置集中在 `src/config.ts`：
-
-```ts
-// 基础配置
-export const BASE_CONFIG = {
-  title: '啊芒果',                                // 站点标题
-  subtitle: '啊芒果',                             // 站点副标题（Logo 文字）
-  description: '天真永不消逝，浪漫致死不渝',        // 站点描述
-  author: '啊芒果',                               // 作者
-  favicon: '/favicon.png',                      // 站点图标
-  site_url: 'https://blog.almango.cn',          // 站点 URL
-  create_time: '2024-01-23',                    // 建站时间
-}
-
-// 文章页配置
-export const POST_CONFIG = {
-  toc: false,      // 文章页是否显示右侧浮动目录
-  page_size: 4,    // 每页显示数量
-}
-
-// 导航栏配置
-export const HEADER_CONFIG = {
-  nav: [
-    { label: '归档', href: '/archive' },
-    { label: '手记', href: '/record' },
-    // 增删导航项只需修改此数组
-  ],
-}
-
-// 页脚配置
-export const FOOTER_CONFIG = {
-  link: [
-    { name: '萌ICP备20240146号', url: 'https://icp.gov.moe/?keyword=20240146' },
-    { name: 'RSS', url: '/rss.xml' },
-    { name: '2.1.1', url: 'https://github.com/Almango/Mello' },
-  ],
-}
-
-// 评论配置
-export const COMMENT_CONFIG = {
-  enable: true,                 // 是否启用评论
-  provider: 'waline',
-  waline: {
-    serverURL: 'https://waline.almango.cn/',  // Waline 服务端地址
-  },
-}
-```
-
-### ✒️ 创建文章
-
-在 `src/content/posts/` 目录下创建 Markdown 文件，添加 frontmatter：
-
-> \[!WARNING]
-> `title` 和 `published` 为必填项，其余可选
 
 ### 📣 反馈
 

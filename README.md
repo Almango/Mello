@@ -3,14 +3,12 @@
 Mello 是基于上一代博客主题设计思路，重新设计的新一代博客主题，它更加极简、优雅、高性能，以阅读体验为核心，专注于内容本身，回归文字最本真的状态，
 没有冗余装饰，没有复杂交互，只保留最纯粹的阅读与写作环境。 (🖥️[Demo](https://blog.almango.cn))
 
-[![](https://img.shields.io/badge/Astro-v6.1.8-BC52EE?logo=astro)]({linkUrl})
-[![](https://img.shields.io/badge/Vercel-success-2A2F3D?logo=vercel)]({linkUrl})
-[![](https://img.shields.io/badge/Node.js->=21-5FA04E?logo=nodedotjs)]({linkUrl})
-[![](https://img.shields.io/badge/pnpm-v10.26.2-F69220?logo=pnpm)]({linkUrl})
-[![](https://img.shields.io/badge/许可-MIT-D1AB66)]({linkUrl})
+[![](https://img.shields.io/badge/Astro-v6-BC52EE?logo=astro)](https://astro.build)
+[![](https://img.shields.io/badge/Node.js->=22-5FA04E?logo=nodedotjs)](https://nodejs.org)
+[![](https://img.shields.io/badge/pnpm-v12-F69220?logo=pnpm)](https://pnpm.io)
+[![](https://img.shields.io/badge/许可-MIT-D1AB66)](./LICENSE)
 
-
-> [!important]
+> \[!important]
 > 使用该主题部署后请先删除 content/posts/ 的文章！！！
 
 ### ✨ 特性
@@ -19,11 +17,15 @@ Mello 是基于上一代博客主题设计思路，重新设计的新一代博�
 
 **高性能**：基于 Astro 构建，零 JS 默认加载，极致的性能体验
 
-**响应式布局**：完美适配桌面端和移动端
+**浮动目录**：文章页右侧悬浮 TOC，滚动高亮当前小节，窄屏自动隐藏
 
-**自动适配主题**：支持系统偏好自动切换深色/浅色主题浅色主题
+**双端适配**：支持 PC 端和移动端，自动调整布局，丝滑流畅体验
 
-**美观文档**：采用 Github Markdown 格式，增强阅读体验
+**丰富语法**：支持 LaTeX 语法（remark-math + MathJax）
+
+**评论系统**：Waline 评论，样式已深度定制融入主题
+
+**聚合页面**：归档、分类、标签、统计、分页，全部静态生成
 
 **SEO 友好**：自动生成 RSS、Sitemap
 
@@ -57,87 +59,109 @@ pnpm preview
 
 ```
 .
-├── public/                # 静态资源
-│   └──fonts/              # 字体文件
+├── public/                  # 静态资源
+│   └── fonts/               # 字体文件
 ├── src/
-│   ├── components/        # 组件
-│   │   ├── Header.astro   # 导航栏
-│   │   ├── Footer.astro   # 页脚
-│   │   ├── Post.astro     # 文章列表
-│   │   ├── Turnpage.astro # 分页组件
-│   │   └── Comment.astro  # 评论组件
-│   ├── content/           # 内容数据
-│   │   ├── posts/         # Markdown 文章
-│   │   └── about.md       # 关于页面内容
-│   ├── data/              # 数据文件
-│   │   └── links.ts       # 友链集合
-│   ├── layouts/           # 布局模板
-│   │   └── Layout.astro   # 基础布局
-│   ├── pages/             # 页面路由
-│   │   ├── index.astro    # 首页
-│   │   ├── archive.astro  # 归档
-│   │   ├── logs.astro     # 日志
-│   │   ├── link.astro     # 友链页面
-│   │   ├── about.astro    # 关于页面
-│   │   └── post/          # 文章详情页
-│   ├── styles/            # 样式文件
-│   │   ├── global.css     # 全局样式
-│   │   └── markdown.css   # Markdown 样式
-│   ├── config.ts          # 站点配置
-│   └── content.config.ts  # 内容集合配置
-├── astro.config.mjs       # Astro 配置
+│   ├── components/          # 组件
+│   │   ├── Header.astro     # 顶部导航栏
+│   │   ├── Footer.astro     # 页脚
+│   │   ├── ThemeToggle.astro# 主题切换按钮
+│   │   ├── Intro.astro      # 首页介绍
+│   │   ├── PageHeader.astro # 页面标题头
+│   │   ├── PostList.astro   # 文章列表（归档/手记/分类/标签共用）
+│   │   ├── PostTOC.astro    # 文章浮动目录
+│   │   ├── Recent.astro     # 首页文章列表 + 分页
+│   │   ├── TurnPage.astro   # 分页组件
+│   │   └── Comment.astro    # 评论组件（Waline）
+│   ├── content/             # 内容数据
+│   │   ├── posts/           # Markdown 文章
+│   │   ├── about.md         # 关于页面内容
+│   │   └── link.md          # 友链申请说明
+│   ├── data/
+│   │   └── links.ts         # 友链集合
+│   ├── layouts/
+│   │   └── Layout.astro     # 基础布局
+│   ├── pages/               # 页面路由
+│   │   ├── index.astro      # 首页
+│   │   ├── archive.astro    # 归档
+│   │   ├── record.astro     # 手记
+│   │   ├── statistics.astro # 统计
+│   │   ├── link.astro       # 友链
+│   │   ├── logs.astro       # 日志
+│   │   ├── about.astro      # 关于
+│   │   ├── rss.xml.js       # RSS 订阅
+│   │   ├── post/[id].astro  # 文章详情
+│   │   ├── page/[page].astro    # 分页
+│   │   ├── category/[name].astro# 分类聚合
+│   │   └── tag/[name].astro     # 标签聚合
+│   ├── scripts/
+│   │   └── image-zoom.js    # 图片放大
+│   ├── styles/
+│   │   ├── global.css       # 全局样式 + 主题变量
+│   │   ├── markdown.css     # Markdown 正文样式
+│   │   └── waline.css       # 评论区定制样式
+│   ├── config.ts            # 站点配置（唯一需要改的配置文件）
+│   └── content.config.ts    # 内容集合配置
+├── astro.config.mjs         # Astro 配置
 └── package.json
 ```
 
 ### 🔄 配置站点信息
 
-你可以在 `src/config.ts` 中配置站点信息：
+所有站点配置集中在 `src/config.ts`：
 
 ```ts
-// src/config.ts
+// 基础配置
 export const BASE_CONFIG = {
-  title: 'Almango',  // 站点标题
-  subtitle: '天真永不消逝，浪漫至死不渝',  // 站点副标题
-  author: 'Almango',  // 站点作者
-  favicon: '/favicon.png',  // 站点图标
-  site_url: 'https://blog.almango.cn',  // 站点 URL
-  create_time: '2024-01-23',  // 创建时间
+  title: '啊芒果',                                // 站点标题
+  subtitle: '啊芒果',                             // 站点副标题（Logo 文字）
+  description: '天真永不消逝，浪漫致死不渝',        // 站点描述
+  author: '啊芒果',                               // 作者
+  favicon: '/favicon.png',                      // 站点图标
+  site_url: 'https://blog.almango.cn',          // 站点 URL
+  create_time: '2024-01-23',                    // 建站时间
 }
 
+// 文章页配置
 export const POST_CONFIG = {
-  page_size: 8,  // 每页显示的文章数量
+  toc: false,      // 文章页是否显示右侧浮动目录
+  page_size: 4,    // 每页显示数量
 }
 
-export const CommentConfig = {
-  enable: true,
-  provider: 'twikoo',
-  twikoo: {
-    envId: 'https://your-twikoo-url.vercel.app',  // Twikoo 环境 ID
-    path: 'auto',
-  }
+// 导航栏配置
+export const HEADER_CONFIG = {
+  nav: [
+    { label: '归档', href: '/archive' },
+    { label: '手记', href: '/record' },
+    // 增删导航项只需修改此数组
+  ],
+}
+
+// 页脚配置
+export const FOOTER_CONFIG = {
+  link: [
+    { name: '萌ICP备20240146号', url: 'https://icp.gov.moe/?keyword=20240146' },
+    { name: 'RSS', url: '/rss.xml' },
+    { name: '2.1.1', url: 'https://github.com/Almango/Mello' },
+  ],
+}
+
+// 评论配置
+export const COMMENT_CONFIG = {
+  enable: true,                 // 是否启用评论
+  provider: 'waline',
+  waline: {
+    serverURL: 'https://waline.almango.cn/',  // Waline 服务端地址
+  },
 }
 ```
 
 ### ✒️ 创建文章
 
-在 `content/posts/` 目录下创建 markdown 文件，添加 frontmatter：
+在 `src/content/posts/` 目录下创建 Markdown 文件，添加 frontmatter：
 
-> [!WARNING]
-> 需严格遵守 frontmatter 格式，否则会导致文章渲染错误
-
-```md
----
-title: Hello World
-description: this is a article description.
-published: 2026-03-24 12:00:00
-cover: https://example.com/cover.webp
-category: 分类
-tags: ["标签"]
-id: "x8032l7x2"
----
-
-文章内容...
-```
+> \[!WARNING]
+> `title` 和 `published` 为必填项，其余可选
 
 ### 📣 反馈
 

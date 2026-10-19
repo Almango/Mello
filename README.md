@@ -21,11 +21,9 @@ Mello 是基于上一代博客主题设计思路，重新设计的新一代博�
 
 **双端适配**：支持 PC 端和移动端，自动调整布局，丝滑流畅体验
 
-**丰富语法**：支持 LaTeX 语法（remark-math + MathJax）
-
 **评论系统**：Waline 评论，样式已深度定制融入主题
 
-**聚合页面**：归档、分类、标签、统计、分页，全部静态生成
+**聚合页面**：归档、分类、标签、统计，全部静态生成
 
 **SEO 友好**：自动生成 RSS、Sitemap
 
@@ -70,8 +68,7 @@ pnpm preview
 │   │   ├── PageHeader.astro # 页面标题头
 │   │   ├── PostList.astro   # 文章列表（归档/手记/分类/标签共用）
 │   │   ├── PostTOC.astro    # 文章浮动目录
-│   │   ├── Recent.astro     # 首页文章列表 + 分页
-│   │   ├── TurnPage.astro   # 分页组件
+│   │   ├── Recent.astro     # 首页文章列表
 │   │   └── Comment.astro    # 评论组件（Waline）
 │   ├── content/             # 内容数据
 │   │   ├── posts/           # Markdown 文章
@@ -91,7 +88,6 @@ pnpm preview
 │   │   ├── about.astro      # 关于
 │   │   ├── rss.xml.js       # RSS 订阅
 │   │   ├── post/[id].astro  # 文章详情
-│   │   ├── page/[page].astro    # 分页
 │   │   ├── category/[name].astro# 分类聚合
 │   │   └── tag/[name].astro     # 标签聚合
 │   ├── scripts/

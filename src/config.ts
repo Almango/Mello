@@ -11,7 +11,7 @@ export const BASE_CONFIG = {
 
 // 文章页配置
 export const POST_CONFIG = {
-  toc: false,        // 文章页是否显示右侧浮动目录
+  toc: true,        // 文章页是否显示右侧浮动目录
   page_size: 4,     // 首页显示的文章数量
 }
 

@@ -4,11 +4,12 @@ import Footer from '../components/Footer.astro'
 import { BASE_CONFIG } from '../config'
 import '../styles/global.css'
 
+const { title = BASE_CONFIG.title } = Astro.props
+
 interface Props {
   title?: string
 }
 
-const { title = BASE_CONFIG.title } = Astro.props
 ---
 
 <html lang="zh-CN">
@@ -21,31 +22,6 @@ const { title = BASE_CONFIG.title } = Astro.props
     <script>
       import '../scripts/image-zoom.js';
     </script>
-    <script is:inline>
-      (function () {
-        const theme = localStorage.getItem('theme');
-        if (theme === 'dark' || theme === 'light') {
-          document.documentElement.setAttribute('data-theme', theme);
-        }
-      })();
-    </script>
-
-    <style is:inline>
-      :root {
-        --bg-color: #ffffff;
-      }
-      :root[data-theme="dark"] {
-        --bg-color: #1d2024;
-      }
-      @media (prefers-color-scheme: dark) {
-        :root:not([data-theme]) {
-          --bg-color: #1d2024;
-        }
-      }
-      html {
-        background-color: var(--bg-color);
-      }
-    </style>
   </head>
   <body>
     <main class="container">

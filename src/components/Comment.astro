@@ -1,11 +1,11 @@
 ---
-import { CommentConfig } from '../config';
+import { COMMENT_CONFIG } from '../config';
 import '../styles/waline.css';
 
-const serverURL = CommentConfig.waline.serverURL;
+const serverURL = COMMENT_CONFIG.waline.serverURL;
 ---
 
-{CommentConfig.enable && (
+{COMMENT_CONFIG.enable && (
   <>
     <section class="comment">
       <div id="waline" class="waline-container" data-server-url={serverURL}></div>
@@ -47,11 +47,6 @@ const serverURL = CommentConfig.waline.serverURL;
         reaction: false,
         imageUploader: false,  // 禁用图片上传（同时隐藏工具栏上传按钮）
         noRss: true,           // 隐藏评论区 RSS 订阅链接
-        emoji: [
-    'https://unpkg.com/@waline/emojis@1.4.0/bilibili',   // 哔哩哔哩
-    'https://unpkg.com/@waline/emojis@1.4.0/weibo',      // 微博
-    'https://unpkg.com/@waline/emojis@1.4.0/tw-emoji',   // Twitter Emoji
-  ],
       });
 
       // 评论计数改为“评论 (n)”：locale 无此配置项，只能渲染后改写文本。

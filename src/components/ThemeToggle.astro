@@ -1,0 +1,94 @@
+---
+// 主题切换组件
+---
+
+<span data-theme-toggle class="theme-toggle" role="button" tabindex="0" aria-label="Toggle theme">
+  <span class="light-icon">Light</span>
+  <span class="dark-icon">Dark</span>
+</span>
+
+<style>
+  .theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .light-icon,
+  .dark-icon {
+    display: none;
+  }
+
+  :global(html[data-theme="dark"]) .light-icon,
+  :global(html[data-theme="light"]) .dark-icon {
+    display: inline-block;
+  }
+
+  .theme-toggle:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
+  }
+</style>
+
+<script is:inline>
+  (() => {
+    const FLAG = '__AstroThemeToggleInitialized';
+
+    if (window[FLAG]) return;
+    window[FLAG] = true;
+
+    const root = document.documentElement;
+    const STORAGE_KEY = 'theme';
+
+    const applyTheme = (theme) => {
+      root.dataset.theme = theme;
+      root.classList.toggle('dark', theme === 'dark');
+    };
+
+    try {
+      applyTheme(
+        localStorage.getItem(STORAGE_KEY) === 'dark'
+          ? 'dark'
+          : 'light'
+      );
+    } catch {
+      applyTheme('light');
+    }
+
+    const toggle = () => {
+      const next =
+        root.dataset.theme === 'dark' ? 'light' : 'dark';
+
+      applyTheme(next);
+
+      try {
+        localStorage.setItem(STORAGE_KEY, next);
+      } catch {}
+    };
+
+    document.addEventListener('click', (event) => {
+      const target = event.target;
+      if (!(target instanceof Element)) return;
+
+      const btn = target.closest('[data-theme-toggle]');
+      if (!btn) return;
+
+      if (btn.closest('a')) event.preventDefault();
+
+      toggle();
+    });
+
+    document.addEventListener('keydown', (event) => {
+      const target = event.target;
+      if (!(target instanceof Element)) return;
+      if (!target.matches('[data-theme-toggle]')) return;
+      if (event.key !== 'Enter' && event.key !== ' ') return;
+      if (event.repeat) return;
+
+      event.preventDefault();
+      toggle();
+    });
+  })();
+</script>

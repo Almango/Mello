@@ -27,22 +27,10 @@
   --line-border-color: #94989c;
 }
 
-/* 暗色主题：auto 模式下跟随系统（无 data-theme 属性时） */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme]) {
-    --text-logo-color: #e8e8e8;
-    --text-title-color: #d8d8d8;
-    --text-content-color: #d8d8d8;
-    --text-description-color: #a8a8a8;
-    --bg-color: #1d2024;
-    --line-divider-color: #94989c;
-    --line-border-color: #94989c;
-  }
-}
-
 html,body{
   margin: 0;
   background-color: var(--bg-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
   font-family: var(--font-family);
 }
 

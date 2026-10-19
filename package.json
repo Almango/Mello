@@ -13,7 +13,6 @@
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.18",
-    "@tailwindcss/typography": "^0.5.19",
     "astro": "^6.1.7",
     "github-markdown-css": "^5.9.0",
     "medium-zoom": "^1.1.0",

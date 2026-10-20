@@ -44,11 +44,17 @@ const toc = headings.filter(h => h.depth === 2 || h.depth === 3);
     text-decoration: none;
     display: block;
     line-height: 1.4;
+    transition: color 0.18s ease, background-color 0.18s ease;
+  }
+  .toc-link:hover {
+    color: var(--text-title-color);
   }
   .toc-link.active {
     width: fit-content;
-    background-color: var(--text-content-color);
-    color: var(--bg-color);
+    padding: 0 4px;
+    margin-left: -4px;
+    background-color: var(--accent-color);
+    color: var(--accent-contrast-color);
   }
   .toc-depth-3 {
     padding-left: 0.5rem;

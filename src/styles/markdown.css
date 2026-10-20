@@ -1,8 +1,79 @@
-.markdown-body {
+/* ============================================================
+   Markdown 内容区
+   把 github-markdown-css 的 GitHub 调色板整体映射到站点色板，
+   让代码块、表格、引用和纸张底色保持同一种温度。
+   ============================================================ */
+
+/* 用 :root 提升一级优先级，压过 github-markdown-css 的
+   prefers-color-scheme 深色变量，避免系统深色模式污染手动浅色主题 */
+:root .markdown-body {
   background-color: transparent !important;
+  color: var(--text-content-color);
+  color-scheme: inherit;
+
+  /* 基础文字与背景 */
+  --fgColor-default: var(--text-content-color);
+  --fgColor-muted: var(--text-description-color);
+  --fgColor-accent: var(--accent-color);
+  --fgColor-danger: var(--syntax-invalid);
+  --fgColor-success: var(--syntax-string);
+  --fgColor-attention: var(--syntax-constant);
+  --fgColor-done: var(--syntax-entity);
+
+  --bgColor-default: var(--bg-color);
+  --bgColor-muted: var(--bg-sunken);
+  --bgColor-neutral-muted: color-mix(in srgb, var(--text-content-color) 7%, transparent);
+  --bgColor-attention-muted: color-mix(in srgb, var(--syntax-constant) 14%, transparent);
+  --bgColor-danger-muted: color-mix(in srgb, var(--syntax-invalid) 12%, transparent);
+  --bgColor-success-muted: color-mix(in srgb, var(--syntax-string) 12%, transparent);
+  --bgColor-done-muted: color-mix(in srgb, var(--syntax-entity) 12%, transparent);
+  --bgColor-accent-muted: color-mix(in srgb, var(--accent-color) 12%, transparent);
+
+  /* 边框 */
+  --borderColor-default: var(--line-divider-color);
+  --borderColor-muted: var(--line-divider-color);
+  --borderColor-neutral-muted: var(--line-divider-color);
+  --borderColor-accent-emphasis: var(--accent-color);
+  --borderColor-attention-emphasis: var(--syntax-constant);
+  --borderColor-danger-emphasis: var(--syntax-invalid);
+  --borderColor-done-emphasis: var(--syntax-entity);
+  --borderColor-success-emphasis: var(--syntax-string);
+  --focus-outlineColor: var(--accent-color);
+
+  /* 代码高亮 */
+  --color-prettylights-syntax-comment: var(--syntax-comment);
+  --color-prettylights-syntax-constant: var(--syntax-constant);
+  --color-prettylights-syntax-constant-other-reference-link: var(--syntax-constant);
+  --color-prettylights-syntax-entity: var(--syntax-entity);
+  --color-prettylights-syntax-entity-tag: var(--syntax-tag);
+  --color-prettylights-syntax-keyword: var(--syntax-keyword);
+  --color-prettylights-syntax-string: var(--syntax-string);
+  --color-prettylights-syntax-string-regexp: var(--syntax-string);
+  --color-prettylights-syntax-variable: var(--syntax-variable);
+  --color-prettylights-syntax-markup-heading: var(--syntax-heading);
+  --color-prettylights-syntax-markup-list: var(--syntax-constant);
+  --color-prettylights-syntax-markup-bold: var(--text-title-color);
+  --color-prettylights-syntax-markup-italic: var(--text-title-color);
+  --color-prettylights-syntax-storage-modifier-import: var(--text-content-color);
+  --color-prettylights-syntax-brackethighlighter-angle: var(--text-description-color);
+  --color-prettylights-syntax-brackethighlighter-unmatched: var(--syntax-invalid);
+  --color-prettylights-syntax-carriage-return-bg: var(--syntax-invalid);
+  --color-prettylights-syntax-carriage-return-text: var(--accent-contrast-color);
+  --color-prettylights-syntax-sublimelinter-gutter-mark: var(--line-border-color);
+  --color-prettylights-syntax-invalid-illegal-bg: var(--syntax-invalid);
+  --color-prettylights-syntax-invalid-illegal-text: var(--accent-contrast-color);
+  --color-prettylights-syntax-markup-changed-bg: color-mix(in srgb, var(--syntax-constant) 18%, transparent);
+  --color-prettylights-syntax-markup-changed-text: var(--syntax-constant);
+  --color-prettylights-syntax-markup-deleted-bg: color-mix(in srgb, var(--syntax-invalid) 16%, transparent);
+  --color-prettylights-syntax-markup-deleted-text: var(--syntax-invalid);
+  --color-prettylights-syntax-markup-inserted-bg: color-mix(in srgb, var(--syntax-string) 16%, transparent);
+  --color-prettylights-syntax-markup-inserted-text: var(--syntax-string);
+  --color-prettylights-syntax-markup-ignored-bg: var(--line-divider-color);
+  --color-prettylights-syntax-markup-ignored-text: var(--text-description-color);
+  --color-prettylights-syntax-meta-diff-range: var(--syntax-entity);
 }
 
-/* 标题 */
+/* ---------- 标题与正文 ---------- */
 .markdown-body h1,
 .markdown-body h2,
 .markdown-body h3,
@@ -19,138 +90,152 @@
 .markdown-body h5 { font-size: 15px; }
 .markdown-body h6 { font-size: 14px; }
 
-/* 表格 */
-.markdown-body table,
-.markdown-body table tr,
-.markdown-body table th,
-.markdown-body table td {
-  background-color: transparent !important;
+.markdown-body strong {
+  color: var(--text-title-color);
 }
 
+/* 保留全站宋体，同时让代码恢复等宽字体 */
 .markdown-body * {
   font-family: var(--font-family) !important;
 }
 
-/* 代码块使用等宽字体 */
-
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body samp,
 .markdown-body pre * {
-  border-radius: 0;
   font-family: Consolas, "Courier New", monospace !important;
 }
 
+/* ---------- 链接：全站唯一的高饱和色，只留给可点击处 ---------- */
 .markdown-body a {
-  color: var(--text-content-color);
+  color: var(--accent-color);
   text-decoration: underline;
-  text-underline-offset: 6px;
+  text-decoration-color: color-mix(in srgb, var(--accent-color) 38%, transparent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  transition: color 0.18s ease, text-decoration-color 0.18s ease;
 }
 
-/* 手动切换主题时覆盖 github-markdown-css 的变量
-   因为 github-markdown.css 默认只在 @media (prefers-color-scheme) 下切换 */
-[data-theme="dark"] .markdown-body {
-  color-scheme: dark;
-  --fgColor-accent: #4493f8;
-  --bgColor-attention-muted: #bb800926;
-  --bgColor-default: #0d1117;
-  --bgColor-muted: #151b23;
-  --bgColor-neutral-muted: #656c7633;
-  --borderColor-accent-emphasis: #1f6feb;
-  --borderColor-attention-emphasis: #9e6a03;
-  --borderColor-danger-emphasis: #da3633;
-  --borderColor-default: #3d444d;
-  --borderColor-done-emphasis: #8957e5;
-  --borderColor-success-emphasis: #238636;
-  --color-prettylights-syntax-brackethighlighter-angle: #9198a1;
-  --color-prettylights-syntax-brackethighlighter-unmatched: #f85149;
-  --color-prettylights-syntax-carriage-return-bg: #b62324;
-  --color-prettylights-syntax-carriage-return-text: #f0f6fc;
-  --color-prettylights-syntax-comment: #9198a1;
-  --color-prettylights-syntax-constant: #79c0ff;
-  --color-prettylights-syntax-constant-other-reference-link: #a5d6ff;
-  --color-prettylights-syntax-entity: #d2a8ff;
-  --color-prettylights-syntax-entity-tag: #7ee787;
-  --color-prettylights-syntax-keyword: #ff7b72;
-  --color-prettylights-syntax-markup-bold: #f0f6fc;
-  --color-prettylights-syntax-markup-changed-bg: #5a1e02;
-  --color-prettylights-syntax-markup-changed-text: #ffdfb6;
-  --color-prettylights-syntax-markup-deleted-bg: #67060c;
-  --color-prettylights-syntax-markup-deleted-text: #ffdcd7;
-  --color-prettylights-syntax-markup-heading: #1f6feb;
-  --color-prettylights-syntax-markup-ignored-bg: #1158c7;
-  --color-prettylights-syntax-markup-ignored-text: #f0f6fc;
-  --color-prettylights-syntax-markup-inserted-bg: #033a16;
-  --color-prettylights-syntax-markup-inserted-text: #aff5b4;
-  --color-prettylights-syntax-markup-italic: #f0f6fc;
-  --color-prettylights-syntax-markup-list: #f2cc60;
-  --color-prettylights-syntax-meta-diff-range: #d2a8ff;
-  --color-prettylights-syntax-storage-modifier-import: #f0f6fc;
-  --color-prettylights-syntax-string: #a5d6ff;
-  --color-prettylights-syntax-string-regexp: #7ee787;
-  --color-prettylights-syntax-sublimelinter-gutter-mark: #3d444d;
-  --color-prettylights-syntax-variable: #ffa657;
-  --fgColor-attention: #d29922;
-  --fgColor-danger: #f85149;
-  --fgColor-default: #f0f6fc;
-  --fgColor-done: #ab7df8;
-  --fgColor-muted: #9198a1;
-  --fgColor-success: #3fb950;
-  --borderColor-muted: #3d444db3;
-  --color-prettylights-syntax-invalid-illegal-bg: var(--bgColor-danger-muted);
-  --color-prettylights-syntax-invalid-illegal-text: var(--fgColor-danger);
-  --focus-outlineColor: var(--borderColor-accent-emphasis);
-  --borderColor-neutral-muted: var(--borderColor-muted);
+.markdown-body a:hover {
+  color: var(--accent-hover-color);
+  text-decoration-color: currentColor;
 }
 
-[data-theme="light"] .markdown-body {
-  color-scheme: light;
-  --fgColor-danger: #d1242f;
-  --bgColor-attention-muted: #fff8c5;
-  --bgColor-muted: #f6f8fa;
-  --bgColor-neutral-muted: #818b981f;
-  --borderColor-accent-emphasis: #0969da;
-  --borderColor-attention-emphasis: #9a6700;
-  --borderColor-danger-emphasis: #cf222e;
-  --borderColor-default: #d1d9e0;
-  --borderColor-done-emphasis: #8250df;
-  --borderColor-success-emphasis: #1a7f37;
-  --color-prettylights-syntax-brackethighlighter-angle: #59636e;
-  --color-prettylights-syntax-brackethighlighter-unmatched: #82071e;
-  --color-prettylights-syntax-carriage-return-bg: #cf222e;
-  --color-prettylights-syntax-carriage-return-text: #f6f8fa;
-  --color-prettylights-syntax-comment: #59636e;
-  --color-prettylights-syntax-constant: #0550ae;
-  --color-prettylights-syntax-constant-other-reference-link: #0a3069;
-  --color-prettylights-syntax-entity: #6639ba;
-  --color-prettylights-syntax-entity-tag: #0550ae;
-  --color-prettylights-syntax-invalid-illegal-text: var(--fgColor-danger);
-  --color-prettylights-syntax-keyword: #cf222e;
-  --color-prettylights-syntax-markup-changed-bg: #ffd8b5;
-  --color-prettylights-syntax-markup-changed-text: #953800;
-  --color-prettylights-syntax-markup-deleted-bg: #ffebe9;
-  --color-prettylights-syntax-markup-deleted-text: #82071e;
-  --color-prettylights-syntax-markup-heading: #0550ae;
-  --color-prettylights-syntax-markup-ignored-bg: #0550ae;
-  --color-prettylights-syntax-markup-ignored-text: #d1d9e0;
-  --color-prettylights-syntax-markup-inserted-bg: #dafbe1;
-  --color-prettylights-syntax-markup-inserted-text: #116329;
-  --color-prettylights-syntax-markup-list: #3b2300;
-  --color-prettylights-syntax-meta-diff-range: #8250df;
-  --color-prettylights-syntax-string: #0a3069;
-  --color-prettylights-syntax-string-regexp: #116329;
-  --color-prettylights-syntax-sublimelinter-gutter-mark: #818b98;
-  --color-prettylights-syntax-variable: #953800;
-  --fgColor-accent: #0969da;
-  --fgColor-attention: #9a6700;
-  --fgColor-done: #8250df;
-  --fgColor-muted: #59636e;
-  --fgColor-success: #1a7f37;
-  --bgColor-default: #ffffff;
-  --borderColor-muted: #d1d9e0b3;
-  --color-prettylights-syntax-invalid-illegal-bg: var(--bgColor-danger-muted);
-  --color-prettylights-syntax-markup-bold: #1f2328;
-  --color-prettylights-syntax-markup-italic: #1f2328;
-  --color-prettylights-syntax-storage-modifier-import: #1f2328;
-  --fgColor-default: #1f2328;
-  --focus-outlineColor: var(--borderColor-accent-emphasis);
-  --borderColor-neutral-muted: var(--borderColor-muted);
+/* ---------- 引用：朱砂细线 + 极淡纸色 ---------- */
+.markdown-body blockquote {
+  margin: 1.5em 0;
+  padding: 0.7em 1em;
+  border-left: 3px solid color-mix(in srgb, var(--accent-color) 52%, var(--line-divider-color));
+  border-radius: 0 2px 2px 0;
+  background-color: color-mix(in srgb, var(--bg-sunken) 45%, transparent);
+  color: var(--text-description-color);
 }
 
+/* ---------- 行内代码与代码块 ---------- */
+.markdown-body code {
+  padding: 0.14em 0.36em;
+  border-radius: 3px;
+  background-color: var(--bg-sunken);
+  color: var(--text-title-color);
+  font-size: 0.86em;
+}
+
+.markdown-body pre {
+  margin: 1.4em 0;
+  padding: 1em 1.15em;
+  border: 1px solid var(--line-divider-color);
+  border-radius: 4px;
+  background-color: var(--bg-sunken);
+  line-height: 1.7;
+}
+
+.markdown-body pre code {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  color: var(--text-content-color);
+  font-size: 0.84em;
+}
+
+/* ---------- Shiki 双主题：亮色读 --shiki-light，暗色读 --shiki-dark ---------- */
+.markdown-body .astro-code,
+.markdown-body .astro-code span {
+  color: var(--shiki-light);
+  font-style: var(--shiki-light-font-style);
+  font-weight: var(--shiki-light-font-weight);
+  text-decoration: var(--shiki-light-text-decoration);
+}
+
+:root[data-theme="dark"] .markdown-body .astro-code,
+:root[data-theme="dark"] .markdown-body .astro-code span {
+  color: var(--shiki-dark);
+  font-style: var(--shiki-dark-font-style);
+  font-weight: var(--shiki-dark-font-weight);
+  text-decoration: var(--shiki-dark-text-decoration);
+}
+
+.markdown-body .astro-code {
+  background-color: var(--bg-sunken) !important;
+  border: 1px solid var(--line-divider-color);
+}
+
+/* ---------- 表格 ---------- */
+.markdown-body table {
+  border-color: var(--line-divider-color);
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  border-color: var(--line-divider-color);
+}
+
+.markdown-body table th {
+  background-color: var(--bg-sunken);
+  color: var(--text-title-color);
+}
+
+.markdown-body table tr {
+  border-color: var(--line-divider-color);
+  background-color: transparent;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: color-mix(in srgb, var(--bg-sunken) 45%, transparent);
+}
+
+/* ---------- 其他排版细节 ---------- */
+.markdown-body hr {
+  height: 1px;
+  border: 0;
+  background-color: var(--line-divider-color);
+}
+
+.markdown-body img {
+  border-radius: 2px;
+  box-shadow: 0 1px 4px var(--shadow-color);
+}
+
+.markdown-body mark {
+  background-color: color-mix(in srgb, var(--accent-color) 18%, transparent);
+  color: var(--text-title-color);
+}
+
+.markdown-body kbd {
+  padding: 0.2em 0.4em;
+  border: 1px solid var(--line-border-color);
+  border-bottom-width: 2px;
+  border-radius: 3px;
+  background-color: var(--bg-surface);
+  color: var(--text-content-color);
+  font-size: 0.85em;
+}
+
+.markdown-body input[type="checkbox"] {
+  accent-color: var(--accent-color);
+}
+
+.markdown-body .footnotes {
+  border-top-color: var(--line-divider-color);
+  color: var(--text-description-color);
+}

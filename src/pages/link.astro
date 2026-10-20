@@ -1,4 +1,4 @@
-﻿---
+---
 import Layout from '../layouts/Layout.astro'
 import PageHeader from '../components/PageHeader.astro'
 import { links } from '../data/links.ts'
@@ -52,10 +52,10 @@ const title = '友链'
   align-items: center;
   gap: 12px;
   padding: 0.75rem;
-  background: #fff;
+  background: var(--bg-surface);
   filter:
-    drop-shadow(0 1px 1px rgba(0, 0, 0, 0.06))
-    drop-shadow(0 3px 5px rgba(0, 0, 0, 0.045));
+    drop-shadow(0 1px 1px var(--shadow-color))
+    drop-shadow(0 4px 10px var(--shadow-color));
   clip-path: polygon(
     1% 4%, 4% 0%, 20% 2%, 36% 0%, 53% 2%, 69% 0%, 85% 2%, 98% 1%,
     100% 6%, 98% 25%, 100% 48%, 98% 70%, 100% 90%, 97% 99%, 80% 98%,
@@ -63,24 +63,6 @@ const title = '友链'
     0% 50%, 2% 27%
   );
 }
-
-/* 暗色主题 */
-:root[data-theme="dark"] .link-item {
-  background: #26292e;
-  filter:
-    drop-shadow(0 1px 1px rgba(0, 0, 0, 0.2))
-    drop-shadow(0 3px 5px rgba(0, 0, 0, 0.12));
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme]) .link-item {
-    background: #26292e;
-    filter:
-      drop-shadow(0 1px 1px rgba(0, 0, 0, 0.2))
-      drop-shadow(0 3px 5px rgba(0, 0, 0, 0.12));
-  }
-}
-
 
   .link-avatar {
     width: 46px;

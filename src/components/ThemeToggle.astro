@@ -45,6 +45,9 @@
     const applyTheme = (theme) => {
       root.dataset.theme = theme;
       root.classList.toggle('dark', theme === 'dark');
+      document
+        .querySelector('meta[name="theme-color"]')
+        ?.setAttribute('content', theme === 'dark' ? '#191a15' : '#f6f2e7');
     };
 
     try {

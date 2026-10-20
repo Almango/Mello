@@ -1,26 +1,26 @@
 :root {
     --waline-font-size: var(--text-content-fontsize);
-    --waline-white: var(--bg-color);
+    --waline-white: var(--bg-surface);
     --waline-light-grey: var(--text-description-color);
     --waline-dark-grey: var(--text-description-color);
-    --waline-theme-color: var(--text-title-color);
-    --waline-active-color: var(--text-content-color);
+    --waline-theme-color: var(--accent-color);
+    --waline-active-color: var(--accent-hover-color);
     --waline-color: var(--text-content-color);
     --waline-bg-color: var(--bg-color);
-    --waline-bg-color-light: color-mix(in srgb, var(--bg-color) 94%, var(--text-content-color));
+    --waline-bg-color-light: var(--bg-sunken);
     --waline-bg-color-hover: color-mix(in srgb, var(--bg-color) 88%, var(--text-content-color));
-    --waline-border-color: var(--line-border-color);
-    --waline-disable-bg-color: color-mix(in srgb, var(--bg-color) 94%, var(--text-content-color));
-    --waline-disable-color: var(--text-description-color);
-    --waline-code-bg-color: #282c34;
-    --waline-warning-color: #915930;
-    --waline-warning-bg-color: rgb(234 179 8 / 14%);
+    --waline-border-color: var(--line-divider-color);
+    --waline-disable-bg-color: var(--bg-sunken);
+    --waline-disable-color: var(--text-faint-color);
+    --waline-code-bg-color: var(--bg-sunken);
+    --waline-warning-color: var(--syntax-constant);
+    --waline-warning-bg-color: color-mix(in srgb, var(--syntax-constant) 14%, transparent);
     --waline-bq-color: var(--line-divider-color);
     --waline-avatar-size: 3.25rem;
     --waline-m-avatar-size: calc(var(--waline-avatar-size) * 9 / 13);
     --waline-badge-color: var(--text-title-color);
     --waline-badge-font-size: 0.75em;
-    --waline-info-bg-color: color-mix(in srgb, var(--bg-color) 94%, var(--text-content-color));
+    --waline-info-bg-color: var(--bg-sunken);
     --waline-info-color: var(--text-description-color);
     --waline-info-font-size: 0.625em;
     --waline-border: 1px solid var(--waline-border-color);
@@ -1547,4 +1547,75 @@
     box-shadow: 0 0 0 1000px var(--waline-bg-color) inset;
     caret-color: var(--waline-color);
     transition: background-color 99999s ease-in-out 0s;
+}
+
+/* ============================================================
+   评论区代码块：与文章代码块使用同一套纸色与语法色
+   ============================================================ */
+[data-waline] .wl-content pre,
+[data-waline] .wl-content pre[class*=language-] {
+    background: var(--bg-sunken) !important;
+    border: 1px solid var(--line-divider-color);
+    border-radius: 4px;
+    color: var(--text-content-color);
+}
+
+[data-waline] .wl-content pre code,
+[data-waline] .wl-content pre[class*=language-] code,
+[data-waline] .wl-content :not(pre) > code[class*=language-] {
+    background: transparent !important;
+    color: var(--text-content-color) !important;
+}
+
+[data-waline] .wl-content .token.comment,
+[data-waline] .wl-content .token.block-comment,
+[data-waline] .wl-content .token.prolog,
+[data-waline] .wl-content .token.doctype,
+[data-waline] .wl-content .token.cdata {
+    color: var(--syntax-comment);
+}
+
+[data-waline] .wl-content .token.punctuation {
+    color: var(--text-description-color);
+}
+
+[data-waline] .wl-content .token.tag,
+[data-waline] .wl-content .token.attr-name,
+[data-waline] .wl-content .token.namespace,
+[data-waline] .wl-content .token.deleted,
+[data-waline] .wl-content .token.selector,
+[data-waline] .wl-content .token.important,
+[data-waline] .wl-content .token.atrule,
+[data-waline] .wl-content .token.keyword,
+[data-waline] .wl-content .token.builtin {
+    color: var(--syntax-keyword);
+}
+
+[data-waline] .wl-content .token.function-name,
+[data-waline] .wl-content .token.function {
+    color: var(--syntax-entity);
+}
+
+[data-waline] .wl-content .token.boolean,
+[data-waline] .wl-content .token.number,
+[data-waline] .wl-content .token.property,
+[data-waline] .wl-content .token.class-name,
+[data-waline] .wl-content .token.constant,
+[data-waline] .wl-content .token.symbol {
+    color: var(--syntax-constant);
+}
+
+[data-waline] .wl-content .token.string,
+[data-waline] .wl-content .token.char,
+[data-waline] .wl-content .token.attr-value,
+[data-waline] .wl-content .token.regex,
+[data-waline] .wl-content .token.variable,
+[data-waline] .wl-content .token.inserted {
+    color: var(--syntax-string);
+}
+
+[data-waline] .wl-content .token.operator,
+[data-waline] .wl-content .token.entity,
+[data-waline] .wl-content .token.url {
+    color: var(--syntax-tag);
 }

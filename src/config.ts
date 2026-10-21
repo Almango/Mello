@@ -31,7 +31,7 @@ export const FOOTER_CONFIG = {
   link: [
     { name: '萌ICP备20240146号', url: 'https://icp.gov.moe/?keyword=20240146'},
     { name: 'RSS', url: '/rss.xml'},
-    { name: '2.1.1b', url: 'https://github.com/Almango/Mello'},
+    { name: '2.1.2', url: 'https://github.com/Almango/Mello'},
   ],
 } 
 

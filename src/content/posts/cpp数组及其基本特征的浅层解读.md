@@ -2,9 +2,10 @@
 title: C++数组及其基本特征的浅层解读【4】
 description: C++指针与结构体的出生操作
 published: 2024-08-16 22:44:10
-tags: [C++, 数据结构]                               
+tags:
+    - C++
 category: 技能 
-slug: "16978d0e"
+id: "16978d0e"
 ---
 
 

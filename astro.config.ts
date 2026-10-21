@@ -1,23 +1,20 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-import remarkMath from 'remark-math';
-import rehypeMathjax from 'rehype-mathjax';
-import { melloLight, melloDark } from './src/theme/shiki-themes';
+import sitemap from '@astrojs/sitemap';
+import expressiveCode from 'astro-expressive-code';
+
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://blog.almango.cn',
+  integrations: [sitemap(), 
+    expressiveCode({
+      themes: ['rose-pine-dawn', 'rose-pine'],
+      themeCssSelector: (theme) => `[data-theme='${theme.type}']`,
+    }),
+  ],
   markdown: {
-      remarkPlugins: [remarkMath],
-      rehypePlugins: [rehypeMathjax],
-      // 与站点同源的亮/暗代码主题，由 markdown.css 根据 data-theme 切换
-      shikiConfig: {
-          themes: {
-              light: melloLight,
-              dark: melloDark,
-          },
-          defaultColor: false,
-          wrap: false,
-      },
+      remarkPlugins: ['remark-breaks', 'remark-math'],
+      rehypePlugins: ['rehype-mathjax'],
   }
 });

@@ -3,7 +3,7 @@ title: Unity2D开发记录_游戏场景搭建【1】
 published: 2024-11-09 12:49:34
 cover: img/cover/unity.jpg
 top_img: false
-tags: [Unity. Unity2D]
+tags: [Unity2D]
 category: 学习笔记
 slug: "b122fcb8"
 ---

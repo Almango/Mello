@@ -17,22 +17,8 @@ interface Props {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="theme-color" content="#f6f2e7" id="theme-color" />
     <link rel="icon" href={BASE_CONFIG.favicon} />
     <title>{title}</title>
-    <script is:inline>
-      // 在首次绘制前确定主题，避免暗色用户看到白屏闪烁
-      (() => {
-        const STORAGE_KEY = 'theme';
-        let theme = 'light';
-        try {
-          theme = localStorage.getItem(STORAGE_KEY) === 'dark' ? 'dark' : 'light';
-        } catch {}
-        document.documentElement.dataset.theme = theme;
-        const meta = document.getElementById('theme-color');
-        if (meta) meta.setAttribute('content', theme === 'dark' ? '#191a15' : '#f6f2e7');
-      })();
-    </script>
     <script>
       import '../scripts/image-zoom.ts';
     </script>

@@ -5,7 +5,7 @@ published: 2025-11-12 17:12:21
 category: 感言
 cover: https://gitee.com/almango/image-bed/raw/master/album/game/game_mcserver_1.webp
 tags: [我的世界]
-slug: 5cc4b857
+slug: 251112a
 ---
 
 > 运营了半年的 MC 服务器，终于画上了句点。这段旅程，历时6个月29天，吸引了超过40名玩家参与，共同创造了无数难忘的回忆。

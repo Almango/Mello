@@ -133,7 +133,6 @@ body {
 /* 通用悬停反白效果：直接加 class="hover-underline" 即可 */
 .hover-underline {
   width: fit-content;
-  transition: background-color 0.18s ease, color 0.18s ease;
 }
 
 .hover-underline:hover {

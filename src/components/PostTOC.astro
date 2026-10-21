@@ -40,11 +40,11 @@ const toc = headings.filter(h => h.depth === 2 || h.depth === 3);
     gap: 0.6rem;
   }
   .toc-link {
+    width: fit-content;
     color: var(--text-description-color);
     text-decoration: none;
     display: block;
     line-height: 1.4;
-    transition: color 0.18s ease, background-color 0.18s ease;
   }
   .toc-link:hover {
     color: var(--text-title-color);

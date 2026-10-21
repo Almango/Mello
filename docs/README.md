@@ -14,10 +14,12 @@
 ## 实现入口
 
 - `src/styles/global.css`：设计令牌（颜色、阴影、选区、焦点）
-- `src/theme/shiki-themes.ts`：代码高亮主题，与站点色板同源
-- `src/styles/markdown.css`：Markdown / 代码块 / 表格 / 引用
+- `src/styles/markdown.css`：Markdown / 行内代码 / 表格 / 引用
 - `src/styles/waline.css`：评论区
-- `src/layouts/Layout.astro`：首屏主题脚本与 `theme-color`
+- `src/components/ThemeToggle.astro`：主题初始化与切换
+- `src/layouts/Layout.astro`：页面骨架，不包含主题逻辑
+
+代码块沿用 Astro 默认的 Shiki 主题，颜色不进入站点色板；`palette.html` 里的代码块仅用于展示色板。
 
 ## 关键对比度
 

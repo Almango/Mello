@@ -113,7 +113,6 @@
   text-decoration-color: color-mix(in srgb, var(--accent-color) 38%, transparent);
   text-decoration-thickness: 1px;
   text-underline-offset: 4px;
-  transition: color 0.18s ease, text-decoration-color 0.18s ease;
 }
 
 .markdown-body a:hover {
@@ -131,8 +130,8 @@
   color: var(--text-description-color);
 }
 
-/* ---------- 行内代码与代码块 ---------- */
-.markdown-body code {
+/* ---------- 行内代码 ---------- */
+.markdown-body :not(pre) > code {
   padding: 0.14em 0.36em;
   border-radius: 3px;
   background-color: var(--bg-sunken);
@@ -140,44 +139,14 @@
   font-size: 0.86em;
 }
 
-.markdown-body pre {
-  margin: 1.4em 0;
-  padding: 1em 1.15em;
-  border: 1px solid var(--line-divider-color);
-  border-radius: 4px;
-  background-color: var(--bg-sunken);
-  line-height: 1.7;
-}
-
-.markdown-body pre code {
-  padding: 0;
-  border: 0;
+/* 代码块沿用 Astro 默认的 Shiki 主题，只保留等宽字体 */
+.markdown-body pre * {
   border-radius: 0;
-  background-color: transparent;
-  color: var(--text-content-color);
-  font-size: 0.84em;
 }
 
-/* ---------- Shiki 双主题：亮色读 --shiki-light，暗色读 --shiki-dark ---------- */
-.markdown-body .astro-code,
-.markdown-body .astro-code span {
-  color: var(--shiki-light);
-  font-style: var(--shiki-light-font-style);
-  font-weight: var(--shiki-light-font-weight);
-  text-decoration: var(--shiki-light-text-decoration);
-}
-
-:root[data-theme="dark"] .markdown-body .astro-code,
-:root[data-theme="dark"] .markdown-body .astro-code span {
-  color: var(--shiki-dark);
-  font-style: var(--shiki-dark-font-style);
-  font-weight: var(--shiki-dark-font-weight);
-  text-decoration: var(--shiki-dark-text-decoration);
-}
-
-.markdown-body .astro-code {
-  background-color: var(--bg-sunken) !important;
-  border: 1px solid var(--line-divider-color);
+/* Expressive Code 代码块底部留白 */
+.markdown-body .expressive-code {
+  margin-bottom: 16px;
 }
 
 /* ---------- 表格 ---------- */

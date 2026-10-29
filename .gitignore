@@ -24,3 +24,6 @@ pnpm-debug.log*
 
 # vscode setting folder
 .vscode/
+
+# docs for ai
+docs/

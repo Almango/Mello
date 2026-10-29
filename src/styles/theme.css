@@ -1,0 +1,162 @@
+/* 
+ *  配色数据 · paper / mono
+ *  本文件只声明颜色变量，不写任何具体样式规则。
+ *  由 global.css 通过 var() 使用，
+ *  可在 src/config.ts 的THEME_CONFIG.palette 中切换配色。
+ */
+
+/* ------------------------------------------------------------
+   paper：宣纸风格
+   ------------------------------------------------------------ */
+:root {
+  color-scheme: light;
+
+  /* 三层纸面：页面 / 浮起 / 凹陷 */
+  --bg-color: #f6f2e7;
+  --bg-surface: #fbf8ef;
+  --bg-sunken: #eae3d1;
+
+  /* 墨色由深到浅 */
+  --text-logo-color: #221f18;
+  --text-title-color: #2a2720;
+  --text-content-color: #38352c;
+  --text-description-color: #6b6657;
+  --text-faint-color: #8b8473;
+
+  /* 分隔线与描边 */
+  --line-divider-color: #ded7c3;
+  --line-border-color: #c6bda5;
+
+  /* 朱砂：链接、选中、焦点 */
+  --accent-color: #a2452d;
+  --accent-hover-color: #87341e;
+  --accent-soft-color: #f1e3d7;
+  --accent-contrast-color: #fbf8ef;
+
+  /* 交互与阴影 */
+  --selection-bg: #e9d5c1;
+  --selection-color: #221f18;
+  --shadow-color: rgba(63, 51, 30, 0.1);
+
+  /* 代码语法色（用于评论区代码块） */
+  --syntax-comment: #6b6657;
+  --syntax-keyword: #a2452d;
+  --syntax-string: #42634b;
+  --syntax-constant: #8a5a22;
+  --syntax-entity: #6a4f74;
+  --syntax-variable: #8b4a2b;
+  --syntax-tag: #42634b;
+  --syntax-heading: #8a5a22;
+  --syntax-invalid: #b3261e;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg-color: #191a15;
+  --bg-surface: #21221c;
+  --bg-sunken: #11120e;
+
+  --text-logo-color: #f2eddf;
+  --text-title-color: #e9e3d3;
+  --text-content-color: #dcd6c6;
+  --text-description-color: #a29c8a;
+  --text-faint-color: #7d7868;
+
+  --line-divider-color: #30312a;
+  --line-border-color: #414237;
+
+  --accent-color: #e2856b;
+  --accent-hover-color: #f09c84;
+  --accent-soft-color: #382a22;
+  --accent-contrast-color: #1b1712;
+
+  --selection-bg: #443627;
+  --selection-color: #f2eddf;
+  --shadow-color: rgba(0, 0, 0, 0.45);
+
+  --syntax-comment: #85806f;
+  --syntax-keyword: #e2856b;
+  --syntax-string: #a9c08d;
+  --syntax-constant: #d9b36b;
+  --syntax-entity: #c9a9de;
+  --syntax-variable: #e0a46f;
+  --syntax-tag: #d98e72;
+  --syntax-heading: #e0c08a;
+  --syntax-invalid: #f07b72;
+}
+
+/*------------------------------------------------------------
+   mono：纯中性灰阶，强调色就是墨色本身
+  ------------------------------------------------------------*/
+:root[data-palette="mono"] {
+  color-scheme: light;
+
+  --bg-color: #ffffff;
+  --bg-surface: #fafafa;
+  --bg-sunken: #f2f2f2;
+
+  --text-logo-color: #0f0f0f;
+  --text-title-color: #171717;
+  --text-content-color: #262626;
+  --text-description-color: #595959;
+  --text-faint-color: #8c8c8c;
+
+  --line-divider-color: #e8e8e8;
+  --line-border-color: #d4d4d4;
+
+  --accent-color: #171717;
+  --accent-hover-color: #000000;
+  --accent-soft-color: #f0f0f0;
+  --accent-contrast-color: #ffffff;
+
+  --selection-bg: #d9d9d9;
+  --selection-color: #0a0a0a;
+  --shadow-color: rgba(0, 0, 0, 0.06);
+
+  --syntax-comment: #737373;
+  --syntax-keyword: #171717;
+  --syntax-string: #404040;
+  --syntax-constant: #525252;
+  --syntax-entity: #262626;
+  --syntax-variable: #404040;
+  --syntax-tag: #262626;
+  --syntax-heading: #171717;
+  --syntax-invalid: #171717;
+}
+
+:root[data-palette="mono"][data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg-color: #0a0a0a;
+  --bg-surface: #161616;
+  --bg-sunken: #1f1f1f;
+
+  --text-logo-color: #fafafa;
+  --text-title-color: #f0f0f0;
+  --text-content-color: #d4d4d4;
+  --text-description-color: #a3a3a3;
+  --text-faint-color: #737373;
+
+  --line-divider-color: #262626;
+  --line-border-color: #3a3a3a;
+
+  --accent-color: #f5f5f5;
+  --accent-hover-color: #ffffff;
+  --accent-soft-color: #262626;
+  --accent-contrast-color: #0a0a0a;
+
+  --selection-bg: #404040;
+  --selection-color: #ffffff;
+  --shadow-color: rgba(0, 0, 0, 0.55);
+
+  --syntax-comment: #8a8a8a;
+  --syntax-keyword: #f5f5f5;
+  --syntax-string: #d4d4d4;
+  --syntax-constant: #bdbdbd;
+  --syntax-entity: #e5e5e5;
+  --syntax-variable: #cccccc;
+  --syntax-tag: #e5e5e5;
+  --syntax-heading: #ffffff;
+  --syntax-invalid: #f5f5f5;
+}

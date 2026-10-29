@@ -1,7 +1,8 @@
 ---
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
-import { BASE_CONFIG } from '../config'
+import { BASE_CONFIG, THEME_CONFIG } from '../config'
+import '../styles/theme.css'
 import '../styles/global.css'
 
 const { title = BASE_CONFIG.title } = Astro.props
@@ -12,7 +13,7 @@ interface Props {
 
 ---
 
-<html lang="zh-CN">
+<html lang="zh-CN" data-palette={THEME_CONFIG.palette}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />

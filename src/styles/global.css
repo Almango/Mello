@@ -1,9 +1,4 @@
-/* ============================================================
-   配色系统 · 宣纸与松烟
-   亮色 = 宣纸底 + 松烟墨字 + 朱砂点缀
-   暗色 = 夜读底 + 月白字 + 灯下朱砂
-   正文对比度 ≥ 10.9:1，辅助文字 ≥ 5.1:1（WCAG AA / AAA）
-   ============================================================ */
+/* 全局样式 */
 
 :root {
   --text-logo-fontsize: 26px;
@@ -12,84 +7,7 @@
   --text-description-fontsize: 14px;
   --text-weight: bold;
   --font-family: "KingHwaOldSong", "Note serif";
-
-  color-scheme: light;
-
-  /* ---------- 亮色：宣纸 ---------- */
-  /* 三层纸面：页面 / 浮起 / 凹陷 */
-  --bg-color: #f6f2e7;
-  --bg-surface: #fbf8ef;
-  --bg-sunken: #eae3d1;
-
-  /* 墨色由深到浅 */
-  --text-logo-color: #221f18;
-  --text-title-color: #2a2720;
-  --text-content-color: #38352c;
-  --text-description-color: #6b6657;
-  --text-faint-color: #8b8473;
-
-  /* 分隔线与描边 */
-  --line-divider-color: #ded7c3;
-  --line-border-color: #c6bda5;
-
-  /* 朱砂：链接、选中、焦点 */
-  --accent-color: #a2452d;
-  --accent-hover-color: #87341e;
-  --accent-soft-color: #f1e3d7;
-  --accent-contrast-color: #fbf8ef;
-
-  /* 交互与阴影 */
-  --selection-bg: #e9d5c1;
-  --selection-color: #221f18;
-  --shadow-color: rgba(63, 51, 30, 0.1);
-
-  /* 代码语法色（亮色） */
-  --syntax-comment: #6b6657;
-  --syntax-keyword: #a2452d;
-  --syntax-string: #42634b;
-  --syntax-constant: #8a5a22;
-  --syntax-entity: #6a4f74;
-  --syntax-variable: #8b4a2b;
-  --syntax-tag: #42634b;
-  --syntax-heading: #8a5a22;
-  --syntax-invalid: #b3261e;
-}
-
-/* ---------- 暗色：夜读 ---------- */
-:root[data-theme="dark"] {
-  color-scheme: dark;
-
-  --bg-color: #191a15;
-  --bg-surface: #21221c;
-  --bg-sunken: #11120e;
-
-  --text-logo-color: #f2eddf;
-  --text-title-color: #e9e3d3;
-  --text-content-color: #dcd6c6;
-  --text-description-color: #a29c8a;
-  --text-faint-color: #7d7868;
-
-  --line-divider-color: #30312a;
-  --line-border-color: #414237;
-
-  --accent-color: #e2856b;
-  --accent-hover-color: #f09c84;
-  --accent-soft-color: #382a22;
-  --accent-contrast-color: #1b1712;
-
-  --selection-bg: #443627;
-  --selection-color: #f2eddf;
-  --shadow-color: rgba(0, 0, 0, 0.45);
-
-  --syntax-comment: #85806f;
-  --syntax-keyword: #e2856b;
-  --syntax-string: #a9c08d;
-  --syntax-constant: #d9b36b;
-  --syntax-entity: #c9a9de;
-  --syntax-variable: #e0a46f;
-  --syntax-tag: #d98e72;
-  --syntax-heading: #e0c08a;
-  --syntax-invalid: #f07b72;
+  --code-font: Consolas, "Courier New", monospace;
 }
 
 html {
@@ -143,14 +61,6 @@ body {
 @font-face {
   font-family: "KingHwaOldSong";
   src: url("/fonts/KingHwaOldSong.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Kaibunsyo";
-  src: url("/fonts/Kaibunsyo.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;

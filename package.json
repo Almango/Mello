@@ -16,10 +16,12 @@
     "@astrojs/sitemap": "^3.7.4",
     "astro": "^6.1.7",
     "astro-expressive-code": "^0.44.2",
-    "github-markdown-css": "^5.9.0",
     "medium-zoom": "^1.1.0",
     "rehype-mathjax": "^7.1.0",
+    "remark-alert": "^0.1.0",
+    "remark-blackout": "^1.0.0",
     "remark-breaks": "^4.0.0",
+    "remark-directive": "^4.0.0",
     "remark-math": "^6.0.0"
   }
 }

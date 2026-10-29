@@ -1,4 +1,4 @@
-# 我是谁
+## 我是谁
 嗨！我是 Almango ，你也可以叫我啊芒果。
 
 什么？你也好奇这个网名的由来吗？那就让我悄悄地告诉你吧！因为我喜欢芒果，想了想，于是便将一个小芒果的单词“A little mango”首字母拼凑起来用作我的网名啦！
@@ -19,7 +19,7 @@ MBTI鉴定为：[「INFJ-T」](https://www.16personalities.com/ch/infj-人格)�
 - 联系邮箱：sliveralmango@outlook.com
 
 
-# 关于博客
+## 关于博客
 
 框架与主题：[Astro](https://astro.build/) & [Mello](https://github.com/Almango/Mello)
 

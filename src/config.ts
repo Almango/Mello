@@ -9,6 +9,13 @@ export const BASE_CONFIG = {
   create_time: '2024-01-23',
 }
 
+// 配色方案
+export type PaletteName = 'paper' | 'mono'
+
+export const THEME_CONFIG = {
+  palette: 'mono',
+} as const satisfies { palette: PaletteName }
+
 // 文章页配置
 export const POST_CONFIG = {
   toc: true,        // 文章页是否显示右侧浮动目录
@@ -31,7 +38,7 @@ export const FOOTER_CONFIG = {
   link: [
     { name: '萌ICP备20240146号', url: 'https://icp.gov.moe/?keyword=20240146'},
     { name: 'RSS', url: '/rss.xml'},
-    { name: '2.1.2a', url: 'https://github.com/Almango/Mello'},
+    { name: '2.2.0', url: 'https://github.com/Almango/Mello'},
   ],
 } 
 

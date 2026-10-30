@@ -9,7 +9,7 @@ import "../../styles/markdown.css";
 export async function getStaticPaths() {
   const posts = await getCollection("posts");
   return posts.map((post) => ({
-    params: { id: post.id },
+    params: { id: post.data.id ?? post.id },
     props: { post },
   }));
 }

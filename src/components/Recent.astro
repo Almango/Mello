@@ -6,6 +6,7 @@ interface Props {
       title: string
       description?: string
       published: Date
+      id?: string
     }
   }[]
 }
@@ -18,7 +19,7 @@ const { posts } = Astro.props
   <ul class="recent-list">
     {posts.map(post => (
       <li class="recent-item">
-        <a href={`/post/${post.id}`} class="recent-title hover-underline">{post.data.title}</a>
+        <a href={`/post/${post.data.id ?? post.id}`} class="recent-title hover-underline">{post.data.title}</a>
         {post.data.description && <p class="recent-description">{post.data.description}</p>}
         <span class="recent-published">{post.data.published.toISOString().split('T')[0]}</span>
       </li>

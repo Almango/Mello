@@ -11,8 +11,6 @@ swiper_index: 2 #置顶轮播图顺序，非负整数，数字越大越靠前
 slug: "ed1d45a3"
 ---
 
-
-@[toc]
 ## 系统介绍
 **什么是FydeOS ?**
 
@@ -127,7 +125,6 @@ slug: "ed1d45a3"
 2. 我们打开任务正中间的蓝色图标（Chromium浏览器）看看是否能正常浏览网页，我们再下载个壁纸装上试试。一切都很正常！！！
 ![post_fydeos17_20.png](https://s2.loli.net/2024/02/02/Sre5zTPxmdVLaJv.png)
 ![post_fydeos17_21.png](https://s2.loli.net/2024/02/02/uiCZWxI9BtnDXkh.png)
-![post_fydeos17_22.png](https://s2.loli.net/2024/02/02/iPuK2n8sGNwAhxe.png)
 
 
 ### 结语

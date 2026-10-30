@@ -4,11 +4,7 @@ import { BASE_CONFIG, FOOTER_CONFIG } from "../config";
 ---
 
 <footer>
-  <span class="footer-copyright"
-    >© {BASE_CONFIG.create_time.split("-")[0]} Built with by {
-      BASE_CONFIG.author
-    }.</span
-  >
+  <span class="footer-copyright">© {BASE_CONFIG.create_time.split("-")[0]} Built with by {BASE_CONFIG.author}.</span>
   <nav class="footer-nav">
     {
       FOOTER_CONFIG.link.map((link) => (
@@ -61,7 +57,7 @@ import { BASE_CONFIG, FOOTER_CONFIG } from "../config";
 
   /* 右侧各项之间用 · 衔接 */
   .footer-nav > *:not(:first-child)::before {
-    content: "·";
+    content: "/";
     margin: 0 0.5rem;
     color: var(--text-description-color);
   }

@@ -27,7 +27,7 @@ export const HEADER_CONFIG = {
   nav: [
     { label: '归档', href: '/archive' },
     { label: '手记', href: '/record' },
-    { label: '统计', href: '/statistics' },
+    { label: '探索', href: '/explore' },
     { label: '邻居', href: '/link' },
     { label: '关于', href: '/about' },
   ],
@@ -37,9 +37,8 @@ export const HEADER_CONFIG = {
 export const FOOTER_CONFIG = {
   link: [
     { name: '萌ICP备20240146号', url: 'https://icp.gov.moe/?keyword=20240146'},
-    { name: 'RSS', url: '/rss.xml'},
-    { name: '2.2.0', url: 'https://github.com/Almango/Mello'},
-  ],
+    { name: 'RSS', url: '/rss.xml'}
+  ]
 } 
 
 // 评论配置

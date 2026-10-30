@@ -22,7 +22,7 @@ export async function GET(context) {
       title: post.data.title,
       pubDate: post.data.published,
       description: post.data.description,
-      link: `/post/${post.id}/`,
+      link: `/post/${post.data.id ?? post.id}/`,
     })),
     customData: `<language>zh-cn</language>`,
   });

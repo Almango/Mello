@@ -1,6 +1,7 @@
 ---
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
+import ThemeInit from '../components/ThemeInit.astro'
 import { BASE_CONFIG, THEME_CONFIG } from '../config'
 import '../styles/theme.css'
 import '../styles/global.css'
@@ -20,6 +21,7 @@ interface Props {
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" href={BASE_CONFIG.favicon} />
     <title>{title}</title>
+    <ThemeInit />
     <script>
       import '../scripts/image-zoom.ts';
     </script>

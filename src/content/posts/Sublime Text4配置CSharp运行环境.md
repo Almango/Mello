@@ -1,10 +1,8 @@
 ---
 title: Sublime Text4配置C#运行环境
 published: 2024-02-24 15:48:30
-cover: img/cover/sublime.jpg         # 设置文章封面
-top_img: false
 tags: [C#, .NET, 开发工具]                                # 添加分类
-category: IDE 
+category: 学习笔记 
 slug: "353077b0"
 ---
 

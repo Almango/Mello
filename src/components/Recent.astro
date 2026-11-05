@@ -19,9 +19,9 @@ const { posts } = Astro.props
   <ul class="recent-list">
     {posts.map(post => (
       <li class="recent-item">
+        <span class="recent-published">{post.data.published.toISOString().split('T')[0]}</span>
         <a href={`/post/${post.data.id ?? post.id}`} class="recent-title hover-underline">{post.data.title}</a>
         {post.data.description && <p class="recent-description">{post.data.description}</p>}
-        <span class="recent-published">{post.data.published.toISOString().split('T')[0]}</span>
       </li>
     ))}
   </ul>
@@ -47,13 +47,23 @@ const { posts } = Astro.props
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
   }
 
   .recent-item {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    padding: 1rem 0;
+    border-bottom: 1px dashed var(--line-divider-color);
+  }
+
+  .recent-item:first-child {
+    padding-top: 0;
+  }
+
+  .recent-item:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
   }
 
   .recent-title {
@@ -66,7 +76,11 @@ const { posts } = Astro.props
   .recent-description {
     font-size: var(--text-description-fontsize);
     color: var(--text-description-color);
+    display: -webkit-box;
+    overflow: hidden;
     margin: 0;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
   }
 
   .recent-published {

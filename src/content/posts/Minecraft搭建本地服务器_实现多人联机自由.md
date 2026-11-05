@@ -3,8 +3,8 @@ title: 我的世界Java版本搭建本地服务器：实现开服与联机自由
 published: 2024-11-15 14:34:01             # 设置发布时间（默认不设）
 top_img: false  
 # cover: https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/EXPLORE_PDPScreenshotRefresh2024_multipleBiomes_01.png           # 设置文章封面
-tags: [开服,MC]                                # 添加分类
-category: Minecraft
+tags: [MC]                                # 添加分类
+category: 游戏
 slug: "4185c5cc"
 ---
 

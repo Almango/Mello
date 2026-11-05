@@ -1,10 +1,8 @@
 ---
 title: Sublime Text4代码配色自定义方案 #  设置文章标题
 published: 2024-03-05 12:30:10             # 设置发布时间（默认不设）
-cover: img/cover/sublime.jpg         # 设置文章封面
-top_img: false
 tags: [美化, 开发工具]                                # 添加分类
-category: IDE
+category: 学习笔记
 slug: "3c3a3570"
 ---
 

@@ -1,10 +1,12 @@
 ---
-import ThemeToggle from "./ThemeToggle.astro";
 import { BASE_CONFIG, FOOTER_CONFIG } from "../config";
 ---
 
 <footer>
-  <span class="footer-copyright">© {BASE_CONFIG.create_time.split("-")[0]} Built with by {BASE_CONFIG.author}.</span>
+  <span class="footer-copyright">
+    © {BASE_CONFIG.create_time.split("-")[0]} Built with ❤️ by {BASE_CONFIG.author}.
+  </span>
+
   <nav class="footer-nav">
     {
       FOOTER_CONFIG.link.map((link) => (
@@ -17,7 +19,6 @@ import { BASE_CONFIG, FOOTER_CONFIG } from "../config";
         </a>
       ))
     }
-    <a href="#"><ThemeToggle /></a>
   </nav>
 </footer>
 
@@ -25,6 +26,7 @@ import { BASE_CONFIG, FOOTER_CONFIG } from "../config";
   footer {
     margin: 0;
     padding: 1rem 0 1.5rem 0;
+    font-family: serif, "Times New Roman" ;
     border-top: 1px solid var(--line-border-color);
     display: flex;
     justify-content: space-between;
@@ -38,24 +40,23 @@ import { BASE_CONFIG, FOOTER_CONFIG } from "../config";
     font-size: var(--text-description-fontsize);
     color: var(--text-description-color);
   }
+  .footer-copyright a {
+    color: var(--text-description-color);
+    text-decoration: none;
+  }
 
   .footer-nav {
     display: flex;
     align-items: center;
   }
 
-  .footer-nav a,
-  .footer-nav button {
+  .footer-nav a {
     font-size: var(--text-description-fontsize);
     color: var(--text-description-color);
     text-decoration: none;
-    background: none;
-    border: none;
-    padding: 0;
-    font-family: inherit;
   }
 
-  /* 右侧各项之间用 · 衔接 */
+  /* 右侧各项之间用 / 衔接 */
   .footer-nav > *:not(:first-child)::before {
     content: "/";
     margin: 0 0.5rem;

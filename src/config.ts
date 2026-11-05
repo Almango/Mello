@@ -37,7 +37,6 @@ export const HEADER_CONFIG = {
 export const FOOTER_CONFIG = {
   link: [
     { name: '萌ICP备20240146号', url: 'https://icp.gov.moe/?keyword=20240146'},
-    { name: 'RSS', url: '/rss.xml'}
   ]
 } 
 

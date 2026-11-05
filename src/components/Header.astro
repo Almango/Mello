@@ -1,5 +1,6 @@
 ---
 import { BASE_CONFIG, HEADER_CONFIG } from '../config'
+import ThemeToggle from './ThemeToggle.astro'
 ---
 <header>
   <a href="/" class="header-logo">{BASE_CONFIG.subtitle}</a>
@@ -7,6 +8,7 @@ import { BASE_CONFIG, HEADER_CONFIG } from '../config'
     {HEADER_CONFIG.nav.map(item => (
       <a href={item.href} class="hover-underline">{item.label}</a>
     ))}
+    <ThemeToggle>
   </nav>
 </header>
 
@@ -25,7 +27,7 @@ import { BASE_CONFIG, HEADER_CONFIG } from '../config'
   .header-logo {
     font-size: var(--text-logo-fontsize);
     font-weight: var(--text-weight);
-    font-family: "Noto Serif SC";
+    font-family: "Noto Serif SC", serif;
     text-decoration: none;
     letter-spacing: -0.02em;
     color: var(--text-logo-color);
@@ -33,6 +35,7 @@ import { BASE_CONFIG, HEADER_CONFIG } from '../config'
   .header-nav {
     display: flex;
     gap: 1.5rem;
+    font-family: "Noto Serif SC", serif;
   }
   .header-nav a {
     font-size: var(--text-content-fontsize);

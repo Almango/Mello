@@ -1,13 +1,9 @@
 ---
 title: FydeOS17国产操作系统全过程安装【保姆级教程】
 published: 2024-01-23 10:15:06
-cover: img/cover/fydeos.png
 tags: [FydeOS]
-category: 操作系统                          # 添加分类
-
-
+category: 学习笔记
 description: 基于Linux + Chromium Project国产操作系统开箱。
-swiper_index: 2 #置顶轮播图顺序，非负整数，数字越大越靠前
 slug: "ed1d45a3"
 ---
 

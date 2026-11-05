@@ -2,7 +2,7 @@
 title: 使用Git将本地项目推送至Github仓库
 published: 2024-07-21 15:36:23
 tags: [Git]
-category: Git                         # 添加分类
+category: 学习笔记                         # 添加分类
 slug: "2b852c80"
 ---
 

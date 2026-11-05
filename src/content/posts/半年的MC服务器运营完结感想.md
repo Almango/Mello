@@ -2,7 +2,7 @@
 title: 运营了半年的MC服务器的结档感言
 description: 半年的时间，我运营了一个 MC 服务器，与40多名玩家的共同体验。从开始的简单建设，到最终的完善运营，这段经历让我深刻理解了服务器运营的复杂性和重要性。
 published: 2025-11-12 17:12:21
-category: 感言
+category: 游戏
 cover: https://gitee.com/almango/image-bed/raw/master/album/game/game_mcserver_1.webp
 tags: [我的世界]
 slug: 251112a

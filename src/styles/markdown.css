@@ -198,8 +198,8 @@
 .markdown-body blockquote {
   margin: 1.5em 0;
   padding: 0.8em 1em;
+  border-radius: 0;
   border-left: 3px solid color-mix(in srgb, var(--accent-color) 52%, var(--line-divider-color));
-  border-radius: 0 2px 2px 0;
   background-color: color-mix(in srgb, var(--bg-sunken) 45%, transparent);
   color: var(--text-description-color);
 }
@@ -341,7 +341,6 @@
 
 .markdown-body img {
   height: auto;
-  border-radius: 2px;
   box-shadow: 0 1px 4px var(--shadow-color);
 }
 

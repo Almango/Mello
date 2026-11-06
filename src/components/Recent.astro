@@ -15,7 +15,7 @@ const { posts } = Astro.props
 ---
 
 <section class="recent">
-  <span class="recent-label">RECENT</span>
+  <span class="recent-label">最近文章</span>
   <ul class="recent-list">
     {posts.map(post => (
       <li class="recent-item">
@@ -25,7 +25,7 @@ const { posts } = Astro.props
       </li>
     ))}
   </ul>
-  <a href="/archive" class="recent-more hover-underline">显示更多文章 →</a>
+  <a href="/archive" class="recent-more hover-underline">浏览更多文章 →</a>
 </section>
 
 <style>
@@ -69,6 +69,7 @@ const { posts } = Astro.props
   .recent-title {
     font-size: var(--text-title-fontsize);
     color: var(--text-title-color);
+    font-weight: var(--text-weight);
     width: fit-content;
     text-decoration: none;
   }

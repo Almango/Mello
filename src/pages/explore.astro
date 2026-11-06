@@ -20,12 +20,6 @@ for (const post of posts) {
   }
 }
 
-// 根据出现次数映射字号：13px ~ 26px（px 单位）
-function exploreSize(count: number, map: Map<string, number>) {
-  const max = Math.max(...map.values(), 1)
-  return Math.round(13 + (count / max) * 13)
-}
-
 const title = '探索'
 ---
 
@@ -38,7 +32,6 @@ const title = '探索'
         <a
           href={`/category/${name}`}
           class="explore-item hover-underline"
-          style={`font-size: ${exploreSize(count, categoryMap)}px`}
           title={`${count} 篇`}
         >{name}</a>
       ))}
@@ -52,7 +45,6 @@ const title = '探索'
         <a
           href={`/tag/${name}`}
           class="explore-item hover-underline"
-          style={`font-size: ${exploreSize(count, tagMap)}px`}
           title={`${count} 篇`}
         >{name}</a>
       ))}
@@ -92,9 +84,11 @@ const title = '探索'
     color: var(--text-content-color);
     text-decoration: none;
     padding: 2px 8px;
-    border: 1px dashed var(--line-divider-color);
+    border: 1px solid var(--line-divider-color);
+    font-size: var(--text-description-fontsize);
   }
-
+   .explore-item a {
+   }
   .explore-item:hover {
     border-color: var(--text-content-color);
   }

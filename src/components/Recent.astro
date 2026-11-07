@@ -6,93 +6,171 @@ interface Props {
       title: string
       description?: string
       published: Date
+      category?: string
       id?: string
     }
   }[]
 }
 
 const { posts } = Astro.props
+
+type Post = Props['posts'][number]
+
+const categoryOf = (post: Post) => post.data.category || '随笔'
+const glyphOf = (post: Post) => Array.from(post.data.title.trim())[0] || '文'
+const dateOf = (post: Post) => post.data.published.toISOString().slice(0, 10).replaceAll('-', '.')
+const hrefOf = (post: Post) => `/post/${post.data.id ?? post.id}`
 ---
 
 <section class="recent">
-  <span class="recent-label">最近文章</span>
-  <ul class="recent-list">
-    {posts.map(post => (
-      <li class="recent-item">
-        <span class="recent-published">{post.data.published.toISOString().split('T')[0]}</span>
-        <a href={`/post/${post.data.id ?? post.id}`} class="recent-title hover-underline">{post.data.title}</a>
-        {post.data.description && <p class="recent-description">{post.data.description}</p>}
-      </li>
+  <div class="recent-head">
+    <h2 class="recent-heading">最新文章</h2>
+    <a href="/archive" class="recent-all hover-underline">全部文章 <span aria-hidden="true">→</span></a>
+  </div>
+
+  <div class="recent-grid">
+    {posts.slice(0, 4).map((post) => (
+      <a href={hrefOf(post)} class="post-card">
+        <span class="post-mark" aria-hidden="true">{glyphOf(post)}</span>
+        <div class="post-body">
+          <h3 class="post-title">{post.data.title}</h3>
+          {post.data.description && <p class="post-description">{post.data.description}</p>}
+          <div class="post-meta">
+            <span class="post-category">#{categoryOf(post)}</span>
+            <span class="post-published">{dateOf(post)}</span>
+          </div>
+        </div>
+      </a>
     ))}
-  </ul>
-  <a href="/archive" class="recent-more hover-underline">浏览更多文章 →</a>
+  </div>
 </section>
 
 <style>
   .recent {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
     padding: 2rem 0;
   }
 
-  .recent-label {
-    font-size: var(--text-description-fontsize);
-    color: var(--text-description-color);
+  .recent-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
   }
 
-  .recent-list {
-    list-style: none;
-    padding: 0;
+  .recent-heading {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     margin: 0;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .recent-item {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    padding: 1rem 0;
-    border-bottom: 1px dashed var(--line-divider-color);
-  }
-
-  .recent-item:first-child {
-    padding-top: 0;
-  }
-
-  .recent-item:last-child {
-    padding-bottom: 0;
-    border-bottom: 0;
-  }
-
-  .recent-title {
-    font-size: var(--text-title-fontsize);
     color: var(--text-title-color);
+    font-size: var(--text-content-fontsize);
     font-weight: var(--text-weight);
-    width: fit-content;
+  }
+
+  .recent-all {
+    color: var(--text-description-color);
+    font-size: var(--text-description-fontsize);
     text-decoration: none;
   }
 
-  .recent-description {
-    font-size: var(--text-description-fontsize);
-    color: var(--text-description-color);
+  .recent-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: minmax(0, 1fr);
+    gap: 1rem;
+  }
+
+  .post-card {
+    position: relative;
+    display: flex;
+    min-width: 0;
+    overflow: hidden;
+    background-color: var(--bg-surface);
+    background-color: color-mix(in srgb, var(--bg-sunken) 80%, var(--bg-surface));
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .post-card:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 3px;
+  }
+
+  .post-mark {
+    position: absolute;
+    right: -0.08em;
+    bottom: -0.3em;
+    color: color-mix(in srgb, var(--text-title-color) 6%, transparent);
+    font-family: "KingHwaOldSong", serif;
+    font-size: clamp(3.5rem, 7vw, 5rem);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .post-body {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 1rem 1.1rem 0.9rem;
+  }
+
+  .post-title {
     display: -webkit-box;
     overflow: hidden;
     margin: 0;
+    color: var(--text-title-color);
+    font-size: 17px;
+    font-weight: var(--text-weight);
+    line-height: 1.35;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
   }
 
-  .recent-published {
-    font-size: var(--text-description-fontsize);
+  .post-description {
+    display: -webkit-box;
+    overflow: hidden;
+    margin: 0;
     color: var(--text-description-color);
+    font-size: 12px;
+    line-height: 1.6;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
   }
 
-  .recent-more {
-    font-size: var(--text-description-fontsize);
+  .post-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: auto;
+    padding-top: 0.3rem;
     color: var(--text-description-color);
-    text-decoration: none;
-    margin-top: 1rem;
+    font-size: 11px;
+  }
+
+  .post-category {
+    font-family: "Noto serif SC", serif;
+    color: var(--accent-color);
+
+  }
+
+  .post-published {
+    font-family: "Noto serif SC", serif;
+    letter-spacing: 0.02em;
+  }
+
+  @media (max-width: 700px) {
+    .recent-grid {
+      grid-template-columns: 1fr;
+      grid-auto-rows: auto;
+    }
+
+    .post-description {
+      font-size: var(--text-description-fontsize);
+    }
   }
 </style>

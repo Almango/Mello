@@ -15,10 +15,12 @@ const title = '友链'
   <div class="link">
     <div class="link-top">
       {links.map(link => (
-        <div class="link-item">
-          <img src={link.avatar} alt={link.name} class="link-avatar" />
+        <div
+          class:list={['link-item', link.avatar && 'has-avatar']}
+          style={link.avatar ? `--card-avatar: url("${link.avatar}")` : undefined}
+        >
           <div class="link-info">
-            <a href={link.url} target="_blank" rel="noopener" class="link-name hover-underline">{link.name}</a>
+            <a href={link.url} target="_blank" rel="noopener" class="link-name">{link.name}</a>
             <span class="link-description">{link.description}</span>
           </div>
         </div>
@@ -46,35 +48,60 @@ const title = '友链'
   }
 
 .link-item {
+  position: relative;
   min-width: 0;
   display: flex;
   align-items: center;
   gap: 12px;
   padding: 0.75rem;
+  overflow: hidden;
   background: var(--bg-surface);
-  filter:
-    drop-shadow(0 1px 1px var(--shadow-color))
-    drop-shadow(0 4px 10px var(--shadow-color));
-  clip-path: polygon(
-    1% 4%, 4% 0%, 20% 2%, 36% 0%, 53% 2%, 69% 0%, 85% 2%, 98% 1%,
-    100% 6%, 98% 25%, 100% 48%, 98% 70%, 100% 90%, 97% 99%, 80% 98%,
-    62% 100%, 45% 98%, 28% 100%, 12% 98%, 2% 100%, 0% 93%, 2% 72%,
-    0% 50%, 2% 27%
-  );
+  border: 1px solid var(--border-color);
+  user-select: none;
 }
 
-  .link-avatar {
-    width: 46px;
-    height: 46px;
-    object-fit: cover;
-    flex-shrink: 0;
-  }
+.link-item.has-avatar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  background-image: var(--card-avatar);
+  background-size: cover;
+  background-position: center;
+  -webkit-mask-image: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.4) 20%,
+    rgba(0, 0, 0, 0.2) 50%,
+    rgba(0, 0, 0, 0.08) 60%,
+    rgba(0, 0, 0, 0.02) 70%,
+    rgba(0, 0, 0, 0) 80%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.4) 20%,
+    rgba(0, 0, 0, 0.2) 50%,
+    rgba(0, 0, 0, 0.08) 60%,
+    rgba(0, 0, 0, 0.02) 70%,
+    rgba(0, 0, 0, 0) 80%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
 
   .link-info {
+    /* 作为 flex 项可直接使用 z-index；不设 position，避免成为拉伸链接 ::after 的包含块 */
+    z-index: 1;
     display: flex;
     flex-direction: column;
     gap: 4px;
+    flex: 1 1 auto;
     min-width: 0;
+    max-width: 100%;
   }
 
   .link-name {
@@ -86,6 +113,22 @@ const title = '友链'
     text-overflow: ellipsis;
     white-space: nowrap;
     text-decoration: none;
+  }
+
+  /* 拉伸链接：伪元素以 .link-item（position: relative）为包含块铺满整卡 */
+  .link-name::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+  }
+
+  .link-name:focus-visible {
+    outline: none;
+  }
+
+  .link-name:focus-visible::after {
+    outline: 2px solid var(--text-title-color);
+    outline-offset: -2px;
   }
 
   .link-description {

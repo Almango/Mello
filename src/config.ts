@@ -5,6 +5,7 @@ export const BASE_CONFIG = {
   description: '天真永不消逝，浪漫致死不渝',
   author: '啊芒果',
   favicon: '/favicon.png',
+  avatar: '/avatar.webp',
   site_url: 'https://blog.almango.cn',
   create_time: '2024-01-23',
 }
@@ -13,13 +14,13 @@ export const BASE_CONFIG = {
 export type PaletteName = 'paper' | 'mono'
 
 export const THEME_CONFIG = {
-  palette: 'mono',
+  palette: 'paper',
 } as const satisfies { palette: PaletteName }
 
 // 文章页配置
 export const POST_CONFIG = {
   toc: true,        // 文章页是否显示右侧浮动目录
-  page_size: 4,     // 首页显示的文章数量
+  page_size: 4,     // 首页推荐文章数量
 }
 
 // 导航栏配置

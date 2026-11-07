@@ -6,7 +6,7 @@
   --text-content-fontsize: 16px;
   --text-description-fontsize: 14px;
   --text-weight: bold;
-  --font-family: "Noto Serif SC", "Note serif", Serif;
+  --font-family: "Note serif", Serif;
   --code-font: Consolas, "Courier New", monospace;
 }
 
@@ -20,7 +20,6 @@ body {
   margin: 0;
   background-color: var(--bg-color);
   color: var(--text-content-color);
-  transition: background-color 0.3s ease, color 0.3s ease;
   font-family: var(--font-family);
 }
 
@@ -32,14 +31,6 @@ body {
 :focus-visible {
   outline: 2px solid var(--accent-color);
   outline-offset: 3px;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html,
-  body,
-  .hover-underline {
-    transition: none;
-  }
 }
 
 .container {
@@ -61,14 +52,6 @@ body {
 @font-face {
   font-family: "KingHwaOldSong";
   src: url("/fonts/KingHwaOldSong.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Damion";
-  src: url("/fonts/Damion-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;

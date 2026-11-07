@@ -12,78 +12,76 @@
   color-scheme: light;
 
   /* 三层纸面：页面 / 浮起 / 凹陷 */
-  --bg-color: #f6f2e7;
-  --bg-surface: #fbf8ef;
-  --bg-sunken: #eae3d1;
+  --bg-color: #f4f4ee;
+  --bg-surface: #fbfbf7;
+  --bg-sunken: #e9e9e1;
 
   /* 墨色由深到浅 */
-  --text-logo-color: #221f18;
-  --text-title-color: #2a2720;
-  --text-content-color: #38352c;
-  --text-description-color: #6b6657;
-  --text-faint-color: #8b8473;
+  --text-logo-color: #262622;
+  --text-title-color: #2f2f2a;
+  --text-content-color: #3c3c36;
+  --text-description-color: #67675f;
+  --text-faint-color: #919189;
 
   /* 分隔线与描边 */
-  --line-divider-color: #ded7c3;
-  --line-border-color: #c6bda5;
+  --line-divider-color: #deded5;
+  --line-border-color: #c8c8bf;
 
   /* 朱砂：链接、选中、焦点 */
-  --accent-color: #a2452d;
-  --accent-hover-color: #87341e;
-  --accent-soft-color: #f1e3d7;
-  --accent-contrast-color: #fbf8ef;
+  --accent-color: #a84a33;
+  --accent-hover-color: #8c361f;
+  --accent-contrast-color: #fbfbf7;
 
   /* 交互与阴影 */
-  --selection-bg: #e9d5c1;
-  --selection-color: #221f18;
-  --shadow-color: rgba(63, 51, 30, 0.1);
+  --selection-bg: #e3dfd3;
+  --selection-color: #262622;
+  --shadow-color: rgba(60, 58, 48, 0.08);
 
   /* 代码语法色（用于评论区代码块） */
-  --syntax-comment: #6b6657;
-  --syntax-keyword: #a2452d;
-  --syntax-string: #42634b;
-  --syntax-constant: #8a5a22;
-  --syntax-entity: #6a4f74;
-  --syntax-variable: #8b4a2b;
-  --syntax-tag: #42634b;
-  --syntax-heading: #8a5a22;
-  --syntax-invalid: #b3261e;
+  --syntax-comment: #6d6d65;
+  --syntax-keyword: #a84a33;
+  --syntax-string: #4f6b55;
+  --syntax-constant: #8a6435;
+  --syntax-entity: #6b5675;
+  --syntax-variable: #8a5438;
+  --syntax-tag: #4f6b55;
+  --syntax-heading: #8a6435;
+  --syntax-invalid: #b2382b;
 }
 
 :root[data-theme="dark"] {
   color-scheme: dark;
 
-  --bg-color: #191a15;
-  --bg-surface: #21221c;
-  --bg-sunken: #11120e;
+  --bg-color: #1e1e1e;
+  --bg-surface: #272727;
+  --bg-sunken: #171717;
 
-  --text-logo-color: #f2eddf;
-  --text-title-color: #e9e3d3;
-  --text-content-color: #dcd6c6;
-  --text-description-color: #a29c8a;
-  --text-faint-color: #7d7868;
+  --text-logo-color: #fafafa;
+  --text-title-color: #f0f0f0;
+  --text-content-color: #d4d4d4;
+  --text-description-color: #a3a3a3;
+  --text-faint-color: #7a7a7a;
 
-  --line-divider-color: #30312a;
-  --line-border-color: #414237;
+  --line-divider-color: #333333;
+  --line-border-color: #4a4a4a;
 
   --accent-color: #e2856b;
   --accent-hover-color: #f09c84;
-  --accent-soft-color: #382a22;
   --accent-contrast-color: #1b1712;
 
-  --selection-bg: #443627;
-  --selection-color: #f2eddf;
-  --shadow-color: rgba(0, 0, 0, 0.45);
+  --selection-bg: #4a4a4a;
+  --selection-color: #ffffff;
+  --shadow-color: rgba(0, 0, 0, 0.5);
 
-  --syntax-comment: #85806f;
-  --syntax-keyword: #e2856b;
-  --syntax-string: #a9c08d;
-  --syntax-constant: #d9b36b;
-  --syntax-entity: #c9a9de;
-  --syntax-variable: #e0a46f;
-  --syntax-tag: #d98e72;
-  --syntax-heading: #e0c08a;
-  --syntax-invalid: #f07b72;
+  --syntax-comment: #8a8a8a;
+  --syntax-keyword: #f5f5f5;
+  --syntax-string: #cfcfcf;
+  --syntax-constant: #bdbdbd;
+  --syntax-entity: #e5e5e5;
+  --syntax-variable: #c7c7c7;
+  --syntax-tag: #e0e0e0;
+  --syntax-heading: #ffffff;
+  --syntax-invalid: #f5f5f5;
 }
 
 /*------------------------------------------------------------
@@ -107,7 +105,6 @@
 
   --accent-color: #171717;
   --accent-hover-color: #000000;
-  --accent-soft-color: #f0f0f0;
   --accent-contrast-color: #ffffff;
 
   --selection-bg: #d9d9d9;
@@ -143,7 +140,6 @@
 
   --accent-color: #f5f5f5;
   --accent-hover-color: #ffffff;
-  --accent-soft-color: #262626;
   --accent-contrast-color: #0a0a0a;
 
   --selection-bg: #404040;

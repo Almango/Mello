@@ -6,7 +6,7 @@
   --text-content-fontsize: 16px;
   --text-description-fontsize: 14px;
   --text-weight: bold;
-  --font-family: "Noto serif SC";
+  --font-family: "Noto serif SC", serif;
   --code-font: Consolas, "Courier New", monospace;
 }
 

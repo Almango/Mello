@@ -71,7 +71,7 @@ const links: { label: string; href: string; icon: string; external?: boolean }[]
     color: var(--text-logo-color);
     font-size: var(--text-logo-fontsize);
     font-weight: var(--text-weight);
-    font-family: "Noto serif SC";
+    font-family: "Noto serif SC", serif;
     line-height: 1.3;
   }
 
@@ -108,18 +108,23 @@ const links: { label: string; href: string; icon: string; external?: boolean }[]
   }
 
   .intro-portrait {
-    position: relative;
-    height: 100%;
-    aspect-ratio: 1;
+    --portrait-rotate: -4deg;
+    box-sizing: border-box;
+    flex: none;
+    width: 140px;
+    height: 140px;
+    padding: 8px;
+    overflow: hidden;
+    background-color: var(--bg-surface);
+    transform: rotate(var(--portrait-rotate));
   }
 
   .intro-avatar {
-    position: absolute;
-    inset: 0;
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
   }
 
   .intro-heatmap {

@@ -274,7 +274,6 @@
     display: flex;
     overflow: hidden;
     padding: 0 4px;
-    border-bottom: 2px dashed var(--waline-border-color);
     border-top-left-radius: .75em;
     border-top-right-radius: .75em
 }
@@ -287,10 +286,9 @@
 
 .wl-header label {
     min-width: 40px;
-    padding: .75em .5em;
+    padding: .75em .5em .75em 0;
     color: var(--waline-color);
     font-size: .75em;
-    text-align: center
 }
 
 .wl-header input {
@@ -303,15 +301,11 @@
 }
 
 .wl-header-item {
+    border-top: 1px solid var(--waline-border-color);
     display: flex;
     flex: 1
 }
 
-@media(max-width: 580px) {
-    .wl-header-item:not(:last-child) {
-        border-bottom: 2px dashed var(--waline-border-color)
-    }
-}
 
 .wl-header-1 .wl-header-item {
     width: 100%
@@ -344,7 +338,6 @@
     box-sizing: border-box;
     width: calc(100% - 1em);
     min-height: 8.75em;
-    margin: .75em .5em;
     border-radius: .5em;
     background: rgba(0, 0, 0, 0);
     font-size: .875em
@@ -393,7 +386,6 @@
     position: relative;
     display: flex;
     flex-wrap: wrap;
-    margin: .5em .75em
 }
 
 .wl-actions {
@@ -408,7 +400,7 @@
     justify-content: center;
     width: 1.5em;
     height: 1.5em;
-    margin: 2px;
+    margin: 0;
     padding: 0;
     border: none;
     background: rgba(0, 0, 0, 0);
@@ -735,7 +727,6 @@
 
 .wl-card .wl-badge {
     display: inline-block;
-    margin-inline-end: 1em;
     padding: 0 .3em;
     border: 1px solid var(--waline-badge-color);
     border-radius: 4px;
@@ -823,7 +814,6 @@
 .wl-card .wl-content {
     position: relative;
     margin-bottom: .75em;
-    padding-top: .625em;
     font-size: .875em;
     line-height: 2;
     overflow-wrap: break-word
@@ -891,9 +881,6 @@
     border-radius: 0 .5em .5em 0
 }
 
-.wl-card .wl-quote {
-    border-inline-start: 1px dashed rgba(237, 237, 237, .5)
-}
 
 .wl-card .wl-quote .wl-user {
     --avatar-size: var(--waline-m-avatar-size)
@@ -977,7 +964,6 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: .375em
 }
 
 .wl-sort {
@@ -1041,6 +1027,7 @@
 .wl-reaction img {
     width: 100%;
     height: 100%;
+    user-select: none;
     transition: all 250ms ease-in-out
 }
 
@@ -1119,10 +1106,6 @@
     line-height: 1
 }
 
-.wl-reaction-item.active .wl-reaction-votes {
-    background: var(--waline-theme-color);
-    color: var(--waline-bg-color)
-}
 
 .wl-reaction-text {
     font-size: .875em
@@ -1219,7 +1202,7 @@
     padding: 1rem 1.25rem;
     border-radius: 6px;
     background: var(--waline-code-bg-color);
-    line-height: 1.4
+    line-height: 1.4;
 }
 
 .wl-content pre code,
@@ -1618,4 +1601,177 @@
 [data-waline] .wl-content .token.entity,
 [data-waline] .wl-content .token.url {
     color: var(--syntax-tag);
+}
+
+/* ============================================================
+   ���������б�����ͷ���޿�Ƭ�����߷ָ�
+   ============================================================ */
+[data-waline] .wl-cards .wl-user {
+    display: none;
+}
+
+[data-waline] .wl-card-item {
+    padding: 0;
+}
+
+[data-waline] .wl-card {
+    padding: 1.1rem 0;
+    border-bottom: 1px dashed var(--waline-border-color);
+}
+
+[data-waline] .wl-card:first-child {
+    margin-inline-start: 0;
+}
+
+[data-waline] .wl-card-item:last-child > .wl-card {
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+[data-waline] .wl-card .wl-head {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    overflow: visible;
+}
+
+[data-waline] .wl-card .wl-head .wl-nick {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+[data-waline] .wl-card .wl-time {
+    margin: 0;
+    font-size: 0.75rem;
+}
+
+[data-waline] .wl-card .wl-meta {
+    display: none;
+}
+
+[data-waline] .wl-card .wl-comment-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    float: none;
+    margin-inline-start: auto;
+}
+
+[data-waline] .wl-card .wl-content {
+    margin: 0;
+    font-size: 0.9375rem;
+    line-height: 1.9;
+}
+
+/* ������ȥ���������鱳��ͼ */
+[data-waline] .wl-panel {
+    margin: 0;
+    border: 0;
+    background: transparent;
+}
+
+[data-waline] .wl-header {
+    padding: 0;
+    border-bottom: 1px solid var(--waline-border-color);
+}
+
+[data-waline] .wl-editor {
+    width: 100%;
+    min-height: 7rem;
+    margin: 0.75rem 0;
+    border-bottom: 1px solid var(--waline-border-color);
+    background-image: none;
+}
+
+[data-waline] .wl-editor:focus {
+    background: transparent;
+}
+
+[data-waline] .wl-card .wl-head .wl-nick {
+    color: var(--text-title-color);
+}
+
+[data-waline] .wl-card .wl-head .wl-nick:hover {
+    color: var(--accent-color);
+}
+
+[data-waline] .wl-sort {
+    display: none;
+}
+
+[data-waline] .wl-card .wl-head a.wl-nick,
+[data-waline] .wl-card .wl-head span.wl-nick {
+    color: var(--text-title-color) !important;
+}
+
+[data-waline] .wl-card .wl-head a.wl-nick:hover,
+[data-waline] .wl-card .wl-head span.wl-nick:hover {
+    color: var(--accent-color) !important;
+}
+
+[data-waline] .wl-card .wl-badge {
+    color: var(--text-description-color);
+    border-color: var(--line-border-color);
+}
+
+
+/* 回复前缀与正文同一行，不再用 float 挤正文 */
+[data-waline] .wl-card .wl-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.35rem;
+}
+
+[data-waline] .wl-card .wl-content .wl-reply-to {
+    flex: 0 0 auto;
+    float: none;
+    margin: 0;
+}
+
+[data-waline] .wl-card .wl-content > div {
+    flex: 1;
+    min-width: 0;
+}
+
+/* 只在评论之间画线，最后一条不加 */
+[data-waline] .wl-card {
+    border-bottom: 0;
+}
+
+[data-waline] .wl-card-item:last-child > .wl-card {
+    padding-bottom: 1.1rem;
+    border-bottom: 0;
+}
+
+[data-waline] .wl-cards > .wl-card-item + .wl-card-item,
+[data-waline] .wl-quote > .wl-card-item + .wl-card-item {
+    border-top: 1px dashed var(--waline-border-color);
+}
+
+[data-waline] .wl-card .wl-content > div > :first-child {
+    margin-top: 0;
+}
+
+[data-waline] .wl-card .wl-content > div > :last-child {
+    margin-bottom: 0;
+}
+
+[data-waline] .wl-card .wl-quote:not(:empty) {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px dashed var(--waline-border-color);
+}
+
+/* 关闭 Waline 内所有过渡与动画 */
+[data-waline] *,
+[data-waline] *::before,
+[data-waline] *::after {
+    transition: none !important;
+    animation: none !important;
+}
+
+/* 评论正文上下留白 */
+[data-waline] .wl-card .wl-content {
+    padding: 0.6rem 0;
 }

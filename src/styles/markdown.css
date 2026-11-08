@@ -41,7 +41,7 @@
 
 .markdown-body h2 {
   padding-bottom: 0.35em;
-  border-bottom: 1px solid var(--line-divider-color);
+  border-bottom: 1px dashed var(--line-divider-color);
   font-size: 20px;
 }
 

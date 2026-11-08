@@ -2,11 +2,11 @@
 
 :root {
   --text-logo-fontsize: 26px;
-  --text-title-fontsize: 18px;
+  --text-title-fontsize: 20px;
   --text-content-fontsize: 16px;
   --text-description-fontsize: 14px;
   --text-weight: bold;
-  --font-family: "Note serif", Serif;
+  --font-family: "Noto serif SC";
   --code-font: Consolas, "Courier New", monospace;
 }
 
@@ -52,6 +52,14 @@ body {
 @font-face {
   font-family: "KingHwaOldSong";
   src: url("/fonts/KingHwaOldSong.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "LXGWWenKai";
+  src: url("/fonts/LXGWWenKai.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;

@@ -19,6 +19,7 @@
   /* 墨色由深到浅 */
   --text-logo-color: #1f1f1c;
   --text-title-color: #242420;
+  --text-subtitle-color: #272722;
   --text-content-color: #2b2b26;
   --text-description-color: #56564d;
   --text-faint-color: #7e7e75;
@@ -58,6 +59,7 @@
 
   --text-logo-color: #fafafa;
   --text-title-color: #f0f0f0;
+  --text-subtitle-color: #e2e2e2;
   --text-content-color: #d4d4d4;
   --text-description-color: #a3a3a3;
   --text-faint-color: #7a7a7a;
@@ -96,6 +98,7 @@
 
   --text-logo-color: #0f0f0f;
   --text-title-color: #171717;
+  --text-subtitle-color: #1f1f1f;
   --text-content-color: #262626;
   --text-description-color: #595959;
   --text-faint-color: #8c8c8c;
@@ -131,6 +134,7 @@
 
   --text-logo-color: #fafafa;
   --text-title-color: #f0f0f0;
+  --text-subtitle-color: #e2e2e2;
   --text-content-color: #d4d4d4;
   --text-description-color: #a3a3a3;
   --text-faint-color: #737373;

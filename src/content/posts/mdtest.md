@@ -97,7 +97,7 @@ function hello(name) {
 [带标题的链接](https://www.example.com "标题")
 <https://www.example.com>  自动链接
 
-![图片描述](/demo-image.svg "图片标题")
+![图片描述](https://bu.dusays.com/2026/08/30/6a93e96f31cf0.jpg "图片标题")
 
 
 ## 表格

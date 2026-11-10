@@ -1,33 +1,59 @@
 ### 🍃 Astro Theme Mello
 
-Astro Theme Mello 是基于上一代博客主题设计思路，重新设计的新一代博客主题，它更加极简、优雅、高性能，以阅读体验为核心，专注于内容本身，回归文字最本真的状态，
-没有冗余装饰，没有复杂交互，只保留最纯粹的阅读与写作环境。
+Astro Theme Mello 是基于上一代博客主题设计思路，重新设计的新一代博客主题。它更加极简、优雅、高性能，以阅读体验为核心，专注于内容本身，回归文字最本真的状态。没有冗余装饰，没有复杂交互，只保留最纯粹的阅读与写作环境。
 
 [![](https://img.shields.io/badge/Astro-v6-BC52EE?logo=astro)](https://astro.build)
 [![](https://img.shields.io/badge/Node.js->=22-5FA04E?logo=nodedotjs)](https://nodejs.org)
 [![](https://img.shields.io/badge/pnpm-v12-F69220?logo=pnpm)](https://pnpm.io)
 [![](https://img.shields.io/badge/许可-MIT-D1AB66)](./LICENSE.txt)
 
-> \[!important]
-> 使用该主题部署后请先删除 content/posts/ 的文章！！！
+> [!IMPORTANT]
+> `src/content/posts/` 中只有用于演示的示例文章，部署前请替换或删除。
 
 ### ✨ 特性
 
-**极简设计**：极度简约的设计风格，专注于内容本身
+**三套配色**：paper 取宣纸、墨色与灰绿；mono 偏学术科普，使用墨蓝、学术蓝与图表橙；normal 为纯灰阶单色极简。三套都支持亮色与暗色。
 
-**高性能**：基于 Astro 构建，零 JS 默认加载，极致的性能体验
+**阅读优先**：768px 单栏版心，衬线排版、克制的分隔线和充足留白，没有侧栏与多余组件。
 
-**浮动目录**：文章页右侧悬浮 TOC，滚动高亮当前小节，窄屏自动隐藏
+**首页**：站点介绍、头像、写作热力图和最近四篇文章；热力图桌面显示 53 周，移动端显示 26 周。
 
-**双端适配**：支持 PC 端和移动端，自动调整布局，丝滑流畅体验
+**文章页**：右侧浮动目录、Expressive Code 代码高亮、MathJax 数学公式、GitHub Alerts、隐藏文字和图片点击缩放。
 
-**语法丰富** 支持数学公式、文字模糊隐藏、Alert提示等语法。
+**聚合页面**：归档、探索、分类、标签、友链和关于，全部静态生成；自动生成 RSS 与 Sitemap。
 
-**评论系统**：Waline 评论，样式已深度定制融入主题
+**评论系统**：可选接入 Waline，默认关闭；内置评论列表、输入框和暗色模式的深度样式适配。
 
-**聚合页面**：归档、分类、标签、统计，全部静态生成
+**轻量实现**：基于 Astro 6 与原生 CSS/TypeScript，不依赖 React、Vue 等 UI 框架，没有 Tailwind 或客户端路由；默认只加载主题切换和图片缩放两个小脚本。
 
-**SEO 友好**：自动生成 RSS、Sitemap
+**配置集中**：站点信息、导航、页脚、评论与配色方案选择都在 `src/config.ts`，配色和版式变量分别在 `theme.css` 与 `global.css`。
+
+### ⚙️ 配置
+
+```ts
+// src/config.ts
+export const BASE_CONFIG = {
+  title: 'Mello',
+  subtitle: 'Mello',
+  description: '简约、高效、优雅。',
+  author: 'Mello',
+  favicon: '/favicon.svg',
+  avatar: '/avatar.svg',
+  site_url: 'https://example.com',
+}
+
+export const THEME_CONFIG = {
+  palette: 'paper', // 'paper' | 'mono' | 'normal'
+}
+
+export const COMMENT_CONFIG = {
+  enable: false,
+  provider: 'waline',
+  waline: { serverURL: 'https://example.cn/' },
+}
+```
+
+部署前至少需要修改 `site_url`、`astro.config.ts` 中的 `site`，以及 `src/content/` 下的示例内容。
 
 ### 🛠️ 安装
 
@@ -68,7 +94,9 @@ pnpm preview
 │   │   ├── Header.astro     # 顶部导航栏
 │   │   ├── Footer.astro     # 页脚
 │   │   ├── ThemeToggle.astro# 主题切换按钮
+│   │   ├── ThemeInit.astro  # 初始化主题状态
 │   │   ├── Intro.astro      # 首页介绍
+│   │   ├── HeatChart.astro  # 写作热力图
 │   │   ├── PageHeader.astro # 页面标题头
 │   │   ├── PostList.astro   # 文章列表（归档/分类/标签共用）
 │   │   ├── PostTOC.astro    # 文章浮动目录

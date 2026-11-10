@@ -12,78 +12,78 @@
   color-scheme: light;
 
   /* 三层纸面：页面 / 浮起 / 凹陷 */
-  --bg-color: #f4f4ee;
-  --bg-surface: #fbfbf7;
-  --bg-sunken: #e9e9e1;
+  --bg-color: #f8f5f0;
+  --bg-surface: #fbf9f5;
+  --bg-sunken: #e9e3d9;
 
   /* 墨色由深到浅 */
-  --text-logo-color: #1f1f1c;
-  --text-title-color: #242420;
-  --text-subtitle-color: #272722;
-  --text-content-color: #2b2b26;
-  --text-description-color: #56564d;
-  --text-faint-color: #7e7e75;
+  --text-logo-color: #2c2c2c;
+  --text-title-color: #2c2c2c;
+  --text-subtitle-color: #363632;
+  --text-content-color: #3c3b37;
+  --text-description-color: #6b675f;
+  --text-faint-color: #948d82;
 
   /* 分隔线与描边 */
-  --line-divider-color: #deded5;
-  --line-border-color: #c8c8bf;
+  --line-divider-color: rgba(44, 44, 44, 0.15);
+  --line-border-color: rgba(44, 44, 44, 0.2);
 
-  /* 朱砂：链接、选中、焦点 */
-  --accent-color: #a84a33;
-  --accent-hover-color: #8c361f;
-  --accent-contrast-color: #fbfbf7;
+  /* 灰绿：链接、选中、焦点 */
+  --accent-color: #6b7b6e;
+  --accent-hover-color: #56665a;
+  --accent-contrast-color: #f8f5f0;
 
   /* 交互与阴影 */
-  --selection-bg: #e3dfd3;
-  --selection-color: #262622;
-  --shadow-color: rgba(60, 58, 48, 0.08);
+  --selection-bg: #d9d0c3;
+  --selection-color: #2c2c2c;
+  --shadow-color: rgba(44, 44, 44, 0.05);
 
   /* 代码语法色（用于评论区代码块） */
-  --syntax-comment: #6d6d65;
-  --syntax-keyword: #a84a33;
-  --syntax-string: #4f6b55;
-  --syntax-constant: #8a6435;
-  --syntax-entity: #6b5675;
-  --syntax-variable: #8a5438;
-  --syntax-tag: #4f6b55;
-  --syntax-heading: #8a6435;
-  --syntax-invalid: #b2382b;
+  --syntax-comment: #7a766d;
+  --syntax-keyword: #6b7b6e;
+  --syntax-string: #697a7c;
+  --syntax-constant: #a89279;
+  --syntax-entity: #6b7b6e;
+  --syntax-variable: #8a7560;
+  --syntax-tag: #697a7c;
+  --syntax-heading: #2c2c2c;
+  --syntax-invalid: #9c5a4f;
 }
 
 :root[data-theme="dark"] {
   color-scheme: dark;
 
   --bg-color: #1e1e1e;
-  --bg-surface: #272727;
-  --bg-sunken: #171717;
+  --bg-surface: #262421;
+  --bg-sunken: #141311;
 
-  --text-logo-color: #fafafa;
-  --text-title-color: #f0f0f0;
-  --text-subtitle-color: #e2e2e2;
-  --text-content-color: #d4d4d4;
-  --text-description-color: #a3a3a3;
-  --text-faint-color: #7a7a7a;
+  --text-logo-color: #f8f5f0;
+  --text-title-color: #f2efe8;
+  --text-subtitle-color: #e4e0d7;
+  --text-content-color: #d2cec4;
+  --text-description-color: #a8a296;
+  --text-faint-color: #7f7a70;
 
-  --line-divider-color: #333333;
-  --line-border-color: #4a4a4a;
+  --line-divider-color: rgba(248, 245, 240, 0.14);
+  --line-border-color: rgba(248, 245, 240, 0.2);
 
-  --accent-color: #e2856b;
-  --accent-hover-color: #f09c84;
-  --accent-contrast-color: #1b1712;
+  --accent-color: #8fa392;
+  --accent-hover-color: #a6b8a9;
+  --accent-contrast-color: #1e1e1e;
 
-  --selection-bg: #4a4a4a;
-  --selection-color: #ffffff;
-  --shadow-color: rgba(0, 0, 0, 0.5);
+  --selection-bg: #4a463f;
+  --selection-color: #f8f5f0;
+  --shadow-color: rgba(0, 0, 0, 0.45);
 
-  --syntax-comment: #8a8a8a;
-  --syntax-keyword: #f5f5f5;
-  --syntax-string: #cfcfcf;
-  --syntax-constant: #bdbdbd;
-  --syntax-entity: #e5e5e5;
-  --syntax-variable: #c7c7c7;
-  --syntax-tag: #e0e0e0;
-  --syntax-heading: #ffffff;
-  --syntax-invalid: #f5f5f5;
+  --syntax-comment: #8a857b;
+  --syntax-keyword: #8fa392;
+  --syntax-string: #9aa9aa;
+  --syntax-constant: #c4b9a8;
+  --syntax-entity: #8fa392;
+  --syntax-variable: #b7a184;
+  --syntax-tag: #9aa9aa;
+  --syntax-heading: #f2efe8;
+  --syntax-invalid: #c98b80;
 }
 
 /*------------------------------------------------------------
@@ -93,70 +93,72 @@
   color-scheme: light;
 
   --bg-color: #ffffff;
-  --bg-surface: #fafafa;
-  --bg-sunken: #f2f2f2;
+  --bg-surface: #fafbfc;
+  --bg-sunken: #f3f4f6;
 
-  --text-logo-color: #0f0f0f;
-  --text-title-color: #171717;
-  --text-subtitle-color: #1f1f1f;
-  --text-content-color: #262626;
-  --text-description-color: #595959;
-  --text-faint-color: #8c8c8c;
+  --text-logo-color: #1f2933;
+  --text-title-color: #1f2933;
+  --text-subtitle-color: #26313c;
+  --text-content-color: #33404d;
+  --text-description-color: #6b7280;
+  --text-faint-color: #9ca3af;
 
-  --line-divider-color: #e8e8e8;
-  --line-border-color: #d4d4d4;
+  --line-divider-color: #e5e7eb;
+  --line-border-color: #e5e7eb;
 
-  --accent-color: #171717;
-  --accent-hover-color: #000000;
+  --accent-color: #2a7ae2;
+  --accent-hover-color: #1d64c0;
   --accent-contrast-color: #ffffff;
+  --chart-color: #e4572e;
 
-  --selection-bg: #d9d9d9;
-  --selection-color: #0a0a0a;
-  --shadow-color: rgba(0, 0, 0, 0.06);
+  --selection-bg: #e8f1fc;
+  --selection-color: #1f2933;
+  --shadow-color: rgba(31, 41, 51, 0.05);
 
-  --syntax-comment: #737373;
-  --syntax-keyword: #171717;
-  --syntax-string: #404040;
-  --syntax-constant: #525252;
-  --syntax-entity: #262626;
-  --syntax-variable: #404040;
-  --syntax-tag: #262626;
-  --syntax-heading: #171717;
-  --syntax-invalid: #171717;
+  --syntax-comment: #6b7280;
+  --syntax-keyword: #2a7ae2;
+  --syntax-string: #4b5563;
+  --syntax-constant: #e4572e;
+  --syntax-entity: #2a7ae2;
+  --syntax-variable: #6b7280;
+  --syntax-tag: #2a7ae2;
+  --syntax-heading: #1f2933;
+  --syntax-invalid: #b42318;
 }
 
 :root[data-palette="mono"][data-theme="dark"] {
   color-scheme: dark;
 
-  --bg-color: #0a0a0a;
-  --bg-surface: #161616;
-  --bg-sunken: #1f1f1f;
+  --bg-color: #1f2933;
+  --bg-surface: #27313d;
+  --bg-sunken: #161d26;
 
-  --text-logo-color: #fafafa;
-  --text-title-color: #f0f0f0;
-  --text-subtitle-color: #e2e2e2;
-  --text-content-color: #d4d4d4;
-  --text-description-color: #a3a3a3;
-  --text-faint-color: #737373;
+  --text-logo-color: #f9fafb;
+  --text-title-color: #f3f4f6;
+  --text-subtitle-color: #dbe3ea;
+  --text-content-color: #cbd5e1;
+  --text-description-color: #9ca3af;
+  --text-faint-color: #6b7280;
 
-  --line-divider-color: #262626;
-  --line-border-color: #3a3a3a;
+  --line-divider-color: #3b4654;
+  --line-border-color: #4a5665;
 
-  --accent-color: #f5f5f5;
-  --accent-hover-color: #ffffff;
-  --accent-contrast-color: #0a0a0a;
+  --accent-color: #60a5fa;
+  --accent-hover-color: #93c5fd;
+  --accent-contrast-color: #1f2933;
+  --chart-color: #f08a63;
 
-  --selection-bg: #404040;
-  --selection-color: #ffffff;
-  --shadow-color: rgba(0, 0, 0, 0.55);
+  --selection-bg: #1e3a5f;
+  --selection-color: #f9fafb;
+  --shadow-color: rgba(0, 0, 0, 0.45);
 
-  --syntax-comment: #8a8a8a;
-  --syntax-keyword: #f5f5f5;
-  --syntax-string: #d4d4d4;
-  --syntax-constant: #bdbdbd;
-  --syntax-entity: #e5e5e5;
-  --syntax-variable: #cccccc;
-  --syntax-tag: #e5e5e5;
-  --syntax-heading: #ffffff;
-  --syntax-invalid: #f5f5f5;
+  --syntax-comment: #9ca3af;
+  --syntax-keyword: #60a5fa;
+  --syntax-string: #cbd5e1;
+  --syntax-constant: #f08a63;
+  --syntax-entity: #60a5fa;
+  --syntax-variable: #cbd5e1;
+  --syntax-tag: #60a5fa;
+  --syntax-heading: #f3f4f6;
+  --syntax-invalid: #f87171;
 }

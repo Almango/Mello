@@ -20,7 +20,6 @@ export const THEME_CONFIG = {
 // 文章页配置
 export const POST_CONFIG = {
   toc: true,        // 文章页是否显示右侧浮动目录
-  page_size: 4,     // 首页推荐文章数量
 }
 
 // 导航栏配置
@@ -39,7 +38,7 @@ export const FOOTER_CONFIG = {
   link: [
     { name: '萌ICP备20240146号', url: 'https://icp.gov.moe/?keyword=20240146'},
   ]
-} 
+}
 
 // 评论配置
 export const COMMENT_CONFIG = {

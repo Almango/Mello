@@ -3,15 +3,14 @@ import Layout from '../layouts/Layout.astro'
 import Intro from '../components/Intro.astro'
 import Recent from '../components/Recent.astro'
 import { getCollection } from 'astro:content'
-import { BASE_CONFIG,POST_CONFIG } from '../config'
+import { BASE_CONFIG } from '../config'
 
 const allPosts = await getCollection('posts')
 const sortedPosts = allPosts.sort((a, b) => {
   return new Date(b.data.published).getTime() - new Date(a.data.published).getTime()
 })
 
-const pageSize = POST_CONFIG.page_size
-const posts = sortedPosts.slice(0, pageSize)
+const posts = sortedPosts
 
 const page = BASE_CONFIG.title
 ---

@@ -11,10 +11,10 @@ export const BASE_CONFIG = {
 }
 
 // 配色方案
-export type PaletteName = 'paper' | 'mono'
+export type PaletteName = 'paper' | 'mono' | 'normal'
 
 export const THEME_CONFIG = {
-  palette: 'mono',
+  palette: 'paper',
 } as const satisfies { palette: PaletteName }
 
 // 文章页配置

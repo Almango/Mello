@@ -109,7 +109,6 @@
   --accent-color: #2a7ae2;
   --accent-hover-color: #1d64c0;
   --accent-contrast-color: #ffffff;
-  --chart-color: #e4572e;
 
   --selection-bg: #e8f1fc;
   --selection-color: #1f2933;
@@ -146,7 +145,6 @@
   --accent-color: #60a5fa;
   --accent-hover-color: #93c5fd;
   --accent-contrast-color: #1f2933;
-  --chart-color: #f08a63;
 
   --selection-bg: #1e3a5f;
   --selection-color: #f9fafb;
@@ -161,4 +159,79 @@
   --syntax-tag: #60a5fa;
   --syntax-heading: #f3f4f6;
   --syntax-invalid: #f87171;
+}
+
+/* ------------------------------------------------------------
+   normal：单色极简
+   ------------------------------------------------------------ */
+:root[data-palette="normal"] {
+  color-scheme: light;
+
+  --bg-color: #fafafa;
+  --bg-surface: #f5f5f5;
+  --bg-sunken: #ebebeb;
+
+  --text-logo-color: #111111;
+  --text-title-color: #111111;
+  --text-subtitle-color: #333333;
+  --text-content-color: #444444;
+  --text-description-color: #666666;
+  --text-faint-color: #999999;
+
+  --line-divider-color: #e5e5e5;
+  --line-border-color: #e5e5e5;
+
+  --accent-color: #111111;
+  --accent-hover-color: #444444;
+  --accent-contrast-color: #fafafa;
+
+  --selection-bg: #e5e5e5;
+  --selection-color: #111111;
+  --shadow-color: rgba(17, 17, 17, 0.04);
+
+  --syntax-comment: #999999;
+  --syntax-keyword: #111111;
+  --syntax-string: #666666;
+  --syntax-constant: #444444;
+  --syntax-entity: #111111;
+  --syntax-variable: #666666;
+  --syntax-tag: #111111;
+  --syntax-heading: #111111;
+  --syntax-invalid: #444444;
+}
+
+:root[data-palette="normal"][data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg-color: #111111;
+  --bg-surface: #1a1a1a;
+  --bg-sunken: #0a0a0a;
+
+  --text-logo-color: #fafafa;
+  --text-title-color: #f5f5f5;
+  --text-subtitle-color: #e5e5e5;
+  --text-content-color: #cccccc;
+  --text-description-color: #999999;
+  --text-faint-color: #666666;
+
+  --line-divider-color: #2a2a2a;
+  --line-border-color: #333333;
+
+  --accent-color: #f5f5f5;
+  --accent-hover-color: #cccccc;
+  --accent-contrast-color: #111111;
+
+  --selection-bg: #333333;
+  --selection-color: #fafafa;
+  --shadow-color: rgba(0, 0, 0, 0.5);
+
+  --syntax-comment: #999999;
+  --syntax-keyword: #f5f5f5;
+  --syntax-string: #cccccc;
+  --syntax-constant: #e5e5e5;
+  --syntax-entity: #f5f5f5;
+  --syntax-variable: #cccccc;
+  --syntax-tag: #f5f5f5;
+  --syntax-heading: #fafafa;
+  --syntax-invalid: #cccccc;
 }

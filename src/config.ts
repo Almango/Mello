@@ -14,7 +14,7 @@ export const BASE_CONFIG = {
 export type PaletteName = 'paper' | 'mono'
 
 export const THEME_CONFIG = {
-  palette: 'paper',
+  palette: 'mono',
 } as const satisfies { palette: PaletteName }
 
 // 文章页配置

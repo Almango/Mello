@@ -28,11 +28,10 @@
 .markdown-body h4,
 .markdown-body h5,
 .markdown-body h6 {
-  margin: 1.6em 0 0.7em;
+  margin: 1.75em 0 .75em;
   color: var(--text-title-color);
   font-weight: var(--text-weight);
   line-height: 1.4;
-  scroll-margin-top: 1.4rem;
 }
 
 .markdown-body h1 {
@@ -40,8 +39,6 @@
 }
 
 .markdown-body h2 {
-  padding-bottom: 0.35em;
-  border-bottom: 1px dashed var(--line-divider-color);
   font-size: 20px;
 }
 
@@ -64,6 +61,7 @@
 /* ---------- 正文 ---------- */
 .markdown-body p {
   margin: 1.2em 0;
+  letter-spacing: .05em;
 }
 
 .markdown-body strong {

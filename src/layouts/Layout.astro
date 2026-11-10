@@ -6,7 +6,10 @@ import { BASE_CONFIG, THEME_CONFIG } from '../config'
 import '../styles/theme.css'
 import '../styles/global.css'
 
-const { title = BASE_CONFIG.title } = Astro.props
+const { title } = Astro.props
+const pageTitle = title && title !== BASE_CONFIG.title
+  ? `${title} · ${BASE_CONFIG.title}`
+  : BASE_CONFIG.title
 
 interface Props {
   title?: string
@@ -20,7 +23,7 @@ interface Props {
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" href={BASE_CONFIG.favicon} />
-    <title>{title}</title>
+    <title>{pageTitle}</title>
     <ThemeInit />
     <script>
       import '../scripts/image-zoom.ts';

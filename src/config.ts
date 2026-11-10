@@ -1,12 +1,12 @@
 // 基础配置
 export const BASE_CONFIG = {
-  title: '啊芒果',
-  subtitle: '啊芒果',
-  description: '天真永不消逝，浪漫致死不渝',
-  author: '啊芒果',
-  favicon: '/favicon.png',
+  title: 'Mello',
+  subtitle: 'Mello',
+  description: '简约、高效、优雅。',
+  author: 'Mello',
+  favicon: '/favicon.svg',
   avatar: '/avatar.webp',
-  site_url: 'https://blog.almango.cn',
+  site_url: 'https://example.com',
   create_time: '2024-01-23',
 }
 
@@ -19,16 +19,15 @@ export const THEME_CONFIG = {
 
 // 文章页配置
 export const POST_CONFIG = {
-  toc: true,        // 文章页是否显示右侧浮动目录
+  toc: true,
 }
 
 // 导航栏配置
 export const HEADER_CONFIG = {
   nav: [
     { label: '归档', href: '/archive' },
-    { label: '手记', href: '/record' },
     { label: '探索', href: '/explore' },
-    { label: '邻居', href: '/link' },
+    { label: '朋友', href: '/link' },
     { label: '关于', href: '/about' },
   ],
 }
@@ -36,15 +35,15 @@ export const HEADER_CONFIG = {
 // 页脚配置
 export const FOOTER_CONFIG = {
   link: [
-    { name: '萌ICP备20240146号', url: 'https://icp.gov.moe/?keyword=20240146'},
+    { name: 'Astro', url: 'https://astro.build/'},
   ]
 }
 
 // 评论配置
 export const COMMENT_CONFIG = {
-  enable: true,
+  enable: false,
   provider: 'waline',
   waline: {
-    serverURL: 'https://waline.almango.cn/',
+    serverURL: 'https://example.cn/',
   },
 }

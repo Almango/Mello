@@ -5,7 +5,7 @@ import HeatChart from './HeatChart.astro'
 
 const links: { label: string; href: string; icon: string; external?: boolean }[] = [
   { label: 'GitHub', href: 'https://github.com/Almango', icon: 'tabler:brand-github', external: true },
-  { label: 'Email', href: 'mailto:silveralmango@outlook.com', icon: 'tabler:mail' },
+  { label: 'Email', href: 'mailto:hello@example.com', icon: 'tabler:mail' },
   { label: 'Steam', href: '#', icon: 'tabler:brand-steam' },
   { label: 'RSS', href: '/rss.xml', icon: 'tabler:rss' },
 ]
@@ -13,12 +13,12 @@ const links: { label: string; href: string; icon: string; external?: boolean }[]
 
 <section class="intro">
   <div class="intro-content">
-    <p class="intro-title">你好，我是{BASE_CONFIG.author}。</p>
+    <p class="intro-title">你好，我是 {BASE_CONFIG.author}。</p>
 
     <p class="intro-description">
-      {BASE_CONFIG.description}。
+      {BASE_CONFIG.description}
       <br />
-      想让随手写的日常成为未来宝贵的回忆，仅此而已。
+      Recover one's original simplicity.
     </p>
 
     <ul class="intro-links">

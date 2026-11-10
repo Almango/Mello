@@ -1,12 +1,12 @@
 ### 🍃 Astro Theme Mello
 
 Astro Theme Mello 是基于上一代博客主题设计思路，重新设计的新一代博客主题，它更加极简、优雅、高性能，以阅读体验为核心，专注于内容本身，回归文字最本真的状态，
-没有冗余装饰，没有复杂交互，只保留最纯粹的阅读与写作环境。 (🖥️[Demo](https://blog.almango.cn))
+没有冗余装饰，没有复杂交互，只保留最纯粹的阅读与写作环境。
 
 [![](https://img.shields.io/badge/Astro-v6-BC52EE?logo=astro)](https://astro.build)
 [![](https://img.shields.io/badge/Node.js->=22-5FA04E?logo=nodedotjs)](https://nodejs.org)
 [![](https://img.shields.io/badge/pnpm-v12-F69220?logo=pnpm)](https://pnpm.io)
-[![](https://img.shields.io/badge/许可-MIT-D1AB66)](./LICENSE)
+[![](https://img.shields.io/badge/许可-MIT-D1AB66)](./LICENSE.txt)
 
 > \[!important]
 > 使用该主题部署后请先删除 content/posts/ 的文章！！！
@@ -33,7 +33,7 @@ Astro Theme Mello 是基于上一代博客主题设计思路，重新设计的�
 
 ```bash
 # 克隆仓库
-git clone https://github.com/Almango/Mello.git
+git clone https://github.com/yourname/mello.git
 
 # 进入项目目录
 cd mello
@@ -60,7 +60,9 @@ pnpm preview
 ```
 .
 ├── public/                  # 静态资源
-│   └── fonts/               # 字体文件
+│   ├── avatar.svg           # 占位头像
+│   ├── favicon.svg          # 站点图标
+│   └── demo-image.svg       # 示例图片
 ├── src/
 │   ├── components/          # 组件
 │   │   ├── Header.astro     # 顶部导航栏
@@ -68,7 +70,7 @@ pnpm preview
 │   │   ├── ThemeToggle.astro# 主题切换按钮
 │   │   ├── Intro.astro      # 首页介绍
 │   │   ├── PageHeader.astro # 页面标题头
-│   │   ├── PostList.astro   # 文章列表（归档/手记/分类/标签共用）
+│   │   ├── PostList.astro   # 文章列表（归档/分类/标签共用）
 │   │   ├── PostTOC.astro    # 文章浮动目录
 │   │   ├── Recent.astro     # 首页文章列表
 │   │   └── Comment.astro    # 评论组件（Waline）
@@ -84,23 +86,23 @@ pnpm preview
 │   │   ├── index.astro      # 首页
 │   │   ├── archive.astro    # 归档
 │   │   ├── record.astro     # 手记
-│   │   ├── tag.astro        # 标签
+│   │   ├── explore.astro    # 探索
 │   │   ├── link.astro       # 友链
-│   │   ├── logs.astro       # 日志
 │   │   ├── about.astro      # 关于
-│   │   ├── rss.xml.js       # RSS 订阅
+│   │   ├── rss.xml.ts       # RSS 订阅
 │   │   ├── post/[id].astro  # 文章详情
 │   │   ├── category/[name].astro# 分类聚合
 │   │   └── tag/[name].astro     # 标签聚合
 │   ├── scripts/
-│   │   └── image-zoom.js    # 图片放大
+│   │   └── image-zoom.ts    # 图片放大
 │   ├── styles/
-│   │   ├── global.css       # 全局样式 + 主题变量
+│   │   ├── theme.css        # 配色变量
+│   │   ├── global.css       # 全局样式
 │   │   ├── markdown.css     # Markdown 正文样式
 │   │   └── waline.css       # 评论区定制样式
 │   ├── config.ts            # 站点配置（唯一需要改的配置文件）
 │   └── content.config.ts    # 内容集合配置
-├── astro.config.mjs         # Astro 配置
+├── astro.config.ts          # Astro 配置
 └── package.json
 ```
 

@@ -8,122 +8,18 @@ export interface Link {
 }
 export const links: Link[] = [
   {
-    name: "张洪Heo",
-    description: "分享设计与科技生活",
-    url: "https://blog.zhheo.com/",
-    avatar: "https://img.zhheo.com/i/67d8fa75943e4.webp",
-    rss: "https://blog.zhheo.com/atom.xml"
+    name: "Astro",
+    description: "The web framework for content-driven websites.",
+    url: "https://astro.build/",
+    avatar: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIwLjhlbSIgaGVpZ2h0PSIxZW0iIHZpZXdCb3g9IjAgMCAyNTYgMzIzIj4KCTxwYXRoIGQ9Ik0wIDBoMjU2djMyM0gweiIgZmlsbD0ibm9uZSIgLz4KCTxkZWZzPgoJCTxsaW5lYXJHcmFkaWVudCBpZD0iU1ZHeEFTNTNiQ1giIHgxPSIwJSIgeDI9IjExNi44NDIlIiB5MT0iOTEuMjY5JSIgeTI9IjQxLjExNSUiPgoJCQk8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZDgzMzMzIiAvPgoJCQk8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmMDQxZmYiIC8+CgkJPC9saW5lYXJHcmFkaWVudD4KCTwvZGVmcz4KCTxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik04My4yNjEgMjc1LjAzOWMtMTQuNTg4LTEzLjMzNi0xOC44NDctNDEuMzU1LTEyLjc2OS02MS42NTNjMTAuNTM5IDEyLjc5NiAyNS4xNCAxNi44NTIgNDAuMjY1IDE5LjEzOGMyMy4zNSAzLjUzMyA0Ni4yOCAyLjIxMiA2Ny45Ny04LjQ2YzIuNDgyLTEuMjIgNC43NzUtMi44NDggNy40ODYtNC40OTJjMi4wMzUgNS45MDMgMi41NjUgMTEuODY0IDEuODU0IDE3LjkzMmMtMS43MjggMTQuNzc2LTkuMDgyIDI2LjE5MS0yMC43NzcgMzQuODQyYy00LjY3NyAzLjQ2MS05LjYyNiA2LjU1NS0xNC40NTYgOS44MmMtMTQuODM5IDEwLjAyNi0xOC44NTMgMjEuNzg2LTEzLjI3NyAzOC44OTRjLjEzMi40MTcuMjUuODMzLjU1IDEuODVjLTcuNTc2LTMuMzktMTMuMTEtOC4zMjgtMTcuMzI3LTE0LjgxOGMtNC40NTMtNi44NTItNi41NzItMTQuNDMxLTYuNjg0LTIyLjYzYy0uMDU2LTMuOTktLjA1Ni04LjAxOC0uNTkyLTExLjk1Yy0xLjMxLTkuNTkxLTUuODEzLTEzLjg4Ni0xNC4yOTYtMTQuMTM0Yy04LjcwNS0uMjUyLTE1LjU5MSA1LjEyNy0xNy40MTcgMTMuNjA0Yy0uMTQuNjQ5LS4zNDIgMS4yOTEtLjU0NCAyLjA0N3oiIC8+Cgk8cGF0aCBmaWxsPSJ1cmwoI1NWR3hBUzUzYkNYKSIgZD0iTTgzLjI2MSAyNzUuMDM5Yy0xNC41ODgtMTMuMzM2LTE4Ljg0Ny00MS4zNTUtMTIuNzY5LTYxLjY1M2MxMC41MzkgMTIuNzk2IDI1LjE0IDE2Ljg1MiA0MC4yNjUgMTkuMTM4YzIzLjM1IDMuNTMzIDQ2LjI4IDIuMjEyIDY3Ljk3LTguNDZjMi40ODItMS4yMiA0Ljc3NS0yLjg0OCA3LjQ4Ni00LjQ5MmMyLjAzNSA1LjkwMyAyLjU2NSAxMS44NjQgMS44NTQgMTcuOTMyYy0xLjcyOCAxNC43NzYtOS4wODIgMjYuMTkxLTIwLjc3NyAzNC44NDJjLTQuNjc3IDMuNDYxLTkuNjI2IDYuNTU1LTE0LjQ1NiA5LjgyYy0xNC44MzkgMTAuMDI2LTE4Ljg1MyAyMS43ODYtMTMuMjc3IDM4Ljg5NGMuMTMyLjQxNy4yNS44MzMuNTUgMS44NWMtNy41NzYtMy4zOS0xMy4xMS04LjMyOC0xNy4zMjctMTQuODE4Yy00LjQ1My02Ljg1Mi02LjU3Mi0xNC40MzEtNi42ODQtMjIuNjNjLS4wNTYtMy45OS0uMDU2LTguMDE4LS41OTItMTEuOTVjLTEuMzEtOS41OTEtNS44MTMtMTMuODg2LTE0LjI5Ni0xNC4xMzRjLTguNzA1LS4yNTItMTUuNTkxIDUuMTI3LTE3LjQxNyAxMy42MDRjLS4xNC42NDktLjM0MiAxLjI5MS0uNTQ0IDIuMDQ3eiIgLz4KCTxwYXRoIGZpbGw9IiMxNzE5MWUiIGQ9Ik0wIDIxMC4wMDFzNDMuMTk3LTIxLjA0MSA4Ni41MTUtMjEuMDQxbDMyLjY2LTEwMS4wNzhjMS4yMjQtNC44ODkgNC43OTQtOC4yMSA4LjgyNC04LjIxczcuNjAxIDMuMzIxIDguODI0IDguMjFsMzIuNjYgMTAxLjA3OEMyMjAuNzg3IDE4OC45NiAyNTYgMjEwIDI1NiAyMTBTMTgyLjYyNCAxMC4xMTcgMTgyLjQ4MSA5LjcxNkMxODAuMzc1IDMuODA2IDE3Ni44MjEgMCAxNzIuMDI3IDBIODMuOThjLTQuNzkzIDAtOC4yMDQgMy44MDYtMTAuNDU0IDkuNzE2QzczLjM2NyAxMC4xMDkgMCAyMTAgMCAyMTAiIC8+Cjwvc3ZnPgo=",
+    rss: "#"
   },
   {
-    name: "定の栈",
-    description: "LINK START!",
-    url: "https://blog.saop.cc/",
-    avatar: "https://saop.cc/avatar.webp",
-    rss: "https://blog.saop.cc/atom.xml"
-  },
-  {
-    name: "栖童の小站",
-    description: "越努力，越幸运.",
-    url: "https://blog.linux-qitong.top/",
-    avatar: "https://blog.linux-qitong.top/img/avatar.webp",
-    rss: "https://blog.linux-qitong.top/atom.xml"
-  },
-    {
-    name: "Saneko",
-    description: "Do the things that I like.",
-    url: "https://saneko.me",
-    avatar: "https://cdn.blog.saneko.me/Web/Avatar.png",
-    rss: "https://saneko.me/rss.xml"
-  },
-  {
-    name: "鈴奈咲桜",
-    description: "愛することを忘れないで",
-    url: "https://blog.sakura.ink",
-    avatar: "https://q2.qlogo.cn/headimg_dl?dst_uin=2731443459&spec=5",
-    rss: "https://blog.sakura.ink/rss.xml"
-  },
-  {
-    name: "微尘印记",
-    description: "愿如微尘，亦有印记。",
-    url: "https://weichen.ink",
-    avatar: "https://weichen.ink/avatar.jpg",
-    rss: "https://weichen.ink/rss.xml"
-  },
-  {
-    name: "JustPureH2O",
-    description: "穷方圆平直之情，尽规矩准绳之用。",
-    url: "https://justpureh2o.cn",
-    avatar: "https://img.justpureh2o.cn/image/667f85b1d9c307b7e9ef9f2c.jpg",
-    rss: "https://justpureh2o.cn/rss.xml"
-  },
-  {
-    name: "bbb-lsy07",
-    description: "科技激荡人文，洞见智慧本真。",
-    url: "https://blog.tsoo.net/",
-    avatar: "https://blog.tsoo.net/upload/logo.jpg?width=800",
-    rss: "https://blog.tsoo.net/rss.xml"
-  },
-  {
-    name: "小林の木屋",
-    description: "一个黑客小子！",
-    url: "https://www.wjlin0.com",
-    avatar: "https://www.wjlin0.com/upload/log.png",
-    rss: "https://www.wjlin0.com/rss.xml"
-  },
-  {
-    name: "mccsjs",
-    description: "素敵な一日が始まります🎉🎉🎉",
-    url: "https://mccsjs.cn/",
-    avatar: "https://mccsjs.cn/_astro/ico.DgJiMYbf_1BrGmp.webp",
-    rss: "https://mccsjs.cn/rss.xml"
-  },
-  {
-    name: "qwwp",
-    description: "你要吃C4吗？",
-    url: "https://qwwp.top/",
-    avatar: "https://qwwp.top/images/avatar.jpg",
-    rss: "https://qwwp.top/feed.xml"
-  },
-  {
-    name: "Meorion",
-    description: "去码头整点薯条🍟",
-    url: "https://blog.meorion.moe",
-    avatar: "https://gravatar.meorion.moe/avatar/me",
-    rss: "https://blog.meorion.moe/rss.xml"
-  },
-  {
-    name: "Kegongtang",
-    description: "Blogger / Technophile / Student",
-    url: "https://kegongteng.cn/",
-    avatar: "https://weavatar.com/avatar/0b01396273cca253aa6876c020449b655a9cc12e75f921b38ac088569e814b5e",
-    rss: "https://kegongteng.cn/atom",
-  },
-  {
-    name: "AirTouch",
-    description: "Stay Hungry, Stay Foolish",
-    url: "https://www.xsl.im/",
-    avatar: "https://www.xsl.im/avatar.webp",
-    rss: "https://www.xsl.im/atom.xml"
-  },
-  {
-    name: "天码行空的小破站",
-    description: "路漫漫其修远兮，吾将上下而求索",
-    url: "https://cosky.top/",
-    avatar: "https://i.see.you/2026/04/06/mW3p/e687dcf361b90e15258af06410e4df9e.jpg",
-    rss: "https://cosky.top/rss"
-  },
-  {
-    name: "洪畅的博客",
-    description: "想，全是问题；做，才有答案。",
-    url: "https://blog.hcbu.cn/",
-    avatar: "https://gitee.com/hcbug/picture1/raw/master/20260607223324364.webp",
-    rss: "https://blog.hcbu.cn/atom.xml"
-  },
-  {
-    name: "合荒小站",
-    description: "万物合鸣·独守一荒",
-    url: "https://hehuang.site",
-    avatar: "https://hehuang.site/img/avatar.jpg",
-    rss: "https://hehuang.site/index.xml"
+    name: "Github",
+    description: "Change is constant. GitHub keeps you ahead.",
+    url: "https://github.com/",
+    avatar: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMTIgMTIiPgoJPHBhdGggZD0iTTAgMGgxMnYxMkgweiIgZmlsbD0ibm9uZSIgLz4KCTxwYXRoIGZpbGw9ImN1cnJlbnRDb2xvciIgZD0iTTYgMEMyLjY4NyAwIDAgMi43NTQgMCA2LjE1MmMwIDIuNzE4IDEuNzE5IDUuMDI0IDQuMTAzIDUuODM3Yy4zLjA1Ny40MS0uMTMzLjQxLS4yOTZjMC0uMTQ2LS4wMDUtLjUzMy0uMDA4LTEuMDQ2Yy0xLjY2OS4zNzEtMi4wMjEtLjgyNS0yLjAyMS0uODI1Yy0uMjczLS43MTEtLjY2Ni0uOS0uNjY2LS45Yy0uNTQ1LS4zODIuMDQtLjM3NC4wNC0uMzc0Yy42MDMuMDQ0LjkyLjYzNC45Mi42MzRjLjUzNS45NCAxLjQwNC42NjggMS43NDYuNTExYy4wNTUtLjM5Ny4yMS0uNjY5LjM4MS0uODIyYy0xLjMzMi0uMTU1LTIuNzMzLS42ODMtMi43MzMtMy4wNGMwLS42NzIuMjM0LTEuMjIxLjYxOC0xLjY1MWMtLjA2Mi0uMTU2LS4yNjgtLjc4MS4wNTgtMS42MjljMCAwIC41MDQtLjE2NSAxLjY1LjYzMUE1LjYgNS42IDAgMCAxIDYgMi45NzVhNS42IDUuNiAwIDAgMSAxLjUwMi4yMDdjMS4xNDYtLjc5NiAxLjY0OS0uNjMgMS42NDktLjYzYy4zMjcuODQ3LjEyMSAxLjQ3Mi4wNiAxLjYyOGMuMzg0LjQzLjYxNi45NzkuNjE2IDEuNjVjMCAyLjM2NC0xLjQwMyAyLjg4NC0yLjc0IDMuMDM2Yy4yMTYuMTkuNDA4LjU2NS40MDggMS4xNGMwIC44MjEtLjAwNyAxLjQ4NS0uMDA3IDEuNjg3YzAgLjE2NC4xMDguMzU2LjQxMi4yOTZjMi4zODItLjgxNiA0LjEtMy4xMiA0LjEtNS44MzdDMTIgMi43NTQgOS4zMTMgMCA2IDAiIC8+Cjwvc3ZnPgo=",
+    rss: "#"
   }
+
 ];

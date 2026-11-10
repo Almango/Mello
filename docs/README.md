@@ -29,11 +29,10 @@ export const THEME_CONFIG = {
 | --- | --- |
 | `palette.html` | paper 的亮/暗双主题预览 + 色板 + 设计说明 |
 | `palette.png` | 上面的整页预览图 |
-| `preview-light.png` / `preview-dark.png` | paper 首页实际截图 |
-| `preview-post-light.png` / `preview-post-dark.png` | paper 文章页实际截图（含代码块与目录） |
+| `home-light.png` / `home-dark.png` | paper 首页实际截图 |
+| `preview-post-light.png` / `preview-post-dark.png` | 文章页实际截图（含代码块与目录） |
 | `mono-light.png` / `mono-dark.png` | mono 首页实际截图 |
 | `normal-light.png` / `normal-dark.png` | normal 首页实际截图 |
-| `alert-light.png` / `alert-dark.png` | Markdown 提示框实际截图 |
 
 ## Markdown 提示框（GitHub Alerts）
 
@@ -62,10 +61,6 @@ export const THEME_CONFIG = {
 提示框与 `blockquote` 使用同一套排版：无圆角、无图标、左侧竖线。类型只通过左侧竖线颜色区分，颜色固定写在 `markdown.css`，不随 `paper` / `mono` 切换。
 
 默认标题可以通过插件参数覆盖，例如 `remarkAlert({ titles: { important: '必须注意' } })`。
-
-![提示框亮色](alert-light.png)
-
-![提示框暗色](alert-dark.png)
 
 ## 实现入口
 

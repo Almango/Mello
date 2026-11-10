@@ -7,22 +7,6 @@ tags:
   - Markdown
 id: mdtest
 ---
-> 对于你之前想在国内找 Supabase 替代品的场景，Neon 本身也是一个值得关注的选项，但需要注意的是，它并非国内服务，访问延迟和数据合规是需要考虑的实际问题。
-
-> [!tip] 提示
-> 标题省略时使用默认中文标题。
-
-> [!IMPORTANT] 重点
-> 标题省略时使用默认中文标题。
-
-> [!NOTE] 标记一下
-> 标题省略时使用默认中文标题。
-
-> [!caution] 注意
-> 标题省略时使用默认中文标题。
-
-> [!warning] 警告
-> 标题省略时使用默认中文标题。
 
 
 ## 文本样式
@@ -62,6 +46,27 @@ id: mdtest
 ## 引用
 
 
+## Alert提示
+
+> [!tip] 提示
+> 这是一个提示语法
+
+> [!IMPORTANT] 重点
+> 这是一个重点语法
+
+> [!NOTE] 标记一下
+> 这是一个标记语法
+
+> [!caution] 注意
+> 这是一个注意语法
+
+> [!warning] 警告
+> 这是一个警告语法
+
+
+
+## 隐藏文字
+
 注意，这是一个:spoiler[隐藏]的行内文字
 
 :::spoiler
@@ -92,7 +97,7 @@ function hello(name) {
 [带标题的链接](https://www.example.com "标题")
 <https://www.example.com>  自动链接
 
-![图片描述](https://bu.dusays.com/2026/08/30/6a93e96f31cf0.jpg "图片标题")
+![图片描述](/demo-image.svg "图片标题")
 
 
 ## 表格

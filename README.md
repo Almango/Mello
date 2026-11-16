@@ -7,9 +7,6 @@ Astro Theme Mello 是基于上一代博客主题设计思路，重新设计的�
 [![](https://img.shields.io/badge/pnpm-v12-F69220?logo=pnpm)](https://pnpm.io)
 [![](https://img.shields.io/badge/许可-MIT-D1AB66)](./LICENSE.txt)
 
-> [!IMPORTANT]
-> `src/content/posts/` 中只有用于演示的示例文章，部署前请替换或删除。
-
 ### ✨ 特性
 
 **三套配色**：paper 取宣纸、墨色与灰绿；mono 偏学术科普，使用墨蓝、学术蓝与图表橙；normal 为纯灰阶单色极简。三套都支持亮色与暗色。
@@ -20,7 +17,7 @@ Astro Theme Mello 是基于上一代博客主题设计思路，重新设计的�
 
 **文章页**：右侧浮动目录、Expressive Code 代码高亮、MathJax 数学公式、GitHub Alerts、隐藏文字和图片点击缩放。
 
-**聚合页面**：归档、探索、分类、标签、友链和关于，全部静态生成；自动生成 RSS 与 Sitemap。
+**聚合页面**：归档、分类、友链和关于，全部静态生成；自动生成 RSS 与 Sitemap。导航对应 `归档 / 分类 / 朋友 / 关于` 四项。
 
 **评论系统**：可选接入 Waline，默认关闭；内置评论列表、输入框和暗色模式的深度样式适配。
 
@@ -46,14 +43,17 @@ export const THEME_CONFIG = {
   palette: 'paper', // 'paper' | 'mono' | 'normal'
 }
 
-export const COMMENT_CONFIG = {
-  enable: false,
-  provider: 'waline',
-  waline: { serverURL: 'https://example.cn/' },
+export const HEADER_CONFIG = {
+  nav: [
+    { label: '归档', href: '/archive' },
+    { label: '分类', href: '/category' },
+    { label: '朋友', href: '/link' },
+    { label: '关于', href: '/about' },
+  ],
 }
+
 ```
 
-部署前至少需要修改 `site_url`、`astro.config.ts` 中的 `site`，以及 `src/content/` 下的示例内容。
 
 ### 🛠️ 安装
 
@@ -98,7 +98,6 @@ pnpm preview
 │   │   ├── Intro.astro      # 首页介绍
 │   │   ├── HeatChart.astro  # 写作热力图
 │   │   ├── PageHeader.astro # 页面标题头
-│   │   ├── PostList.astro   # 文章列表（归档/分类/标签共用）
 │   │   ├── PostTOC.astro    # 文章浮动目录
 │   │   ├── Recent.astro     # 首页文章列表
 │   │   └── Comment.astro    # 评论组件（Waline）
@@ -113,14 +112,12 @@ pnpm preview
 │   ├── pages/               # 页面路由
 │   │   ├── index.astro      # 首页
 │   │   ├── archive.astro    # 归档
-│   │   ├── record.astro     # 手记
-│   │   ├── explore.astro    # 探索
+│   │   ├── category.astro   # 分类
 │   │   ├── link.astro       # 友链
 │   │   ├── about.astro      # 关于
 │   │   ├── rss.xml.ts       # RSS 订阅
 │   │   ├── post/[id].astro  # 文章详情
-│   │   ├── category/[name].astro# 分类聚合
-│   │   └── tag/[name].astro     # 标签聚合
+│   │   └── category/[name].astro# 分类聚合
 │   ├── scripts/
 │   │   └── image-zoom.ts    # 图片放大
 │   ├── styles/

@@ -13,7 +13,7 @@ const title = '友链'
 <Layout title={title}>
   <PageHeader title={title} subtitle="海内存知己，天涯若比邻" />
   <div class="link">
-    <div class="link-top">
+    <div class="link-card">
       {links.map(link => (
         <div
           class:list={['link-item', link.avatar && 'has-avatar']}
@@ -37,11 +37,10 @@ const title = '友链'
   .link {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    padding: 1rem 0;
+    padding: 2rem 0;
   }
 
-  .link-top {
+  .link-card {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 16px;

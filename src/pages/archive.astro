@@ -26,7 +26,7 @@ const title = '归档'
   .archive {
     list-style: none;
     margin: 0;
-    padding: 2rem 0;
+    padding: 1rem 0;
   }
 
   .archive-item {
@@ -34,6 +34,15 @@ const title = '归档'
     align-items: center;
     gap: 1rem;
     padding: .75rem 0;
+  }
+  .archive-item:first-child{
+    padding: 0 0 .75rem 0;
+  }
+  .archive-item:last-child{
+    padding: .75rem 0 0 0;
+  }
+  .archive-item:only-child {
+    padding: 0;
   }
 
   .archive-published {

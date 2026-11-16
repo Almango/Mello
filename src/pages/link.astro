@@ -1,9 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import PageHeader from '../components/PageHeader.astro'
-import { links } from '../data/links.ts'
+import links from '../data/links.json'
 import Comment from '../components/Comment.astro'
-import { Content } from '../content/link.md'
 import '../styles/markdown.css'
 
 
@@ -26,9 +25,7 @@ const title = '友链'
         </div>
       ))}
     </div>
-    <div class="link-bottom markdown-body">
-      <Content />
-    </div>
+
     <Comment />
   </div>
 </Layout>
@@ -37,7 +34,7 @@ const title = '友链'
   .link {
     display: flex;
     flex-direction: column;
-    padding: 2rem 0;
+    padding: 1rem 0;
   }
 
   .link-card {

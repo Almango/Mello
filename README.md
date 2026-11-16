@@ -106,7 +106,7 @@ pnpm preview
 │   │   ├── about.md         # 关于页面内容
 │   │   └── link.md          # 友链申请说明
 │   ├── data/
-│   │   └── links.ts         # 友链集合
+│   │   └── links.json       # 友链集合
 │   ├── layouts/
 │   │   └── Layout.astro     # 基础布局
 │   ├── pages/               # 页面路由
